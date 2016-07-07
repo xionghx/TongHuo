@@ -14,6 +14,29 @@
 		037D835B1D2E7B9E0063E17E /* TongHuo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 037D83591D2E7B9E0063E17E /* TongHuo.xcdatamodeld */; };
 		037D835D1D2E7B9E0063E17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037D835C1D2E7B9E0063E17E /* Assets.xcassets */; };
 		037D83601D2E7B9E0063E17E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037D835E1D2E7B9E0063E17E /* LaunchScreen.storyboard */; };
+		037D838B1D2E7D800063E17E /* NetRequest+Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D836A1D2E7D800063E17E /* NetRequest+Article.m */; };
+		037D838C1D2E7D800063E17E /* NetRequest+DailyFavourites.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */; };
+		037D838D1D2E7D800063E17E /* NetRequest+Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D836E1D2E7D800063E17E /* NetRequest+Region.m */; };
+		037D838E1D2E7D800063E17E /* NetRequest+Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83701D2E7D800063E17E /* NetRequest+Simple.m */; };
+		037D838F1D2E7D800063E17E /* NetRequest+Special.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83721D2E7D800063E17E /* NetRequest+Special.m */; };
+		037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */; };
+		037D83911D2E7D800063E17E /* NetRequest+UserInfoRequst.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */; };
+		037D83921D2E7D800063E17E /* MainPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83771D2E7D800063E17E /* MainPage.m */; };
+		037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D837A1D2E7D800063E17E /* MainPageScroll.m */; };
+		037D83941D2E7D800063E17E /* MAMAHeaderPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */; };
+		037D83951D2E7D800063E17E /* MAMATableViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */; };
+		037D83961D2E7D800063E17E /* NSObject+FileWithBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */; };
+		037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */; };
+		037D83981D2E7D800063E17E /* UIView+SetSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83841D2E7D800063E17E /* UIView+SetSize.m */; };
+		037D83991D2E7D800063E17E /* XAlertViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83861D2E7D800063E17E /* XAlertViewHelper.m */; };
+		037D839A1D2E7D800063E17E /* XNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83881D2E7D800063E17E /* XNavigationController.m */; };
+		037D839B1D2E7D800063E17E /* XTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D838A1D2E7D800063E17E /* XTabBar.m */; };
+		037D839E1D2E7DA10063E17E /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D839D1D2E7DA10063E17E /* NetRequest.m */; };
+		037D83A31D2E7DCF0063E17E /* XUtilityTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83A01D2E7DCF0063E17E /* XUtilityTools.m */; };
+		037D83A41D2E7DCF0063E17E /* XStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83A21D2E7DCF0063E17E /* XStringUtils.m */; };
+		037D83AB1D2E845E0063E17E /* RootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83AA1D2E845E0063E17E /* RootVC.m */; };
+		037D83AE1D2E84A50063E17E /* MainPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83AD1D2E84A50063E17E /* MainPageVC.m */; };
+		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +51,55 @@
 		037D835C1D2E7B9E0063E17E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		037D835F1D2E7B9E0063E17E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		037D83611D2E7B9E0063E17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037D83671D2E7C620063E17E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		037D83691D2E7D800063E17E /* NetRequest+Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Article.h"; sourceTree = "<group>"; };
+		037D836A1D2E7D800063E17E /* NetRequest+Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Article.m"; sourceTree = "<group>"; };
+		037D836B1D2E7D800063E17E /* NetRequest+DailyFavourites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+DailyFavourites.h"; sourceTree = "<group>"; };
+		037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+DailyFavourites.m"; sourceTree = "<group>"; };
+		037D836D1D2E7D800063E17E /* NetRequest+Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Region.h"; sourceTree = "<group>"; };
+		037D836E1D2E7D800063E17E /* NetRequest+Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Region.m"; sourceTree = "<group>"; };
+		037D836F1D2E7D800063E17E /* NetRequest+Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Simple.h"; sourceTree = "<group>"; };
+		037D83701D2E7D800063E17E /* NetRequest+Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Simple.m"; sourceTree = "<group>"; };
+		037D83711D2E7D800063E17E /* NetRequest+Special.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Special.h"; sourceTree = "<group>"; };
+		037D83721D2E7D800063E17E /* NetRequest+Special.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Special.m"; sourceTree = "<group>"; };
+		037D83731D2E7D800063E17E /* NetRequest+UserDoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+UserDoing.h"; sourceTree = "<group>"; };
+		037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+UserDoing.m"; sourceTree = "<group>"; };
+		037D83751D2E7D800063E17E /* NetRequest+UserInfoRequst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+UserInfoRequst.h"; sourceTree = "<group>"; };
+		037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+UserInfoRequst.m"; sourceTree = "<group>"; };
+		037D83771D2E7D800063E17E /* MainPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPage.m; sourceTree = "<group>"; };
+		037D83781D2E7D800063E17E /* MainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPage.h; sourceTree = "<group>"; };
+		037D83791D2E7D800063E17E /* MainPageScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageScroll.h; sourceTree = "<group>"; };
+		037D837A1D2E7D800063E17E /* MainPageScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageScroll.m; sourceTree = "<group>"; };
+		037D837B1D2E7D800063E17E /* MAMAHeaderPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMAHeaderPage.h; sourceTree = "<group>"; };
+		037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMAHeaderPage.m; sourceTree = "<group>"; };
+		037D837D1D2E7D800063E17E /* MAMATableViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMATableViewControllers.h; sourceTree = "<group>"; };
+		037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMATableViewControllers.m; sourceTree = "<group>"; };
+		037D837F1D2E7D800063E17E /* NSObject+FileWithBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FileWithBundle.h"; sourceTree = "<group>"; };
+		037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FileWithBundle.m"; sourceTree = "<group>"; };
+		037D83811D2E7D800063E17E /* UIBarButtonItem+CustomItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CustomItem.h"; sourceTree = "<group>"; };
+		037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CustomItem.m"; sourceTree = "<group>"; };
+		037D83831D2E7D800063E17E /* UIView+SetSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetSize.h"; sourceTree = "<group>"; };
+		037D83841D2E7D800063E17E /* UIView+SetSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetSize.m"; sourceTree = "<group>"; };
+		037D83851D2E7D800063E17E /* XAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAlertViewHelper.h; sourceTree = "<group>"; };
+		037D83861D2E7D800063E17E /* XAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAlertViewHelper.m; sourceTree = "<group>"; };
+		037D83871D2E7D800063E17E /* XNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationController.h; sourceTree = "<group>"; };
+		037D83881D2E7D800063E17E /* XNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationController.m; sourceTree = "<group>"; };
+		037D83891D2E7D800063E17E /* XTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBar.h; sourceTree = "<group>"; };
+		037D838A1D2E7D800063E17E /* XTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBar.m; sourceTree = "<group>"; };
+		037D839C1D2E7DA10063E17E /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequest.h; sourceTree = "<group>"; };
+		037D839D1D2E7DA10063E17E /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
+		037D839F1D2E7DCF0063E17E /* XUtilityTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUtilityTools.h; sourceTree = "<group>"; };
+		037D83A01D2E7DCF0063E17E /* XUtilityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUtilityTools.m; sourceTree = "<group>"; };
+		037D83A11D2E7DCF0063E17E /* XStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStringUtils.h; sourceTree = "<group>"; };
+		037D83A21D2E7DCF0063E17E /* XStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStringUtils.m; sourceTree = "<group>"; };
+		037D83A51D2E7DDE0063E17E /* APIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
+		037D83A91D2E845E0063E17E /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
+		037D83AA1D2E845E0063E17E /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
+		037D83AC1D2E84A50063E17E /* MainPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageVC.h; sourceTree = "<group>"; };
+		037D83AD1D2E84A50063E17E /* MainPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageVC.m; sourceTree = "<group>"; };
+		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.release.xcconfig"; sourceTree = "<group>"; };
+		E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +119,8 @@
 			children = (
 				037D834C1D2E7B9E0063E17E /* TongHuo */,
 				037D834B1D2E7B9E0063E17E /* Products */,
+				BB3FE1A4621DB6195B78CC43 /* Pods */,
+				77686E93646AD8C27DBFE939 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +135,8 @@
 		037D834C1D2E7B9E0063E17E /* TongHuo */ = {
 			isa = PBXGroup;
 			children = (
+				037D83A61D2E83A20063E17E /* RootVC */,
+				037D83681D2E7D3D0063E17E /* Helper */,
 				037D83501D2E7B9E0063E17E /* AppDelegate.h */,
 				037D83511D2E7B9E0063E17E /* AppDelegate.m */,
 				037D83531D2E7B9E0063E17E /* ViewController.h */,
@@ -70,6 +147,7 @@
 				037D83611D2E7B9E0063E17E /* Info.plist */,
 				037D83591D2E7B9E0063E17E /* TongHuo.xcdatamodeld */,
 				037D834D1D2E7B9E0063E17E /* Supporting Files */,
+				037D83671D2E7C620063E17E /* PrefixHeader.pch */,
 			);
 			path = TongHuo;
 			sourceTree = "<group>";
@@ -82,6 +160,98 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		037D83681D2E7D3D0063E17E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				037D83A51D2E7DDE0063E17E /* APIConfig.h */,
+				037D839F1D2E7DCF0063E17E /* XUtilityTools.h */,
+				037D83A01D2E7DCF0063E17E /* XUtilityTools.m */,
+				037D83A11D2E7DCF0063E17E /* XStringUtils.h */,
+				037D83A21D2E7DCF0063E17E /* XStringUtils.m */,
+				037D839C1D2E7DA10063E17E /* NetRequest.h */,
+				037D839D1D2E7DA10063E17E /* NetRequest.m */,
+				037D83691D2E7D800063E17E /* NetRequest+Article.h */,
+				037D836A1D2E7D800063E17E /* NetRequest+Article.m */,
+				037D836B1D2E7D800063E17E /* NetRequest+DailyFavourites.h */,
+				037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */,
+				037D836D1D2E7D800063E17E /* NetRequest+Region.h */,
+				037D836E1D2E7D800063E17E /* NetRequest+Region.m */,
+				037D836F1D2E7D800063E17E /* NetRequest+Simple.h */,
+				037D83701D2E7D800063E17E /* NetRequest+Simple.m */,
+				037D83711D2E7D800063E17E /* NetRequest+Special.h */,
+				037D83721D2E7D800063E17E /* NetRequest+Special.m */,
+				037D83731D2E7D800063E17E /* NetRequest+UserDoing.h */,
+				037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */,
+				037D83751D2E7D800063E17E /* NetRequest+UserInfoRequst.h */,
+				037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */,
+				037D83771D2E7D800063E17E /* MainPage.m */,
+				037D83781D2E7D800063E17E /* MainPage.h */,
+				037D83791D2E7D800063E17E /* MainPageScroll.h */,
+				037D837A1D2E7D800063E17E /* MainPageScroll.m */,
+				037D837B1D2E7D800063E17E /* MAMAHeaderPage.h */,
+				037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */,
+				037D837D1D2E7D800063E17E /* MAMATableViewControllers.h */,
+				037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */,
+				037D837F1D2E7D800063E17E /* NSObject+FileWithBundle.h */,
+				037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */,
+				037D83811D2E7D800063E17E /* UIBarButtonItem+CustomItem.h */,
+				037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */,
+				037D83831D2E7D800063E17E /* UIView+SetSize.h */,
+				037D83841D2E7D800063E17E /* UIView+SetSize.m */,
+				037D83851D2E7D800063E17E /* XAlertViewHelper.h */,
+				037D83861D2E7D800063E17E /* XAlertViewHelper.m */,
+				037D83871D2E7D800063E17E /* XNavigationController.h */,
+				037D83881D2E7D800063E17E /* XNavigationController.m */,
+				037D83891D2E7D800063E17E /* XTabBar.h */,
+				037D838A1D2E7D800063E17E /* XTabBar.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		037D83A61D2E83A20063E17E /* RootVC */ = {
+			isa = PBXGroup;
+			children = (
+				037D83A81D2E83EE0063E17E /* LeftVC */,
+				037D83A71D2E83C90063E17E /* MainPageVC */,
+				037D83A91D2E845E0063E17E /* RootVC.h */,
+				037D83AA1D2E845E0063E17E /* RootVC.m */,
+			);
+			path = RootVC;
+			sourceTree = "<group>";
+		};
+		037D83A71D2E83C90063E17E /* MainPageVC */ = {
+			isa = PBXGroup;
+			children = (
+				037D83AC1D2E84A50063E17E /* MainPageVC.h */,
+				037D83AD1D2E84A50063E17E /* MainPageVC.m */,
+			);
+			path = MainPageVC;
+			sourceTree = "<group>";
+		};
+		037D83A81D2E83EE0063E17E /* LeftVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LeftVC;
+			sourceTree = "<group>";
+		};
+		77686E93646AD8C27DBFE939 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB3FE1A4621DB6195B78CC43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */,
+				E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 037D83641D2E7B9E0063E17E /* Build configuration list for PBXNativeTarget "TongHuo" */;
 			buildPhases = (
+				3864CF6330C300A5A78BD6F5 /* [CP] Check Pods Manifest.lock */,
 				037D83461D2E7B9E0063E17E /* Sources */,
 				037D83471D2E7B9E0063E17E /* Frameworks */,
 				037D83481D2E7B9E0063E17E /* Resources */,
+				D69B7AF8505FAA39A76FC338 /* [CP] Embed Pods Frameworks */,
+				C93CE64FF1B6874048908163 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,15 +321,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3864CF6330C300A5A78BD6F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C93CE64FF1B6874048908163 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D69B7AF8505FAA39A76FC338 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		037D83461D2E7B9E0063E17E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037D83A31D2E7DCF0063E17E /* XUtilityTools.m in Sources */,
+				037D83A41D2E7DCF0063E17E /* XStringUtils.m in Sources */,
+				037D83981D2E7D800063E17E /* UIView+SetSize.m in Sources */,
 				037D835B1D2E7B9E0063E17E /* TongHuo.xcdatamodeld in Sources */,
+				037D83941D2E7D800063E17E /* MAMAHeaderPage.m in Sources */,
+				037D83991D2E7D800063E17E /* XAlertViewHelper.m in Sources */,
+				037D838C1D2E7D800063E17E /* NetRequest+DailyFavourites.m in Sources */,
+				037D838D1D2E7D800063E17E /* NetRequest+Region.m in Sources */,
+				037D83921D2E7D800063E17E /* MainPage.m in Sources */,
+				037D839B1D2E7D800063E17E /* XTabBar.m in Sources */,
+				037D838E1D2E7D800063E17E /* NetRequest+Simple.m in Sources */,
+				037D838F1D2E7D800063E17E /* NetRequest+Special.m in Sources */,
+				037D83951D2E7D800063E17E /* MAMATableViewControllers.m in Sources */,
+				037D839A1D2E7D800063E17E /* XNavigationController.m in Sources */,
+				037D838B1D2E7D800063E17E /* NetRequest+Article.m in Sources */,
+				037D839E1D2E7DA10063E17E /* NetRequest.m in Sources */,
 				037D83551D2E7B9E0063E17E /* ViewController.m in Sources */,
+				037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */,
+				037D83AE1D2E84A50063E17E /* MainPageVC.m in Sources */,
+				037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
+				037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */,
+				037D83961D2E7D800063E17E /* NSObject+FileWithBundle.m in Sources */,
 				037D834F1D2E7B9E0063E17E /* main.m in Sources */,
+				037D83AB1D2E845E0063E17E /* RootVC.m in Sources */,
+				037D83911D2E7D800063E17E /* NetRequest+UserInfoRequst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +509,13 @@
 		};
 		037D83651D2E7B9E0063E17E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TongHuo/PrefixHeader.pch";
 				INFOPLIST_FILE = TongHuo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xhx.TongHuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -277,9 +524,13 @@
 		};
 		037D83661D2E7B9E0063E17E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/TongHuo/PrefixHeader.pch";
 				INFOPLIST_FILE = TongHuo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xhx.TongHuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +556,7 @@
 				037D83661D2E7B9E0063E17E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
