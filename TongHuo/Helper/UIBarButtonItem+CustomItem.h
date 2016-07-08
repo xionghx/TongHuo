@@ -13,4 +13,6 @@
 
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)imageName;
 
++(UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)imageName imageInset:(UIEdgeInsets)inset;
+
 @end

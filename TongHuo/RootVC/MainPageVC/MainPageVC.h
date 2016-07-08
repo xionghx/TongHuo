@@ -6,8 +6,8 @@
 //  Copyright © 2016 xionghuanxin. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FoundationVC.h"
 
-@interface MainPageVC : UIViewController
+@interface MainPageVC : FoundationVC
 
 @end

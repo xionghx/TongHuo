@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0307A7A61D2F7B5F00DC2B81 /* LeftSideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */; };
+		0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7A81D2F7B8000DC2B81 /* ShadowView.m */; };
+		0307A7AC1D2F94B500DC2B81 /* LeftSideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */; };
+		0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */; };
 		037D834F1D2E7B9E0063E17E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D834E1D2E7B9E0063E17E /* main.m */; };
 		037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83511D2E7B9E0063E17E /* AppDelegate.m */; };
 		037D83551D2E7B9E0063E17E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83541D2E7B9E0063E17E /* ViewController.m */; };
@@ -118,6 +122,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideView.h; sourceTree = "<group>"; };
+		0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideView.m; sourceTree = "<group>"; };
+		0307A7A71D2F7B8000DC2B81 /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
+		0307A7A81D2F7B8000DC2B81 /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
+		0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideCell.h; sourceTree = "<group>"; };
+		0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideCell.m; sourceTree = "<group>"; };
+		0307A7AE1D2F9E3300DC2B81 /* FoundationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationVC.h; sourceTree = "<group>"; };
+		0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationVC.m; sourceTree = "<group>"; };
 		037D834A1D2E7B9E0063E17E /* TongHuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongHuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037D834E1D2E7B9E0063E17E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		037D83501D2E7B9E0063E17E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -270,6 +282,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0307A7AD1D2F9E1900DC2B81 /* FoundationVC */ = {
+			isa = PBXGroup;
+			children = (
+				0307A7AE1D2F9E3300DC2B81 /* FoundationVC.h */,
+				0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */,
+			);
+			path = FoundationVC;
+			sourceTree = "<group>";
+		};
 		037D83411D2E7B9E0063E17E = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +313,7 @@
 		037D834C1D2E7B9E0063E17E /* TongHuo */ = {
 			isa = PBXGroup;
 			children = (
+				0307A7AD1D2F9E1900DC2B81 /* FoundationVC */,
 				037D83AF1D2E9A8E0063E17E /* images */,
 				037D83A61D2E83A20063E17E /* RootVC */,
 				037D83681D2E7D3D0063E17E /* Helper */,
@@ -382,6 +404,12 @@
 			children = (
 				037D83AC1D2E84A50063E17E /* MainPageVC.h */,
 				037D83AD1D2E84A50063E17E /* MainPageVC.m */,
+				0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */,
+				0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */,
+				0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */,
+				0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */,
+				0307A7A71D2F7B8000DC2B81 /* ShadowView.h */,
+				0307A7A81D2F7B8000DC2B81 /* ShadowView.m */,
 			);
 			path = MainPageVC;
 			sourceTree = "<group>";
@@ -783,15 +811,19 @@
 				037D838C1D2E7D800063E17E /* NetRequest+DailyFavourites.m in Sources */,
 				037D838D1D2E7D800063E17E /* NetRequest+Region.m in Sources */,
 				037D83921D2E7D800063E17E /* MainPage.m in Sources */,
+				0307A7AC1D2F94B500DC2B81 /* LeftSideCell.m in Sources */,
 				037D839B1D2E7D800063E17E /* XTabBar.m in Sources */,
 				037D838E1D2E7D800063E17E /* NetRequest+Simple.m in Sources */,
 				037D838F1D2E7D800063E17E /* NetRequest+Special.m in Sources */,
 				037D83951D2E7D800063E17E /* MAMATableViewControllers.m in Sources */,
+				0307A7A61D2F7B5F00DC2B81 /* LeftSideView.m in Sources */,
 				037D839A1D2E7D800063E17E /* XNavigationController.m in Sources */,
 				037D838B1D2E7D800063E17E /* NetRequest+Article.m in Sources */,
+				0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */,
 				037D839E1D2E7DA10063E17E /* NetRequest.m in Sources */,
 				037D83551D2E7B9E0063E17E /* ViewController.m in Sources */,
 				037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */,
+				0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */,
 				037D83AE1D2E84A50063E17E /* MainPageVC.m in Sources */,
 				037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,

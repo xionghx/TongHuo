@@ -34,19 +34,29 @@
 }
 
 
++(UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)imageName imageInset:(UIEdgeInsets)inset
+{
+    UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle  mainBundle] pathForResource:imageName ofType:@"png" inDirectory:@""]] style:UIBarButtonItemStylePlain target:target action:action];
+    item.tintColor = [UIColor whiteColor];
+    [item setImageInsets:inset];
+    return item;
+
+}
+
 + (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)imageName
 {
 //    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    UIImage *image = [UIImage imageNamed:imageName];
-    
-    UIImageView *aView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
-    aView.image = [UIImage imageNamed:imageName];
     
 
 
 
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageWithContentsOfFile:[[NSBundle  mainBundle] pathForResource:imageName ofType:@"png" inDirectory:@""]] style:UIBarButtonItemStylePlain target:target action:action];
+    item.tintColor = [UIColor whiteColor];
+    [item setImageInsets:UIEdgeInsetsMake(30, 10, 30, 0)];
+//    [item setWidth:1000];
+    
+    
 //    [item setCustomView:aView];
 //    [item setValue:CGRectMake(0, 0, 40, 40) forKey:@"bounds"];
     // 设置图片
