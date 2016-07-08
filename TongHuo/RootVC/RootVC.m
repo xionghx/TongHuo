@@ -11,17 +11,35 @@
 #import "LeftSideView.h"
 #import "ShadowView.h"
 #import "XNavigationController.h"
+#import "NetRequest+Article.h"
 
-@interface RootVC ()<UIScrollViewDelegate,UITableViewDelegate>
+
+static NSString * reUseMark = @"articleListTableViewCell";
+
+@interface RootVC ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)XNavigationController * mainPage;
 @property(nonatomic,strong)LeftSideView * leftSide;
 @property(nonatomic,strong)ShadowView * shadowView;
 @property(nonatomic,strong)UIScrollView *scrollView;
-
+@property(nonatomic,strong)UITableView *articleListTableView;
+@property(nonatomic,strong)NSArray *articleList;
 
 @end
 
 @implementation RootVC
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self loadData];
+    }
+    return self;
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.leftSide loadDataSource];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,15 +60,15 @@
     [((XNavigationController *)(self.navigationController)).titleViewRightButton addTarget:self action:@selector(titleViewRightButtonTaped) forControlEvents:UIControlEventTouchUpInside];
 
 }
--(XNavigationController *)mainPage
-{
-    if (_mainPage == nil) {
-        MainPageVC * mainVC = [MainPageVC new];
-        mainVC.rootVC = self;
-        _mainPage = [[XNavigationController alloc]initWithRootViewController:mainVC];
-    }
-    return _mainPage;
-}
+//-(XNavigationController *)mainPage
+//{
+//    if (_mainPage == nil) {
+//        MainPageVC * mainVC = [MainPageVC new];
+//        mainVC.rootVC = self;
+//        _mainPage = [[XNavigationController alloc]initWithRootViewController:mainVC];
+//    }
+//    return _mainPage;
+//}
 -(UIScrollView *)scrollView
 {
     if (_scrollView == nil) {
@@ -62,6 +80,15 @@
         _scrollView.delegate = self;
     }
     return _scrollView;
+}
+-(UITableView *)articleListTableView
+{
+    if (_articleListTableView == nil) {
+        _articleListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_W, SCREEN_H-64) style:UITableViewStylePlain];
+        _articleListTableView.dataSource = self;
+        [_articleListTableView registerClass:[RootVC class] forCellReuseIdentifier:reUseMark];
+    }
+    return _articleListTableView;
 }
 
 -(ShadowView *)shadowView
@@ -91,8 +118,6 @@
 {
     [[UIApplication sharedApplication].keyWindow addSubview:self.shadowView];
     [[UIApplication sharedApplication].keyWindow addSubview:self.leftSide];
-//    [self.view addSubview:self.shadowView];
-//    [self.view addSubview:self.leftSide];
     [UIView animateWithDuration:0.2 animations:^{
         self.leftSide.x = 0;
         self.shadowView.alpha = 0.3;
@@ -160,7 +185,27 @@
 {
     
 }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 0;
+}
+-(void)loadData
+{
+    [NetRequest getArticleListWithSPage:@"1" andSPagesize:@"5" andCompletionBlock:^(id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"%@",error);
+        }else{
+            self.articleList = responseObject[@"info"][@"data"];
+            NSLog(@"%@",self.articleList);
+        }
+    }];
+}
 @end
 
 

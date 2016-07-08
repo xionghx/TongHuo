@@ -120,6 +120,7 @@
 		037D84521D2E9A8E0063E17E /* 返回顶部.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84051D2E9A8E0063E17E /* 返回顶部.png */; };
 		037D84531D2E9A8E0063E17E /* 黑色返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84061D2E9A8E0063E17E /* 黑色返回.png */; };
 		037D84551D2E9D150063E17E /* asd.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84541D2E9D150063E17E /* asd.png */; };
+		03E8E2A11D2FFB89004D304A /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */; };
 		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
 /* End PBXBuildFile section */
 
@@ -271,6 +272,8 @@
 		037D84051D2E9A8E0063E17E /* 返回顶部.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回顶部.png"; sourceTree = "<group>"; };
 		037D84061D2E9A8E0063E17E /* 黑色返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黑色返回.png"; sourceTree = "<group>"; };
 		037D84541D2E9D150063E17E /* asd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asd.png; sourceTree = "<group>"; };
+		03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
+		03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
 		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.release.xcconfig"; sourceTree = "<group>"; };
 		E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 				037D83A71D2E83C90063E17E /* MainPageVC */,
 				037D83A91D2E845E0063E17E /* RootVC.h */,
 				037D83AA1D2E845E0063E17E /* RootVC.m */,
+				03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */,
+				03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */,
 			);
 			path = RootVC;
 			sourceTree = "<group>";
@@ -836,6 +841,7 @@
 				037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */,
 				0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */,
 				037D83AE1D2E84A50063E17E /* MainPageVC.m in Sources */,
+				03E8E2A11D2FFB89004D304A /* ArticleListTableViewCell.m in Sources */,
 				037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */,
