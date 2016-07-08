@@ -40,8 +40,48 @@
 -(UIImageView *)sAvatarImage
 {
     if (_sAvatarImage == nil) {
-        _sAvatarImage = [UIImageView alloc]initWithFrame:CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
+        _sAvatarImage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 40, 40)];
     }
+    return _sAvatarImage;
+}
+-(UILabel *)sUsernameLabel
+{
+    if (_sUsernameLabel == nil) {
+        _sUsernameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.sAvatarImage.x + self.sAvatarImage.width ,self.sAvatarImage.y, 50, 20)];
+    }
+    return _sUsernameLabel;
+}
+-(UILabel *)sIntroLabel
+{
+    if (_sIntroLabel == nil) {
+        _sIntroLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.sThumbImage.y +self.sThumbImage.height, SCREEN_W, 200)];
+        
+    }
+    return _sIntroLabel;
+}
+-(UIButton *)sShareurlButton
+{
+    if (_sShareurlButton == nil) {
+        _sShareurlButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _sShareurlButton.frame = CGRectMake(10 , self.sIntroLabel.y + self.sIntroLabel.height, 30, 30) ;
+    }
+    return _sShareurlButton;
+}
+-(UIButton *)sCollectTotalButton
+{
+    if (_sCollectTotalButton == nil) {
+        _sCollectTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _sCollectTotalButton.frame = CGRectMake(self.sShareurlButton.x + self.sShareurlButton.width, self.sShareurlButton.y, 20, 20);
+        
+    }
+    return _sCollectTotalButton;
+}
+-(UILabel *)sCollectTotalLabel
+{
+    if (_sCollectTotalLabel == nil) {
+        _sCollectTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.sCollectTotalButton.x + self.sCollectTotalButton.width, self.sCollectTotalButton.y, 30, 30)];
+    }
+    return _sCollectTotalLabel;
 }
 
 @end
