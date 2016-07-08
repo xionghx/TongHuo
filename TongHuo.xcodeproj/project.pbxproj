@@ -11,6 +11,8 @@
 		0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7A81D2F7B8000DC2B81 /* ShadowView.m */; };
 		0307A7AC1D2F94B500DC2B81 /* LeftSideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */; };
 		0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */; };
+		0307A7B61D2FC18600DC2B81 /* ModelVCSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */; };
+		0307A7B91D2FC1BA00DC2B81 /* ModelVCClassed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */; };
 		037D834F1D2E7B9E0063E17E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D834E1D2E7B9E0063E17E /* main.m */; };
 		037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83511D2E7B9E0063E17E /* AppDelegate.m */; };
 		037D83551D2E7B9E0063E17E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83541D2E7B9E0063E17E /* ViewController.m */; };
@@ -122,14 +124,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideView.h; sourceTree = "<group>"; };
-		0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideView.m; sourceTree = "<group>"; };
+		0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideView.h; path = ../MainPageVC/LeftSideView.h; sourceTree = "<group>"; };
+		0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideView.m; path = ../MainPageVC/LeftSideView.m; sourceTree = "<group>"; };
 		0307A7A71D2F7B8000DC2B81 /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
 		0307A7A81D2F7B8000DC2B81 /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
-		0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideCell.h; sourceTree = "<group>"; };
-		0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideCell.m; sourceTree = "<group>"; };
+		0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideCell.h; path = ../MainPageVC/LeftSideCell.h; sourceTree = "<group>"; };
+		0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideCell.m; path = ../MainPageVC/LeftSideCell.m; sourceTree = "<group>"; };
 		0307A7AE1D2F9E3300DC2B81 /* FoundationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationVC.h; sourceTree = "<group>"; };
 		0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationVC.m; sourceTree = "<group>"; };
+		0307A7B41D2FC18600DC2B81 /* ModelVCSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCSimple.h; sourceTree = "<group>"; };
+		0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCSimple.m; sourceTree = "<group>"; };
+		0307A7B71D2FC1BA00DC2B81 /* ModelVCClassed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCClassed.h; sourceTree = "<group>"; };
+		0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCClassed.m; sourceTree = "<group>"; };
 		037D834A1D2E7B9E0063E17E /* TongHuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongHuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037D834E1D2E7B9E0063E17E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		037D83501D2E7B9E0063E17E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -287,6 +293,10 @@
 			children = (
 				0307A7AE1D2F9E3300DC2B81 /* FoundationVC.h */,
 				0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */,
+				0307A7B41D2FC18600DC2B81 /* ModelVCSimple.h */,
+				0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */,
+				0307A7B71D2FC1BA00DC2B81 /* ModelVCClassed.h */,
+				0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */,
 			);
 			path = FoundationVC;
 			sourceTree = "<group>";
@@ -404,10 +414,6 @@
 			children = (
 				037D83AC1D2E84A50063E17E /* MainPageVC.h */,
 				037D83AD1D2E84A50063E17E /* MainPageVC.m */,
-				0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */,
-				0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */,
-				0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */,
-				0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */,
 				0307A7A71D2F7B8000DC2B81 /* ShadowView.h */,
 				0307A7A81D2F7B8000DC2B81 /* ShadowView.m */,
 			);
@@ -417,6 +423,10 @@
 		037D83A81D2E83EE0063E17E /* LeftVC */ = {
 			isa = PBXGroup;
 			children = (
+				0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */,
+				0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */,
+				0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */,
+				0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */,
 			);
 			path = LeftVC;
 			sourceTree = "<group>";
@@ -822,6 +832,7 @@
 				0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */,
 				037D839E1D2E7DA10063E17E /* NetRequest.m in Sources */,
 				037D83551D2E7B9E0063E17E /* ViewController.m in Sources */,
+				0307A7B91D2FC1BA00DC2B81 /* ModelVCClassed.m in Sources */,
 				037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */,
 				0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */,
 				037D83AE1D2E84A50063E17E /* MainPageVC.m in Sources */,
@@ -831,6 +842,7 @@
 				037D83961D2E7D800063E17E /* NSObject+FileWithBundle.m in Sources */,
 				037D834F1D2E7B9E0063E17E /* main.m in Sources */,
 				037D83AB1D2E845E0063E17E /* RootVC.m in Sources */,
+				0307A7B61D2FC18600DC2B81 /* ModelVCSimple.m in Sources */,
 				037D83911D2E7D800063E17E /* NetRequest+UserInfoRequst.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

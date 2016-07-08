@@ -126,6 +126,8 @@
         [self.titleViewRightButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
 
 
+    }else{
+        viewController.view.backgroundColor = [UIColor redColor];
     }
     // 调用父类pushViewController，self.viewControllers数组添加对象viewController
     [super pushViewController:viewController animated:animated];

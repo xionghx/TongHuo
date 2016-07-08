@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-//    self.window.rootViewController = [[XNavigationController alloc]initWithRootViewController:[RootVC new]];
-    self.window.rootViewController = [[RootVC alloc]init];;
+    self.window.rootViewController = [[XNavigationController alloc]initWithRootViewController:[RootVC new]];
+//    self.window.rootViewController = [[RootVC alloc]init];;
     
     return YES;
 }

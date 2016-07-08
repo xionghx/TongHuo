@@ -112,7 +112,7 @@
 
 +(void)getArticleCateList:(void(^)(id responseObject,NSError * error)) completionBlock
 {
-    [NetRequest POST:POST_URL  parameters:[self getParametersByMethod:@"article" action:@"getArticleCateList" params:nil ] sucess:^(id responseObject) {
+    [NetRequest POST:POST_URL2  parameters:[self getParametersByMethod:@"article" action:@"getArticleCateList" params:nil ] sucess:^(id responseObject) {
         completionBlock(responseObject,nil);
     } failure:^(NSError *error) {
         completionBlock(nil,error);

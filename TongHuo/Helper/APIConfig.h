@@ -9,5 +9,6 @@
 #ifndef APIConfig_h
 #define APIConfig_h
 #define POST_URL @"http://test.thclub.cn/mobile_api.php"
+#define POST_URL2 @"http://thmm.rimiedu.com/mobile_api.php"
 
 #endif /* APIConfig_h */

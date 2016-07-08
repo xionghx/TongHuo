@@ -10,8 +10,9 @@
 #import "LeftSideView.h"
 #import "ShadowView.h"
 #import "XNavigationController.h"
+#import "ModelVCClassed.h"
 
-@interface MainPageVC()<UIScrollViewDelegate>
+@interface MainPageVC()<UIScrollViewDelegate,UITableViewDelegate>
 @property(nonatomic,strong)LeftSideView * leftSide;
 @property(nonatomic,strong)ShadowView * shadowView;
 @property(nonatomic,strong)UIScrollView *scrollView;
@@ -53,6 +54,7 @@
 {
     if (_leftSide == nil) {
         _leftSide  = [[LeftSideView alloc]init];
+        _leftSide.rootVC = self;
         _leftSide.x =-0.5 * SCREEN_W;
     }
     return _leftSide;
@@ -95,7 +97,7 @@
     } completion:^(BOOL finished) {
         ((XNavigationController *)(self.navigationController)).titleViewRightButton.selected = NO;
         ((XNavigationController *)(self.navigationController)).titleViewLeftButton.selected = YES;
-
+        
     }];
     
 }
@@ -150,12 +152,20 @@
     if (scrollView.contentOffset.x > 0.5 * SCREEN_W) {
         ((XNavigationController *)(self.navigationController)).titleViewRightButton.selected = YES;
         ((XNavigationController *)(self.navigationController)).titleViewLeftButton.selected = NO;
-
+        
     }else{
         ((XNavigationController *)(self.navigationController)).titleViewRightButton.selected = NO;
         ((XNavigationController *)(self.navigationController)).titleViewLeftButton.selected = YES;
-
+        
     }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [self shadowHide];
+    NSLog(@"%@",self.navigationController);
+    [self.navigationController pushViewController:[ModelVCClassed new] animated:YES];
 }
 
 @end

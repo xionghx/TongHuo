@@ -8,11 +8,14 @@
 
 #import "LeftSideView.h"
 #import "LeftSideCell.h"
-@interface LeftSideView ()<UITableViewDelegate,UITableViewDataSource>
+#import "NetRequest+Article.h"
+#import "XStringUtils.h"
+#import "ModelVCClassed.h"
+@interface LeftSideView ()<UITableViewDataSource>
 @property(nonatomic,strong)NSArray * imageNames;
 @property(nonatomic,strong)UIButton * useInformation;
 @property(nonatomic,strong)UIButton * specialButton;
-@property(nonatomic,strong)UITableView * tableView;
+@property(nonatomic,strong)NSArray *  dataSouce;
 @end
 
 static NSString * cellReuse = @"reUseMark";
@@ -34,6 +37,7 @@ static NSString * cellReuse = @"reUseMark";
     [self addSubview: self.specialButton];
     [self addSubview: self.useInformation];
     [self addSubview:self.tableView];
+    [self loadDataSource];
 }
 
 -(NSArray *)imageNames
@@ -55,8 +59,8 @@ static NSString * cellReuse = @"reUseMark";
         _useInformation = [UIButton buttonWithType:UIButtonTypeCustom];
         _useInformation.layer.cornerRadius = 30;
         _useInformation.bounds = CGRectMake(0, 0, 60, 60);
-        _useInformation.centerX = self.centerX;
-        _useInformation.centerY = self.centerX;
+        _useInformation.centerX = 0.25 * SCREEN_W;
+        _useInformation.centerY = 0.25 * SCREEN_W;
         _useInformation.layer.borderWidth = 3;
         _useInformation.layer.borderColor = [UIColor whiteColor].CGColor;
         _useInformation.backgroundColor = [UIColor blackColor];
@@ -68,8 +72,8 @@ static NSString * cellReuse = @"reUseMark";
     if (_specialButton == nil) {
         _specialButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _specialButton.bounds = CGRectMake(0, 0, self.width, 50);
-        _specialButton.centerX = self.centerX;
-        _specialButton.centerY = self.centerX + 30 + 25;
+        _specialButton.centerX = 0.25 * SCREEN_W;
+        _specialButton.y = 0.5*SCREEN_W;
         [_specialButton setTitle:@"专题" forState:UIControlStateNormal];
         _specialButton.backgroundColor = [UIColor grayColor];
         
@@ -80,9 +84,9 @@ static NSString * cellReuse = @"reUseMark";
 -(UITableView *)tableView
 {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.centerX +50 + 30, self.width, self.height -(self.centerX +50 + 30)) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.specialButton.y + self.specialButton.height, self.width, self.height -(self.specialButton.y + self.specialButton.height)) style:UITableViewStylePlain];
+        NSLog(@"%f",self.centerX);
         [_tableView registerClass:[LeftSideCell class] forCellReuseIdentifier:cellReuse];
-        _tableView.delegate = self;
         _tableView.dataSource = self;
         
     }
@@ -91,16 +95,35 @@ static NSString * cellReuse = @"reUseMark";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return self.dataSouce.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LeftSideCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuse];
-    cell.backgroundColor = [UIColor redColor];
+//    cell.backgroundColor = [UIColor redColor];
+    cell.textLabel.text = self.dataSouce[indexPath.row][@"sCname"];
+    cell.imageView.image = [[NSObject new] imageInMainBundleWithName:[NSString stringWithFormat:@"%@选中",self.dataSouce[indexPath.row][@"sCname"]] andType:@"png" andDirectory:@""];
+    NSLog(@"%@",cell.imageView.image);
     return cell;
     
 }
 
+
+-(void)loadDataSource
+{
+    [NetRequest getArticleCateList:^(id responseObject, NSError *error) {
+        //        NSLog(@"%@",[XStringUtils jsonStringWithParameters:responseObject]);
+        //        NSLog(@"%@",responseObject[@"info"][@"data"]);
+        if (error) {
+            NSLog(@"%@",error);
+        }else{
+            NSArray * array =responseObject[@"info"][@"data"];
+            self.dataSouce = array;
+            NSLog(@"%@",self.dataSouce);
+            [self.tableView reloadData];
+        }
+    }];
+}
 
 @end

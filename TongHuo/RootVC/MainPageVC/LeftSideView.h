@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "RootVC.h"
+@protocol LeftSideViewDelegate <NSObject>
+//-(void)
+
+@end
 
 @interface LeftSideView : UIView
+@property(nonatomic,strong)id<LeftSideViewDelegate> delegate;
+@property(nonatomic,strong)id rootVC;
+@property(nonatomic,strong)UITableView * tableView;
 
 @end
