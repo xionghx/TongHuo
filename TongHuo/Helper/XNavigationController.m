@@ -65,9 +65,9 @@
 //        viewController.hidesBottomBarWhenPushed = YES;
         
         // 定义leftBarButtonItem
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTargat:self action:nil image:@"打开更多"];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:nil image:@"打开更多"];
         // 定义rightBarButtonItem
-        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTargat:self action:nil image:@"calender_F"];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:nil image:@"calender_F"];
 
     }
     // 调用父类pushViewController，self.viewControllers数组添加对象viewController
