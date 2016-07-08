@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootVC.h"
+#import "XNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
-//    self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[RootVC new]];
-    self.window.rootViewController = [RootVC new];
+    self.window.rootViewController = [[XNavigationController alloc]initWithRootViewController:[RootVC new]];
+//    self.window.rootViewController = [[RootVC alloc]init];;
     
     return YES;
 }

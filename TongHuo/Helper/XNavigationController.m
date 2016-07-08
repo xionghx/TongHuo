@@ -1,4 +1,4 @@
-#import <UIKit/UIKit.h>
+     #import <UIKit/UIKit.h>
 //
 //  XNavigationController.m
 //  account book
@@ -11,7 +11,8 @@
 
 
 @interface XNavigationController ()
-//@property(nonatomic,strong)UIPageControl *pageControl;
+@property(nonatomic,strong)UIPageControl *pageControl;
+@property (nonatomic,strong)UIBarButtonItem     *item;
 
 @end
 
@@ -22,10 +23,10 @@
     self = [super initWithRootViewController:rootViewController];
     if (self) {
 //        [self.navigationBar setValue:0 forKey:@"barPosition"];
-//        .barPosition = UIBarPositionTopAttached;
+//        self.navigationBar.barPosition = UIBarPositionTopAttached;
 //        self.navigationBar.backgroundColor = [UIColor redColor];
         self.navigationBar.barTintColor = [UIColor redColor];
-        [self.navigationBar addSubview:self.segmentedControl];
+//        [self.navigationBar addSubview:self.segmentedControl];
 //        [self.navigationBar addSubview:self.pageControl];
     };
     return self;
@@ -45,34 +46,38 @@
     }
     return _segmentedControl;
 }
-//-(UIPageControl *)pageControl
-//{
-//    if (_pageControl == nil) {
-//        _pageControl = [[UIPageControl alloc]init];
-//        _pageControl.frame = CGRectMake(100, 20, 100, 10);
-//        _pageControl.numberOfPages = 2;
-////        _pageControl sets
-//        
-//    }
-//    return _pageControl;
-//}
+
+-(UIPageControl *)pageControl
+{
+    if (_pageControl == nil) {
+        _pageControl = [[UIPageControl alloc]init];
+        _pageControl.frame = CGRectMake(100, 20, 100, 10);
+        _pageControl.numberOfPages = 2;
+        
+    }
+    return _pageControl;
+}
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    if (self.viewControllers.count>0) {
-        viewController.hidesBottomBarWhenPushed = YES;
+    
+    if (self.viewControllers.count<1) {
+//        viewController.hidesBottomBarWhenPushed = YES;
         
         // 定义leftBarButtonItem
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTargat:self action:@selector(back) image:@"navigationbar_back" highImage:@"navigationbar_back_highlighted"];
-        
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTargat:self action:nil image:@"打开更多"];
         // 定义rightBarButtonItem
-        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTargat:self action:@selector(more) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTargat:self action:nil image:@"calender_F"];
+
     }
     // 调用父类pushViewController，self.viewControllers数组添加对象viewController
     [super pushViewController:viewController animated:animated];
-
     
 }
+//-(void)setBarButtonItem{
+//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTargat:self action:@selector(back) image:@"" highImage:@""];
+//
+//}
 
 - (void)back
 {
@@ -84,5 +89,22 @@
 {
     [self popToRootViewControllerAnimated:YES];
 }
+
+
+
+- (void)test {
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
 
 @end

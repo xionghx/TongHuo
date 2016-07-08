@@ -1,4 +1,4 @@
-//
+
 //  MainPageVC.m
 //  TongHuo
 //
@@ -22,10 +22,12 @@
 //-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 //{
 ////    [super touchesBegan:touches withEvent:event];
+////    NSLog(@"2");
 ////    [self presentViewController:[MainPageVC new] animated:YES completion:^{
 ////        
-////    }];
+////    }]
+//    
 //}
-//
+
 
 @end
