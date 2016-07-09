@@ -13,16 +13,18 @@
 #import "XNavigationController.h"
 #import "NetRequest+Article.h"
 #import "ArticleListTableViewCell.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
 
 static NSString * reUseMark = @"articleListTableViewCell";
 
-@interface RootVC ()<UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface RootVC ()<UITableViewDelegate,UITableViewDataSource,SDWebImageManagerDelegate>
 @property(nonatomic,strong)XNavigationController * mainPage;
 @property(nonatomic,strong)LeftSideView * leftSide;
 @property(nonatomic,strong)ShadowView * shadowView;
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,strong)UITableView *articleListTableView;
-@property(nonatomic,strong)NSArray *articleList;
+@property(nonatomic,strong)NSMutableArray *articleList;
 @property(nonnull,strong)NSMutableArray * articleListTableViewCells;
 
 @end
@@ -78,7 +80,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
         _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64)];
         _scrollView.pagingEnabled = true;
         _scrollView.bounces = false;
-        _scrollView.contentSize = CGSizeMake(2 * SCREEN_W, 0);
+        _scrollView.contentSize = CGSizeMake(2 * SCREEN_W,SCREEN_H-64);
         _scrollView.backgroundColor = [UIColor grayColor];
         _scrollView.delegate = self;
     }
@@ -90,9 +92,11 @@ static NSString * reUseMark = @"articleListTableViewCell";
         _articleListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-64) style:UITableViewStylePlain];
         _articleListTableView.dataSource = self;
         [_articleListTableView registerClass:[ArticleListTableViewCell class] forCellReuseIdentifier:reUseMark];
-        _articleListTableView.rowHeight = 400;
+        _articleListTableView.rowHeight = 600;
         //        _articleListTableView.rowHeight = UITableViewAutomaticDimension;
         //        _articleListTableView.estimatedRowHeight = 200;
+        _articleListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _articleListTableView.selectionStyle =UITableViewCellSelectionStyleNone;
         
     }
     return _articleListTableView;
@@ -191,43 +195,68 @@ static NSString * reUseMark = @"articleListTableViewCell";
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.articleListTableViewCells.count;
+    return self.articleList.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ArticleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reUseMark forIndexPath:indexPath];
-    cell = (ArticleListTableViewCell *)(self.articleListTableViewCells[indexPath.row]);
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:cell.sThumb]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.thumbImage.image = [UIImage imageWithData:data];
-        });
-        
-    });
-    //然后就是添加照片语句，这次不是`imageWithName`了，是 imageWithData。
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
+
+//    ArticleListTableViewCell *cell = (ArticleListTableViewCell *)(self.articleListTableViewCells[indexPath.row]);
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+//        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:cell.sThumb]];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            cell.thumbImage.image = [UIImage imageWithData:data];
+//        });
+//    });
+    [cell.thumbImage sd_setImageWithURL:[NSURL URLWithString:((NSString *)(self.articleList[indexPath.row][@"sThumb"]))]];
+    cell.titleLabel.text = self.articleList[indexPath.row][@"sTitle"];
+    cell.introLabel.text = self.articleList[indexPath.row][@"sIntro"];
+    
+    [cell.avatarButton sd_setImageWithURL:[NSURL URLWithString:self.articleList[indexPath.row][@"sAvatar"]] forState:UIControlStateNormal];
+    [cell.avatarButton setTitle:self.articleList[indexPath.row][@"sUsername"] forState:UIControlStateNormal];
+    cell.assistBar.collectTotalButton.titleLabel.text =self.articleList[indexPath.row][@"sCollectTotal"];
+    cell.assistBar.zanTotalButton.titleLabel.text = self.articleList[indexPath.row][@"sZanTotal"];
+    cell.catenameButton.titleLabel.text =self.articleList[indexPath.row][@"sCatename"];
     return cell;
 }
 -(void)loadData
 {
     self.articleListTableViewCells = @[].mutableCopy;
-    [NetRequest getArticleListWithSPage:@"1" andSPagesize:@"20" andCompletionBlock:^(id responseObject, NSError *error) {
+    [NetRequest getArticleListWithSPage:@"1" andSPagesize:@"2" andCompletionBlock:^(id responseObject, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
         }else{
             self.articleList = responseObject[@"info"][@"data"];
-            for (NSDictionary * dic in self.articleList) {
-                ArticleListTableViewCell * cell = [[ArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reUseMark];
-                for (NSString * key in dic.allKeys) {
-                    [cell setValue:dic[key] forKey:key];
-                }
-                [self.articleListTableViewCells addObject:cell];
-            }
+//            for (NSDictionary * dic in self.articleList) {
+//                ArticleListTableViewCell * cell = [[ArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reUseMark];
+//                for (NSString * key in dic.allKeys) {
+//                    [cell setValue:dic[key] forKey:key];
+//                }
+//                [self.articleListTableViewCells addObject:cell];
+//            }
             [self.articleListTableView reloadData];
+            NSLog(@"%@",self.articleList);
         }
     }];
 }
+- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section
+{
+    
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"asdffffffffffff");
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingHeaderView:(UIView *)view forSection:(NSInteger)section
+{
+    
+}
+
 @end
 
 

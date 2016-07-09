@@ -12,7 +12,7 @@
 #import "UIBarButtonItem+CustomItem.h"
 #import "NSObject+FileWithBundle.h"
 
-
+#define WEAK_SELF  __weak __typeof(self)weakSelf = self;
 // RGB颜色
 #define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 

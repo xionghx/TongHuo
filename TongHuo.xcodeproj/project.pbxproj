@@ -121,6 +121,8 @@
 		037D84531D2E9A8E0063E17E /* 黑色返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84061D2E9A8E0063E17E /* 黑色返回.png */; };
 		037D84551D2E9D150063E17E /* asd.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84541D2E9D150063E17E /* asd.png */; };
 		03E8E2A11D2FFB89004D304A /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */; };
+		03F59FDB1D30DEB10000D9C9 /* ArticleAssistBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */; };
+		03F59FDE1D30F64D0000D9C9 /* ArticleAssistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */; };
 		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
 /* End PBXBuildFile section */
 
@@ -274,6 +276,10 @@
 		037D84541D2E9D150063E17E /* asd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asd.png; sourceTree = "<group>"; };
 		03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
 		03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
+		03F59FD91D30DEB10000D9C9 /* ArticleAssistBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAssistBar.h; sourceTree = "<group>"; };
+		03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleAssistBar.m; sourceTree = "<group>"; };
+		03F59FDC1D30F64D0000D9C9 /* ArticleAssistButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAssistButton.h; sourceTree = "<group>"; };
+		03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleAssistButton.m; sourceTree = "<group>"; };
 		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.release.xcconfig"; sourceTree = "<group>"; };
 		E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -326,6 +332,7 @@
 		037D834C1D2E7B9E0063E17E /* TongHuo */ = {
 			isa = PBXGroup;
 			children = (
+				03F59FD81D30DE8D0000D9C9 /* ArticleAssistView */,
 				0307A7AD1D2F9E1900DC2B81 /* FoundationVC */,
 				037D83AF1D2E9A8E0063E17E /* images */,
 				037D83A61D2E83A20063E17E /* RootVC */,
@@ -600,6 +607,17 @@
 			path = "登录页";
 			sourceTree = "<group>";
 		};
+		03F59FD81D30DE8D0000D9C9 /* ArticleAssistView */ = {
+			isa = PBXGroup;
+			children = (
+				03F59FD91D30DEB10000D9C9 /* ArticleAssistBar.h */,
+				03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */,
+				03F59FDC1D30F64D0000D9C9 /* ArticleAssistButton.h */,
+				03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */,
+			);
+			path = ArticleAssistView;
+			sourceTree = "<group>";
+		};
 		77686E93646AD8C27DBFE939 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -820,10 +838,12 @@
 				037D83A31D2E7DCF0063E17E /* XUtilityTools.m in Sources */,
 				037D83A41D2E7DCF0063E17E /* XStringUtils.m in Sources */,
 				037D83981D2E7D800063E17E /* UIView+SetSize.m in Sources */,
+				03F59FDB1D30DEB10000D9C9 /* ArticleAssistBar.m in Sources */,
 				037D835B1D2E7B9E0063E17E /* TongHuo.xcdatamodeld in Sources */,
 				037D83941D2E7D800063E17E /* MAMAHeaderPage.m in Sources */,
 				037D83991D2E7D800063E17E /* XAlertViewHelper.m in Sources */,
 				037D838C1D2E7D800063E17E /* NetRequest+DailyFavourites.m in Sources */,
+				03F59FDE1D30F64D0000D9C9 /* ArticleAssistButton.m in Sources */,
 				037D838D1D2E7D800063E17E /* NetRequest+Region.m in Sources */,
 				037D83921D2E7D800063E17E /* MainPage.m in Sources */,
 				0307A7AC1D2F94B500DC2B81 /* LeftSideCell.m in Sources */,

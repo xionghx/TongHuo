@@ -118,6 +118,7 @@
         [self.titleView addSubview:self.animationLine];
         [self.titleView addSubview: self.titleViewLeftButton];
         [self.titleView addSubview:self.titleViewRightButton];
+        self.titleViewLeftButton.selected = true;
         [self.titleViewLeftButton setTitle:@"专栏精选" forState:UIControlStateNormal];
         [self.titleViewLeftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [self.titleViewLeftButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];

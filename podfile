@@ -6,5 +6,8 @@ target 'TongHuo' do
   # use_frameworks!
 
   # Pods for TongHuo
+pod 'SDWebImage'
 pod 'AFNetworking'
+pod 'Masonry'
+
 end
