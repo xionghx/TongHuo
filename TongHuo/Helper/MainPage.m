@@ -58,7 +58,6 @@
 - (void)sendRequest {
     void (^block)(NSString *);
     block = ^(NSString * a){
-        NSLog(@"%@",a);
     };
     block(@"dfa");
     //初始化网络请求管理类
@@ -104,7 +103,6 @@
         [_aButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
     }
-    NSLog(@"%ld",((XNavigationController *)self.navigationController).segmentedControl.selectedSegmentIndex);
     return _aButton;
 }
 
@@ -114,9 +112,7 @@
         _scrollView = [[UIScrollView alloc]init];
         _scrollView.bounds = CGRectMake(0, 0, SCREEN_W, 603);
         _scrollView.center = CGPointMake(0.5 * SCREEN_W, 64+603*0.5);
-        NSLog(@"%f",SCREEN_H);
         _scrollView.contentSize = CGSizeMake(2*SCREEN_W, 500);
-        NSLog(@"%lf",self.navigationController.navigationBar.frame.size.height);
         _scrollView.backgroundColor = [UIColor redColor];
         _scrollView.pagingEnabled = YES;
         [_scrollView addSubview:self.aButton];

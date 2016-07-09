@@ -85,7 +85,6 @@ static NSString * cellReuse = @"reUseMark";
 {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.specialButton.y + self.specialButton.height, self.width, self.height -(self.specialButton.y + self.specialButton.height)) style:UITableViewStylePlain];
-        NSLog(@"%f",self.centerX);
         [_tableView registerClass:[LeftSideCell class] forCellReuseIdentifier:cellReuse];
         _tableView.dataSource = self;
         
@@ -104,7 +103,6 @@ static NSString * cellReuse = @"reUseMark";
 //    cell.backgroundColor = [UIColor redColor];
     cell.textLabel.text = self.dataSouce[indexPath.row][@"sCname"];
     cell.imageView.image = [[NSObject new] imageInMainBundleWithName:[NSString stringWithFormat:@"%@选中",self.dataSouce[indexPath.row][@"sCname"]] andType:@"png" andDirectory:@""];
-    NSLog(@"%@",cell.imageView.image);
     return cell;
     
 }
@@ -120,7 +118,7 @@ static NSString * cellReuse = @"reUseMark";
         }else{
             NSArray * array =responseObject[@"info"][@"data"];
             self.dataSouce = array;
-            NSLog(@"%@",self.dataSouce);
+//            NSLog(@"%@",self.dataSouce);
             [self.tableView reloadData];
         }
     }];

@@ -33,7 +33,6 @@
     [self.navigationItem.rightBarButtonItem setAction:@selector(rightItemTaped)];
     [self.navigationItem.leftBarButtonItem setAction:@selector(leftItemTaped)];
     [self.view addSubview:self.scrollView];
-    NSLog(@"%@",self.navigationController);
     [((XNavigationController *)(self.navigationController)).titleViewLeftButton addTarget:self action:@selector(titleViewLeftButtonTaped) forControlEvents:UIControlEventTouchUpInside];
     [((XNavigationController *)(self.navigationController)).titleViewRightButton addTarget:self action:@selector(titleViewRightButtonTaped) forControlEvents:UIControlEventTouchUpInside];
     //    [self.view addSubview:self.titleView];
@@ -164,7 +163,6 @@
 {
     
     [self shadowHide];
-    NSLog(@"%@",self.navigationController);
     [self.navigationController pushViewController:[ModelVCClassed new] animated:YES];
 }
 

@@ -23,6 +23,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,strong)UITableView *articleListTableView;
 @property(nonatomic,strong)NSArray *articleList;
+@property(nonnull,strong)NSMutableArray * articleListTableViewCells;
 
 @end
 
@@ -53,14 +54,14 @@ static NSString * reUseMark = @"articleListTableViewCell";
     [self.navigationItem.leftBarButtonItem setAction:@selector(leftItemTaped)];
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.articleListTableView];
-
-
-//    [self addChildViewController:self.mainPage];
-//    [self.mainPage didMoveToParentViewController:self];
-//    [self.view addSubview:self.mainPage.view];
+    
+    
+    //    [self addChildViewController:self.mainPage];
+    //    [self.mainPage didMoveToParentViewController:self];
+    //    [self.view addSubview:self.mainPage.view];
     [((XNavigationController *)(self.navigationController)).titleViewLeftButton addTarget:self action:@selector(titleViewLeftButtonTaped) forControlEvents:UIControlEventTouchUpInside];
     [((XNavigationController *)(self.navigationController)).titleViewRightButton addTarget:self action:@selector(titleViewRightButtonTaped) forControlEvents:UIControlEventTouchUpInside];
-
+    
 }
 //-(XNavigationController *)mainPage
 //{
@@ -89,6 +90,10 @@ static NSString * reUseMark = @"articleListTableViewCell";
         _articleListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-64) style:UITableViewStylePlain];
         _articleListTableView.dataSource = self;
         [_articleListTableView registerClass:[ArticleListTableViewCell class] forCellReuseIdentifier:reUseMark];
+        _articleListTableView.rowHeight = 400;
+        //        _articleListTableView.rowHeight = UITableViewAutomaticDimension;
+        //        _articleListTableView.estimatedRowHeight = 200;
+        
     }
     return _articleListTableView;
 }
@@ -113,7 +118,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
 
 -(void)rightItemTaped
 {
-//    [self.navigationController pushViewController:self.mainPage animated:YES];
+    //    [self.navigationController pushViewController:self.mainPage animated:YES];
 }
 
 -(void)leftItemTaped
@@ -124,7 +129,6 @@ static NSString * reUseMark = @"articleListTableViewCell";
         self.leftSide.x = 0;
         self.shadowView.alpha = 0.3;
     } completion:^(BOOL finished) {
-        
         UITapGestureRecognizer * shadowGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(leftSideHide)];
         [self.shadowView addGestureRecognizer:shadowGesture];
         
@@ -175,11 +179,9 @@ static NSString * reUseMark = @"articleListTableViewCell";
     if (scrollView.contentOffset.x > 0.5 * SCREEN_W) {
         ((XNavigationController *)(self.navigationController)).titleViewRightButton.selected = YES;
         ((XNavigationController *)(self.navigationController)).titleViewLeftButton.selected = NO;
-        
     }else{
         ((XNavigationController *)(self.navigationController)).titleViewRightButton.selected = NO;
         ((XNavigationController *)(self.navigationController)).titleViewLeftButton.selected = YES;
-        
     }
 }
 
@@ -189,24 +191,40 @@ static NSString * reUseMark = @"articleListTableViewCell";
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.articleListTableViewCells.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ArticleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reUseMark forIndexPath:indexPath];
-    cell.textLabel.text = @"asd";
+    cell = (ArticleListTableViewCell *)(self.articleListTableViewCells[indexPath.row]);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:cell.sThumb]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.thumbImage.image = [UIImage imageWithData:data];
+        });
+        
+    });
+    //然后就是添加照片语句，这次不是`imageWithName`了，是 imageWithData。
     return cell;
 }
 -(void)loadData
 {
-    [NetRequest getArticleListWithSPage:@"1" andSPagesize:@"5" andCompletionBlock:^(id responseObject, NSError *error) {
+    self.articleListTableViewCells = @[].mutableCopy;
+    [NetRequest getArticleListWithSPage:@"1" andSPagesize:@"20" andCompletionBlock:^(id responseObject, NSError *error) {
         if (error) {
             NSLog(@"%@",error);
         }else{
             self.articleList = responseObject[@"info"][@"data"];
-            NSLog(@"%@",self.articleList);
+            for (NSDictionary * dic in self.articleList) {
+                ArticleListTableViewCell * cell = [[ArticleListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reUseMark];
+                for (NSString * key in dic.allKeys) {
+                    [cell setValue:dic[key] forKey:key];
+                }
+                [self.articleListTableViewCells addObject:cell];
+            }
+            [self.articleListTableView reloadData];
         }
     }];
 }

@@ -9,135 +9,144 @@
 #import "ArticleListTableViewCell.h"
 
 @interface ArticleListTableViewCell()
-@property(nonatomic,strong)UIImageView * sThumbImage;
-@property(nonatomic,strong)UIImageView *sAvatarImage;
-@property(nonatomic,strong)UILabel *sUsernameLabel;
-@property(nonatomic,strong)UILabel *sIntroLabel;
-@property(nonatomic,strong)UIButton *sShareurlButton;
-@property(nonatomic,strong)UIButton *sCollectTotalButton;
-@property(nonatomic,strong)UILabel *sCollectTotalLabel;
-@property(nonatomic,strong)UIButton *sZanTotalButton;
-@property(nonatomic,strong)UILabel *sZanTotalLabel;
-@property(nonatomic,strong)UIButton *sComTotalButton;
-@property(nonatomic,strong)UILabel *sComTotalLabel;
-@property(nonatomic,strong)UILabel *sCatenameLabel;
 
 //@property(nonatomic,strong)UIButton *
 @end
 
 
 @implementation ArticleListTableViewCell
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"%@",self.sThumb];
+}
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    //如果有系统关键字不要慌，两步搞定。手动的映射key值不同的值。
+    //    if ([key isEqualToString:@"id"]) {
+    //        self.ID = value;
+    //    }
+    
+    //    NSLog(@"%@=%@",key,value);
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self.contentView addSubview:self.sThumbImage];
-        [self.sThumbImage addSubview:self.sAvatarImage];
-        [self.sThumbImage addSubview:self.sUsernameLabel];
-        [self.contentView addSubview:self.sIntroLabel];
-        [self.contentView addSubview:self.sShareurlButton];
-        [self.contentView addSubview:self.sCollectTotalButton];
-        [self.contentView addSubview:self.sCollectTotalLabel];
-        [self.contentView addSubview:self.sZanTotalButton];
-        [self.contentView addSubview:self.sZanTotalLabel];
-        [self.contentView addSubview:self.sComTotalButton];
-        [self.contentView addSubview:self.sComTotalLabel];
-        [self.contentView addSubview:self.sCatenameLabel];
     }
     return self;
 }
--(UIImageView *)sThumbImage
+
+-(void)layoutSubviews
 {
-    if (_sThumbImage == nil) {
-        _sThumbImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, 100)];
-        _sThumbImage.backgroundColor = [UIColor redColor];
+    [super layoutSubviews];
+    [self.contentView addSubview:self.thumbImage];
+    [self.thumbImage addSubview:self.avatarImage];
+    [self.thumbImage addSubview:self.usernameLabel];
+    [self.contentView addSubview:self.introLabel];
+    [self.contentView addSubview:self.shareurlButton];
+    [self.contentView addSubview:self.collectTotalButton];
+    [self.contentView addSubview:self.collectTotalLabel];
+    [self.contentView addSubview:self.zanTotalButton];
+    [self.contentView addSubview:self.zanTotalLabel];
+    [self.contentView addSubview:self.comTotalButton];
+    [self.contentView addSubview:self.comTotalLabel];
+    [self.contentView addSubview:self.catenameLabel];
+
+}
+-(UIImageView *)thumbImage
+{
+    if (_thumbImage == nil) {
+        _thumbImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, 100)];
+        _thumbImage.backgroundColor = [UIColor redColor];
+    }
+    return _thumbImage;
+}
+-(UIImageView *)avatarImage
+{
+    if (_avatarImage == nil) {
+        _avatarImage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 40, 40)];
+    }
+    return _avatarImage;
+}
+-(UILabel *)usernameLabel
+{
+    if (_usernameLabel == nil) {
+        _usernameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.avatarImage.x + self.avatarImage.width ,self.avatarImage.y, 50, 20)];
         
     }
-    return _sThumbImage;
+    return _usernameLabel;
 }
--(UIImageView *)sAvatarImage
+-(UILabel *)introLabel
 {
-    if (_sAvatarImage == nil) {
-        _sAvatarImage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 20, 40, 40)];
+    if (_introLabel == nil) {
+        _introLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.thumbImage.y +self.thumbImage.height, SCREEN_W, 200)];
+        _introLabel.text = self.sIntro;
+        _introLabel.textColor = [UIColor blackColor];
+        _introLabel.numberOfLines = 0;
+        _introLabel.textAlignment = NSTextAlignmentCenter;
     }
-    return _sAvatarImage;
+    return _introLabel;
 }
--(UILabel *)sUsernameLabel
+-(UIButton *)shareurlButton
 {
-    if (_sUsernameLabel == nil) {
-        _sUsernameLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.sAvatarImage.x + self.sAvatarImage.width ,self.sAvatarImage.y, 50, 20)];
+    if (_shareurlButton == nil) {
+        _shareurlButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _shareurlButton.frame = CGRectMake(10 , self.introLabel.y + self.introLabel.height, 30, 30) ;
     }
-    return _sUsernameLabel;
+    return _shareurlButton;
 }
--(UILabel *)sIntroLabel
+-(UIButton *)collectTotalButton
 {
-    if (_sIntroLabel == nil) {
-        _sIntroLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.sThumbImage.y +self.sThumbImage.height, SCREEN_W, 200)];
+    if (_collectTotalButton == nil) {
+        _collectTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _collectTotalButton.frame = CGRectMake(self.shareurlButton.x + self.shareurlButton.width, self.shareurlButton.y, 20, 20);
         
     }
-    return _sIntroLabel;
+    return _collectTotalButton;
 }
--(UIButton *)sShareurlButton
+-(UILabel *)collectTotalLabel
 {
-    if (_sShareurlButton == nil) {
-        _sShareurlButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _sShareurlButton.frame = CGRectMake(10 , self.sIntroLabel.y + self.sIntroLabel.height, 30, 30) ;
+    if (_collectTotalLabel == nil) {
+        _collectTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.collectTotalButton.x + self.collectTotalButton.width, self.collectTotalButton.y, 30, 30)];
     }
-    return _sShareurlButton;
+    return _collectTotalLabel;
 }
--(UIButton *)sCollectTotalButton
+-(UIButton *)zanTotalButton
 {
-    if (_sCollectTotalButton == nil) {
-        _sCollectTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _sCollectTotalButton.frame = CGRectMake(self.sShareurlButton.x + self.sShareurlButton.width, self.sShareurlButton.y, 20, 20);
+    if (_zanTotalButton == nil) {
+        _zanTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _zanTotalButton.frame = CGRectMake(self.collectTotalLabel.x + self.collectTotalLabel.width, self.collectTotalLabel.y, 30, 30);
+    }
+    return _zanTotalButton;
+}
+-(UILabel *)zanTotalLabel
+{
+    if (_zanTotalLabel == nil) {
+        _zanTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(_zanTotalButton.x + _zanTotalButton.width, _zanTotalButton.y, 30, 30)];
         
     }
-    return _sCollectTotalButton;
+    return _zanTotalLabel;
 }
--(UILabel *)sCollectTotalLabel
+-(UIButton *)comTotalButton
 {
-    if (_sCollectTotalLabel == nil) {
-        _sCollectTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.sCollectTotalButton.x + self.sCollectTotalButton.width, self.sCollectTotalButton.y, 30, 30)];
+    if (_comTotalButton == nil) {
+        _comTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        _comTotalButton.frame = CGRectMake(self.zanTotalLabel.x + self.zanTotalLabel.width, _zanTotalLabel.y, 30, 30);
     }
-    return _sCollectTotalLabel;
+    return _comTotalButton;
 }
--(UIButton *)sZanTotalButton
+-(UILabel *)comTotalLabel
 {
-    if (_sZanTotalButton == nil) {
-        _sZanTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _sZanTotalButton.frame = CGRectMake(self.sCollectTotalLabel.x + self.sCollectTotalLabel.width, self.sCollectTotalLabel.y, 30, 30);
+    if (_comTotalLabel == nil) {
+        _comTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.comTotalButton.x + self.comTotalButton.width, self.comTotalButton.y, 30, 30)];
     }
-    return _sZanTotalButton;
+    return _comTotalLabel;
 }
--(UILabel *)sZanTotalLabel
+-(UILabel *)catenameLabel
 {
-    if (_sZanTotalLabel == nil) {
-        _sZanTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(_sZanTotalButton.x + _sZanTotalButton.width, _sZanTotalButton.y, 30, 30)];
-        
+    if (_comTotalLabel == nil) {
+        _comTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W - 50, self.comTotalLabel.y, 50, 30)];
     }
-    return _sZanTotalLabel;
-}
--(UIButton *)sComTotalButton
-{
-    if (_sComTotalButton == nil) {
-        _sComTotalButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _sComTotalButton.frame = CGRectMake(self.sZanTotalLabel.x + self.sZanTotalLabel.width, _sZanTotalLabel.y, 30, 30);
-    }
-    return _sComTotalButton;
-}
--(UILabel *)sComTotalLabel
-{
-    if (_sComTotalLabel == nil) {
-        _sComTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.sComTotalButton.x + self.sComTotalButton.width, self.sComTotalButton.y, 30, 30)];
-    }
-    return _sComTotalLabel;
-}
--(UILabel *)sCatenameLabel
-{
-    if (_sComTotalLabel == nil) {
-        _sComTotalLabel = [[UILabel alloc]initWithFrame:CGRectMake(SCREEN_W - 50, self.sComTotalLabel.y, 50, 30)];
-    }
-    return _sCatenameLabel;
+    return _catenameLabel;
 }
 @end
