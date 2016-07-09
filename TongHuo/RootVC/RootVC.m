@@ -12,7 +12,7 @@
 #import "ShadowView.h"
 #import "XNavigationController.h"
 #import "NetRequest+Article.h"
-
+#import "ArticleListTableViewCell.h"
 
 static NSString * reUseMark = @"articleListTableViewCell";
 
@@ -48,9 +48,11 @@ static NSString * reUseMark = @"articleListTableViewCell";
 -(void)interfaceInital
 {
     self.view.backgroundColor = [UIColor yellowColor];
+    self.automaticallyAdjustsScrollViewInsets = false;
     [self.navigationItem.rightBarButtonItem setAction:@selector(rightItemTaped)];
     [self.navigationItem.leftBarButtonItem setAction:@selector(leftItemTaped)];
     [self.view addSubview:self.scrollView];
+    [self.scrollView addSubview:self.articleListTableView];
 
 
 //    [self addChildViewController:self.mainPage];
@@ -84,9 +86,9 @@ static NSString * reUseMark = @"articleListTableViewCell";
 -(UITableView *)articleListTableView
 {
     if (_articleListTableView == nil) {
-        _articleListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_W, SCREEN_H-64) style:UITableViewStylePlain];
+        _articleListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-64) style:UITableViewStylePlain];
         _articleListTableView.dataSource = self;
-        [_articleListTableView registerClass:[RootVC class] forCellReuseIdentifier:reUseMark];
+        [_articleListTableView registerClass:[ArticleListTableViewCell class] forCellReuseIdentifier:reUseMark];
     }
     return _articleListTableView;
 }
@@ -187,13 +189,15 @@ static NSString * reUseMark = @"articleListTableViewCell";
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return 10;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 0;
+    ArticleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reUseMark forIndexPath:indexPath];
+    cell.textLabel.text = @"asd";
+    return cell;
 }
 -(void)loadData
 {
