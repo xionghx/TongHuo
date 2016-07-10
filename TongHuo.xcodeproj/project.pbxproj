@@ -13,6 +13,8 @@
 		0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */; };
 		0307A7B61D2FC18600DC2B81 /* ModelVCSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */; };
 		0307A7B91D2FC1BA00DC2B81 /* ModelVCClassed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */; };
+		030EF0D11D3233CB0034BDD0 /* ArticleListModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */; };
+		030EF0D41D3237B90034BDD0 /* NetRequest+Prepare_Fro.m in Sources */ = {isa = PBXBuildFile; fileRef = 030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */; };
 		037D834F1D2E7B9E0063E17E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D834E1D2E7B9E0063E17E /* main.m */; };
 		037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83511D2E7B9E0063E17E /* AppDelegate.m */; };
 		037D83551D2E7B9E0063E17E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 037D83541D2E7B9E0063E17E /* ViewController.m */; };
@@ -139,6 +141,10 @@
 		0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCSimple.m; sourceTree = "<group>"; };
 		0307A7B71D2FC1BA00DC2B81 /* ModelVCClassed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCClassed.h; sourceTree = "<group>"; };
 		0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCClassed.m; sourceTree = "<group>"; };
+		030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListModle.h; sourceTree = "<group>"; };
+		030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListModle.m; sourceTree = "<group>"; };
+		030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Prepare_Fro.h"; sourceTree = "<group>"; };
+		030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Prepare_Fro.m"; sourceTree = "<group>"; };
 		037D834A1D2E7B9E0063E17E /* TongHuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongHuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037D834E1D2E7B9E0063E17E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		037D83501D2E7B9E0063E17E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -415,6 +421,10 @@
 				037D83A71D2E83C90063E17E /* MainPageVC */,
 				037D83A91D2E845E0063E17E /* RootVC.h */,
 				037D83AA1D2E845E0063E17E /* RootVC.m */,
+				030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */,
+				030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */,
+				030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */,
+				030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */,
 				03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */,
 				03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */,
 			);
@@ -836,6 +846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037D83A31D2E7DCF0063E17E /* XUtilityTools.m in Sources */,
+				030EF0D41D3237B90034BDD0 /* NetRequest+Prepare_Fro.m in Sources */,
 				037D83A41D2E7DCF0063E17E /* XStringUtils.m in Sources */,
 				037D83981D2E7D800063E17E /* UIView+SetSize.m in Sources */,
 				03F59FDB1D30DEB10000D9C9 /* ArticleAssistBar.m in Sources */,
@@ -865,6 +876,7 @@
 				037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */,
+				030EF0D11D3233CB0034BDD0 /* ArticleListModle.m in Sources */,
 				037D83961D2E7D800063E17E /* NSObject+FileWithBundle.m in Sources */,
 				037D834F1D2E7B9E0063E17E /* main.m in Sources */,
 				037D83AB1D2E845E0063E17E /* RootVC.m in Sources */,

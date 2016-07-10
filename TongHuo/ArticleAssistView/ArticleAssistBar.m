@@ -23,7 +23,7 @@
     if (self) {
         self.frame = CGRectMake(0, 0, 200, 20);
         [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(200, 30));
+            make.size.mas_equalTo(CGSizeMake(200, 40));
         }];
         self.backgroundColor = [UIColor greenColor];
         [self setLayout];
@@ -75,7 +75,7 @@
     [_shareurlButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_left).offset(10);
         make.bottom.equalTo(weakSelf.mas_bottom).offset(0);
-        make.size.mas_equalTo(CGSizeMake(20, 20));
+        make.size.mas_equalTo(CGSizeMake(weakSelf.height, weakSelf.height));
     }];
     [self addSubview:self.collectTotalButton];
     [_collectTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -88,13 +88,13 @@
     [_zanTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_collectTotalButton.mas_right).offset(10);
         make.bottom.equalTo(_collectTotalButton.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(40, 20));
+        make.size.mas_equalTo(CGSizeMake(2 * weakSelf.height, weakSelf.height));
             }];
     [self addSubview:self.comTotalButton];
     [_comTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_zanTotalButton.mas_right).offset(10);
         make.bottom.equalTo(_zanTotalButton);
-        make.size.mas_equalTo(CGSizeMake(40, 20));
+        make.size.mas_equalTo(CGSizeMake(2 * weakSelf.height, weakSelf.height));
     }];
 }
 
