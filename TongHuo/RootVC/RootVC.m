@@ -14,6 +14,7 @@
 #import "NetRequest+Article.h"
 #import "ArticleListTableViewCell.h"
 #import "NetRequest+Prepare_Fro.h"
+#import "ArticleCateListView.h"
 
 
 
@@ -27,6 +28,8 @@ static NSString * reUseMark = @"articleListTableViewCell";
 @property(nonatomic,strong)UITableView *articleListTableView;
 @property(nonatomic,strong)NSMutableArray *articleList;
 @property(nonatomic,strong)NSMutableArray * articleListTableViewCells;
+@property(nonatomic,strong)ArticleCateListView *articleCateListView;
+
 @end
 
 @implementation RootVC
@@ -37,6 +40,13 @@ static NSString * reUseMark = @"articleListTableViewCell";
         [self loadData];
     }
     return self;
+}
+-(ArticleCateListView *)articleCateListView
+{
+    if (_articleCateListView == nil) {
+        _articleCateListView = [[ArticleCateListView alloc]initWithFrame:CGRectMake(SCREEN_W, 0, SCREEN_W, SCREEN_H - 64)];
+    }
+    return _articleCateListView;
 }
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -67,6 +77,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
     [self.navigationItem.leftBarButtonItem setAction:@selector(leftItemTaped)];
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.articleListTableView];
+    [self.scrollView addSubview:self.articleCateListView];
     
     
     //    [self addChildViewController:self.mainPage];
@@ -103,11 +114,11 @@ static NSString * reUseMark = @"articleListTableViewCell";
         _articleListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H-64) style:UITableViewStylePlain];
         _articleListTableView.dataSource = self;
         [_articleListTableView registerClass:[ArticleListTableViewCell class] forCellReuseIdentifier:reUseMark];
-//                _articleListTableView.rowHeight = 600;
-                _articleListTableView.rowHeight = UITableViewAutomaticDimension;
-        _articleListTableView.estimatedRowHeight = 600;
-        _articleListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        //        _articleListTableView.selectionStyle =UITableViewCellSelectionStyleNone;
+        _articleListTableView.rowHeight = 600;
+//        _articleListTableView.rowHeight = UITableViewAutomaticDimension;
+//        _articleListTableView.estimatedRowHeight = 600;
+//        _articleListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//        _articleListTableView.selectionStyle =UITableViewCellSelectionStyleNone;
         
     }
     return _articleListTableView;
@@ -234,12 +245,12 @@ static NSString * reUseMark = @"articleListTableViewCell";
     //    cell.catenameButton.titleLabel.text =self.articleList[indexPath.row][@"sCatename"];
     //    cell.dataSources = self.articleList[indexPath.row];
     [cell setupWithDataSource:self.articleList[indexPath.row] andComplitionHandel:^(CGFloat a) {
-//        cell.height = a;
-//        self.articleListTableView.rowHeight = a + 40;
-//        [self.articleListTableView layoutSubviews];
-//                NSLog(@"%f",a);
-        cell.xHeight = a;
-        [self.articleListTableView layoutSubviews];
+        //        cell.height = a;
+        //        self.articleListTableView.rowHeight = a + 40;
+        //        [self.articleListTableView layoutSubviews];
+        //                NSLog(@"%f",a);
+        //        cell.xHeight = a;
+        //        [self.articleListTableView layoutSubviews];
     }];
     return cell;
 }
@@ -254,7 +265,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
     [NetRequest getArticleListWithSPage:@"" andSPagesize:@"1" andCompletionBlock:^(id responseObject, NSError *error) {
         [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
         [self.articleListTableView reloadData];
-        [NetRequest getArticleListWithSPage:@"" andSPagesize:@"100" andCompletionBlock:^(id responseObject, NSError *error) {
+        [NetRequest getArticleListWithSPage:@"" andSPagesize:@"20" andCompletionBlock:^(id responseObject, NSError *error) {
             [self.articleList removeAllObjects];
             [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
             [self.articleListTableView reloadData];
@@ -286,11 +297,11 @@ static NSString * reUseMark = @"articleListTableViewCell";
     //    }];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%f/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n",((ArticleListTableViewCell *)[self.articleListTableView cellForRowAtIndexPath:indexPath]).xHeight);
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSLog(@"%f/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n/n",((ArticleListTableViewCell *)[self.articleListTableView cellForRowAtIndexPath:indexPath]).xHeight);
 //    return ((ArticleListTableViewCell *)[self.articleListTableView cellForRowAtIndexPath:indexPath]).xHeight;
-    return 500;
-}
+//    return 500;
+//}
 
 - (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section
 {

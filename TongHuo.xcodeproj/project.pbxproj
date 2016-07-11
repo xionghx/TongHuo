@@ -123,6 +123,8 @@
 		037D84531D2E9A8E0063E17E /* 黑色返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84061D2E9A8E0063E17E /* 黑色返回.png */; };
 		037D84551D2E9D150063E17E /* asd.png in Resources */ = {isa = PBXBuildFile; fileRef = 037D84541D2E9D150063E17E /* asd.png */; };
 		03E8E2A11D2FFB89004D304A /* ArticleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */; };
+		03F273701D332CE3003E9C47 /* ArticleCateListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */; };
+		03F273731D332D33003E9C47 /* ArticleCateListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F273721D332D33003E9C47 /* ArticleCateListView.m */; };
 		03F59FDB1D30DEB10000D9C9 /* ArticleAssistBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */; };
 		03F59FDE1D30F64D0000D9C9 /* ArticleAssistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */; };
 		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
@@ -282,6 +284,10 @@
 		037D84541D2E9D150063E17E /* asd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asd.png; sourceTree = "<group>"; };
 		03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
 		03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
+		03F2736E1D332CE3003E9C47 /* ArticleCateListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateListCell.h; sourceTree = "<group>"; };
+		03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateListCell.m; sourceTree = "<group>"; };
+		03F273711D332D33003E9C47 /* ArticleCateListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateListView.h; sourceTree = "<group>"; };
+		03F273721D332D33003E9C47 /* ArticleCateListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateListView.m; sourceTree = "<group>"; };
 		03F59FD91D30DEB10000D9C9 /* ArticleAssistBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAssistBar.h; sourceTree = "<group>"; };
 		03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleAssistBar.m; sourceTree = "<group>"; };
 		03F59FDC1D30F64D0000D9C9 /* ArticleAssistButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAssistButton.h; sourceTree = "<group>"; };
@@ -421,12 +427,16 @@
 				037D83A71D2E83C90063E17E /* MainPageVC */,
 				037D83A91D2E845E0063E17E /* RootVC.h */,
 				037D83AA1D2E845E0063E17E /* RootVC.m */,
+				03F273711D332D33003E9C47 /* ArticleCateListView.h */,
+				03F273721D332D33003E9C47 /* ArticleCateListView.m */,
 				030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */,
 				030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */,
 				030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */,
 				030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */,
 				03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */,
 				03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */,
+				03F2736E1D332CE3003E9C47 /* ArticleCateListCell.h */,
+				03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */,
 			);
 			path = RootVC;
 			sourceTree = "<group>";
@@ -872,10 +882,12 @@
 				037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */,
 				0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */,
 				037D83AE1D2E84A50063E17E /* MainPageVC.m in Sources */,
+				03F273731D332D33003E9C47 /* ArticleCateListView.m in Sources */,
 				03E8E2A11D2FFB89004D304A /* ArticleListTableViewCell.m in Sources */,
 				037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */,
+				03F273701D332CE3003E9C47 /* ArticleCateListCell.m in Sources */,
 				030EF0D11D3233CB0034BDD0 /* ArticleListModle.m in Sources */,
 				037D83961D2E7D800063E17E /* NSObject+FileWithBundle.m in Sources */,
 				037D834F1D2E7B9E0063E17E /* main.m in Sources */,

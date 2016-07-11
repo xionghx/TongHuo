@@ -14,25 +14,26 @@
 {
     ArticleAssistButton * aButton = [super buttonWithType:buttonType];
     [aButton.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(aButton.mas_left);
-        make.right.equalTo(aButton.mas_centerX);
-        
-//        make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, aButton.width * 0.5));
-        make.width.and.height.equalTo(aButton.mas_width).multipliedBy(0.5);
+        //        make.left.equalTo(aButton.mas_left);
+        make.width.and.height.equalTo(aButton.mas_height);
+        make.left.equalTo(aButton);
+        //        make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, aButton.width * 0.5));
+        //        make.width.and.height.equalTo(aButton.mas_width).multipliedBy(0.5);
     }];
     [aButton.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(aButton.mas_centerX);
-//        make.right.equalTo(aButton.mas_right);
-//        make.edges.mas_offset(UIEdgeInsetsMake(0, aButton.width * 0.5, 0, 0));
-
-        make.width.and.height.equalTo(aButton.mas_width).multipliedBy(0.5);
-
-   }];
+        make.left.mas_equalTo(aButton.imageView.mas_right);
+        //        make.right.equalTo(aButton.mas_right);
+        //        make.edges.mas_offset(UIEdgeInsetsMake(0, aButton.width * 0.5, 0, 0));
+        
+        //        make.width.and.height.equalTo(aButton.mas_width).multipliedBy(0.5);
+//        make.height.equalTo(aButton.mas_height);
+        
+    }];
     [aButton.titleLabel setTextColor:[UIColor grayColor]];
     aButton.titleLabel.textColor = [UIColor grayColor];
     aButton.backgroundColor = [UIColor redColor];
-//    aButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-//    aButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    //    aButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    //    aButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     return aButton;
 }
 

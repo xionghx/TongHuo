@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
+//#import "MJRefresh.h"
 @interface ArticleListTableViewCell()
 @property(nonatomic,strong)UIView *masonryView;
 @end
@@ -55,7 +56,7 @@
         //        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 300);
         //        make.bottom.equalTo(weakSelf.thumbImage.mas_bottom).offset(-120);
         //        make.height.mas_equalTo(0);
-        //        make.size.mas_equalTo(CGSizeMake(80, 40));
+                make.size.mas_equalTo(CGSizeMake(80, 40));
         //        make.size.mas_offset(CGSizeMake(40, 20));
         //        make.width.mas_equalTo(200);
     }];
@@ -101,9 +102,9 @@
     [self.catenameButton setTitle:dataSource[@"sCatename"] forState:UIControlStateNormal];
     _dataSources = dataSource;
     
-    CGRect titleFrame = [dataSource[@"sTitle"] boundingRectWithSize:CGSizeMake(SCREEN_W-20 , SCREEN_H) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
-    
-    CGRect introFrame = [dataSource[@"sIntro"] boundingRectWithSize:CGSizeMake(SCREEN_W-20, SCREEN_H) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
+//    CGRect titleFrame = [dataSource[@"sTitle"] boundingRectWithSize:CGSizeMake(SCREEN_W-20 , SCREEN_H) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
+//    
+//    CGRect introFrame = [dataSource[@"sIntro"] boundingRectWithSize:CGSizeMake(SCREEN_W-20, SCREEN_H) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
 
 
     [weakSelf.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -114,22 +115,26 @@
     [weakSelf.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage).offset(20);
         make.top.equalTo(weakSelf.thumbImage).offset(20);
-        //        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 300);
-        //        make.bottom.equalTo(weakSelf.thumbImage.mas_bottom).offset(-120);
+//        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
+//                make.bottom.equalTo(weakSelf.thumbImage.mas_bottom).offset(-120);
         //        make.height.mas_equalTo(0);
-        //        make.size.mas_equalTo(CGSizeMake(80, 40));
-        //        make.size.mas_offset(CGSizeMake(40, 20));
+//                make.size.mas_equalTo(CGSizeMake(80, 40));
+                make.size.mas_offset(CGSizeMake(40, 20));
         //        make.width.mas_equalTo(200);
     }];
     [weakSelf.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage);
         make.top.equalTo(weakSelf.thumbImage.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W, titleFrame.size.height));
+        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
+
+//        make.size.mas_equalTo(CGSizeMake(SCREEN_W, titleFrame.size.height));
     }];
     [weakSelf.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage);
         make.top.equalTo(weakSelf.titleLabel.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W,introFrame.size.height));
+        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
+
+//        make.size.mas_equalTo(CGSizeMake(SCREEN_W,introFrame.size.height));
     }];
     [weakSelf.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage);
@@ -141,12 +146,15 @@
         
     }];
     [weakSelf.masonryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.assistBar.mas_bottom);
+        make.top.equalTo(weakSelf.assistBar.mas_bottom);
+    }];
+    [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(weakSelf.assistBar);
     }];
 
-    complitionHandel(self.masonryView.frame.origin.y);
-
-    self.xHeight =  self.masonryView.frame.origin.y ;
+//    complitionHandel(self.masonryView.frame.origin.y);
+//
+//    self.xHeight =  self.masonryView.frame.origin.y ;
 //    CGRect frame = [content boundingRectWithSize:CGSizeMake(200, 350) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
 
 }

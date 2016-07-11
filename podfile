@@ -9,5 +9,6 @@ target 'TongHuo' do
 pod 'SDWebImage'
 pod 'AFNetworking'
 pod 'Masonry'
+pod 'MJRefresh'
 
 end
