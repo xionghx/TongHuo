@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0307A7A61D2F7B5F00DC2B81 /* LeftSideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */; };
 		0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7A81D2F7B8000DC2B81 /* ShadowView.m */; };
-		0307A7AC1D2F94B500DC2B81 /* LeftSideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */; };
 		0307A7B01D2F9E3300DC2B81 /* FoundationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */; };
 		0307A7B61D2FC18600DC2B81 /* ModelVCSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */; };
 		0307A7B91D2FC1BA00DC2B81 /* ModelVCClassed.m in Sources */ = {isa = PBXBuildFile; fileRef = 0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */; };
@@ -128,25 +126,24 @@
 		03F59FDB1D30DEB10000D9C9 /* ArticleAssistBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */; };
 		03F59FDE1D30F64D0000D9C9 /* ArticleAssistButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */; };
 		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
+		8A7882EF1D347B4900ECD822 /* LeftSideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7882EC1D347B4900ECD822 /* LeftSideCell.m */; };
+		8A7882F01D347B4900ECD822 /* LeftSideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7882EE1D347B4900ECD822 /* LeftSideView.m */; };
+		8ADF16951D34DB9300CF6C23 /* ArticleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF16941D34DB9300CF6C23 /* ArticleList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideView.h; path = ../MainPageVC/LeftSideView.h; sourceTree = "<group>"; };
-		0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideView.m; path = ../MainPageVC/LeftSideView.m; sourceTree = "<group>"; };
-		0307A7A71D2F7B8000DC2B81 /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowView.h; sourceTree = "<group>"; };
-		0307A7A81D2F7B8000DC2B81 /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowView.m; sourceTree = "<group>"; };
-		0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideCell.h; path = ../MainPageVC/LeftSideCell.h; sourceTree = "<group>"; };
-		0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideCell.m; path = ../MainPageVC/LeftSideCell.m; sourceTree = "<group>"; };
+		0307A7A71D2F7B8000DC2B81 /* ShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowView.h; path = MainPageVC/ShadowView.h; sourceTree = "<group>"; };
+		0307A7A81D2F7B8000DC2B81 /* ShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowView.m; path = MainPageVC/ShadowView.m; sourceTree = "<group>"; };
 		0307A7AE1D2F9E3300DC2B81 /* FoundationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationVC.h; sourceTree = "<group>"; };
 		0307A7AF1D2F9E3300DC2B81 /* FoundationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationVC.m; sourceTree = "<group>"; };
 		0307A7B41D2FC18600DC2B81 /* ModelVCSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCSimple.h; sourceTree = "<group>"; };
 		0307A7B51D2FC18600DC2B81 /* ModelVCSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCSimple.m; sourceTree = "<group>"; };
 		0307A7B71D2FC1BA00DC2B81 /* ModelVCClassed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCClassed.h; sourceTree = "<group>"; };
 		0307A7B81D2FC1BA00DC2B81 /* ModelVCClassed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCClassed.m; sourceTree = "<group>"; };
-		030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListModle.h; sourceTree = "<group>"; };
-		030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListModle.m; sourceTree = "<group>"; };
-		030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Prepare_Fro.h"; sourceTree = "<group>"; };
-		030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Prepare_Fro.m"; sourceTree = "<group>"; };
+		030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleListModle.h; path = ../../ArticleListModle.h; sourceTree = "<group>"; };
+		030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleListModle.m; path = ../../ArticleListModle.m; sourceTree = "<group>"; };
+		030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+Prepare_Fro.h"; path = "../NetRequest+Prepare_Fro.h"; sourceTree = "<group>"; };
+		030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+Prepare_Fro.m"; path = "../NetRequest+Prepare_Fro.m"; sourceTree = "<group>"; };
 		037D834A1D2E7B9E0063E17E /* TongHuo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TongHuo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037D834E1D2E7B9E0063E17E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		037D83501D2E7B9E0063E17E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,49 +156,49 @@
 		037D835F1D2E7B9E0063E17E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		037D83611D2E7B9E0063E17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037D83671D2E7C620063E17E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		037D83691D2E7D800063E17E /* NetRequest+Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Article.h"; sourceTree = "<group>"; };
-		037D836A1D2E7D800063E17E /* NetRequest+Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Article.m"; sourceTree = "<group>"; };
-		037D836B1D2E7D800063E17E /* NetRequest+DailyFavourites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+DailyFavourites.h"; sourceTree = "<group>"; };
-		037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+DailyFavourites.m"; sourceTree = "<group>"; };
-		037D836D1D2E7D800063E17E /* NetRequest+Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Region.h"; sourceTree = "<group>"; };
-		037D836E1D2E7D800063E17E /* NetRequest+Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Region.m"; sourceTree = "<group>"; };
-		037D836F1D2E7D800063E17E /* NetRequest+Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Simple.h"; sourceTree = "<group>"; };
-		037D83701D2E7D800063E17E /* NetRequest+Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Simple.m"; sourceTree = "<group>"; };
-		037D83711D2E7D800063E17E /* NetRequest+Special.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+Special.h"; sourceTree = "<group>"; };
-		037D83721D2E7D800063E17E /* NetRequest+Special.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+Special.m"; sourceTree = "<group>"; };
-		037D83731D2E7D800063E17E /* NetRequest+UserDoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+UserDoing.h"; sourceTree = "<group>"; };
-		037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+UserDoing.m"; sourceTree = "<group>"; };
-		037D83751D2E7D800063E17E /* NetRequest+UserInfoRequst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetRequest+UserInfoRequst.h"; sourceTree = "<group>"; };
-		037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetRequest+UserInfoRequst.m"; sourceTree = "<group>"; };
-		037D83771D2E7D800063E17E /* MainPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPage.m; sourceTree = "<group>"; };
-		037D83781D2E7D800063E17E /* MainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPage.h; sourceTree = "<group>"; };
-		037D83791D2E7D800063E17E /* MainPageScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageScroll.h; sourceTree = "<group>"; };
-		037D837A1D2E7D800063E17E /* MainPageScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageScroll.m; sourceTree = "<group>"; };
-		037D837B1D2E7D800063E17E /* MAMAHeaderPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMAHeaderPage.h; sourceTree = "<group>"; };
-		037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMAHeaderPage.m; sourceTree = "<group>"; };
-		037D837D1D2E7D800063E17E /* MAMATableViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMATableViewControllers.h; sourceTree = "<group>"; };
-		037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAMATableViewControllers.m; sourceTree = "<group>"; };
-		037D837F1D2E7D800063E17E /* NSObject+FileWithBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FileWithBundle.h"; sourceTree = "<group>"; };
-		037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FileWithBundle.m"; sourceTree = "<group>"; };
-		037D83811D2E7D800063E17E /* UIBarButtonItem+CustomItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+CustomItem.h"; sourceTree = "<group>"; };
-		037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+CustomItem.m"; sourceTree = "<group>"; };
-		037D83831D2E7D800063E17E /* UIView+SetSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SetSize.h"; sourceTree = "<group>"; };
-		037D83841D2E7D800063E17E /* UIView+SetSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SetSize.m"; sourceTree = "<group>"; };
-		037D83851D2E7D800063E17E /* XAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAlertViewHelper.h; sourceTree = "<group>"; };
-		037D83861D2E7D800063E17E /* XAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAlertViewHelper.m; sourceTree = "<group>"; };
-		037D83871D2E7D800063E17E /* XNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationController.h; sourceTree = "<group>"; };
-		037D83881D2E7D800063E17E /* XNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationController.m; sourceTree = "<group>"; };
-		037D83891D2E7D800063E17E /* XTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTabBar.h; sourceTree = "<group>"; };
-		037D838A1D2E7D800063E17E /* XTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTabBar.m; sourceTree = "<group>"; };
-		037D839C1D2E7DA10063E17E /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequest.h; sourceTree = "<group>"; };
-		037D839D1D2E7DA10063E17E /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
-		037D839F1D2E7DCF0063E17E /* XUtilityTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XUtilityTools.h; sourceTree = "<group>"; };
-		037D83A01D2E7DCF0063E17E /* XUtilityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XUtilityTools.m; sourceTree = "<group>"; };
-		037D83A11D2E7DCF0063E17E /* XStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStringUtils.h; sourceTree = "<group>"; };
-		037D83A21D2E7DCF0063E17E /* XStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStringUtils.m; sourceTree = "<group>"; };
-		037D83A51D2E7DDE0063E17E /* APIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
-		037D83A91D2E845E0063E17E /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootVC.h; sourceTree = "<group>"; };
-		037D83AA1D2E845E0063E17E /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootVC.m; sourceTree = "<group>"; };
+		037D83691D2E7D800063E17E /* NetRequest+Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+Article.h"; path = "../../Helper/NetRequest+Article.h"; sourceTree = "<group>"; };
+		037D836A1D2E7D800063E17E /* NetRequest+Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+Article.m"; path = "../../Helper/NetRequest+Article.m"; sourceTree = "<group>"; };
+		037D836B1D2E7D800063E17E /* NetRequest+DailyFavourites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+DailyFavourites.h"; path = "../../Helper/NetRequest+DailyFavourites.h"; sourceTree = "<group>"; };
+		037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+DailyFavourites.m"; path = "../../Helper/NetRequest+DailyFavourites.m"; sourceTree = "<group>"; };
+		037D836D1D2E7D800063E17E /* NetRequest+Region.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+Region.h"; path = "../../Helper/NetRequest+Region.h"; sourceTree = "<group>"; };
+		037D836E1D2E7D800063E17E /* NetRequest+Region.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+Region.m"; path = "../../Helper/NetRequest+Region.m"; sourceTree = "<group>"; };
+		037D836F1D2E7D800063E17E /* NetRequest+Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+Simple.h"; path = "../../Helper/NetRequest+Simple.h"; sourceTree = "<group>"; };
+		037D83701D2E7D800063E17E /* NetRequest+Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+Simple.m"; path = "../../Helper/NetRequest+Simple.m"; sourceTree = "<group>"; };
+		037D83711D2E7D800063E17E /* NetRequest+Special.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+Special.h"; path = "../../Helper/NetRequest+Special.h"; sourceTree = "<group>"; };
+		037D83721D2E7D800063E17E /* NetRequest+Special.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+Special.m"; path = "../../Helper/NetRequest+Special.m"; sourceTree = "<group>"; };
+		037D83731D2E7D800063E17E /* NetRequest+UserDoing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+UserDoing.h"; path = "../../Helper/NetRequest+UserDoing.h"; sourceTree = "<group>"; };
+		037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+UserDoing.m"; path = "../../Helper/NetRequest+UserDoing.m"; sourceTree = "<group>"; };
+		037D83751D2E7D800063E17E /* NetRequest+UserInfoRequst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NetRequest+UserInfoRequst.h"; path = "../../Helper/NetRequest+UserInfoRequst.h"; sourceTree = "<group>"; };
+		037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NetRequest+UserInfoRequst.m"; path = "../../Helper/NetRequest+UserInfoRequst.m"; sourceTree = "<group>"; };
+		037D83771D2E7D800063E17E /* MainPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainPage.m; path = ../../Helper/MainPage.m; sourceTree = "<group>"; };
+		037D83781D2E7D800063E17E /* MainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainPage.h; path = ../../Helper/MainPage.h; sourceTree = "<group>"; };
+		037D83791D2E7D800063E17E /* MainPageScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainPageScroll.h; path = ../../Helper/MainPageScroll.h; sourceTree = "<group>"; };
+		037D837A1D2E7D800063E17E /* MainPageScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainPageScroll.m; path = ../../Helper/MainPageScroll.m; sourceTree = "<group>"; };
+		037D837B1D2E7D800063E17E /* MAMAHeaderPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAMAHeaderPage.h; path = ../../Helper/MAMAHeaderPage.h; sourceTree = "<group>"; };
+		037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAMAHeaderPage.m; path = ../../Helper/MAMAHeaderPage.m; sourceTree = "<group>"; };
+		037D837D1D2E7D800063E17E /* MAMATableViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAMATableViewControllers.h; path = ../../Helper/MAMATableViewControllers.h; sourceTree = "<group>"; };
+		037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAMATableViewControllers.m; path = ../../Helper/MAMATableViewControllers.m; sourceTree = "<group>"; };
+		037D837F1D2E7D800063E17E /* NSObject+FileWithBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FileWithBundle.h"; path = "../../Helper/NSObject+FileWithBundle.h"; sourceTree = "<group>"; };
+		037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FileWithBundle.m"; path = "../../Helper/NSObject+FileWithBundle.m"; sourceTree = "<group>"; };
+		037D83811D2E7D800063E17E /* UIBarButtonItem+CustomItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+CustomItem.h"; path = "../../Helper/UIBarButtonItem+CustomItem.h"; sourceTree = "<group>"; };
+		037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+CustomItem.m"; path = "../../Helper/UIBarButtonItem+CustomItem.m"; sourceTree = "<group>"; };
+		037D83831D2E7D800063E17E /* UIView+SetSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SetSize.h"; path = "../../Helper/UIView+SetSize.h"; sourceTree = "<group>"; };
+		037D83841D2E7D800063E17E /* UIView+SetSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SetSize.m"; path = "../../Helper/UIView+SetSize.m"; sourceTree = "<group>"; };
+		037D83851D2E7D800063E17E /* XAlertViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XAlertViewHelper.h; path = ../../Helper/XAlertViewHelper.h; sourceTree = "<group>"; };
+		037D83861D2E7D800063E17E /* XAlertViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XAlertViewHelper.m; path = ../../Helper/XAlertViewHelper.m; sourceTree = "<group>"; };
+		037D83871D2E7D800063E17E /* XNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XNavigationController.h; path = ../../Helper/XNavigationController.h; sourceTree = "<group>"; };
+		037D83881D2E7D800063E17E /* XNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XNavigationController.m; path = ../../Helper/XNavigationController.m; sourceTree = "<group>"; };
+		037D83891D2E7D800063E17E /* XTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTabBar.h; path = ../../Helper/XTabBar.h; sourceTree = "<group>"; };
+		037D838A1D2E7D800063E17E /* XTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTabBar.m; path = ../../Helper/XTabBar.m; sourceTree = "<group>"; };
+		037D839C1D2E7DA10063E17E /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetRequest.h; path = ../../Helper/NetRequest.h; sourceTree = "<group>"; };
+		037D839D1D2E7DA10063E17E /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetRequest.m; path = ../../Helper/NetRequest.m; sourceTree = "<group>"; };
+		037D839F1D2E7DCF0063E17E /* XUtilityTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XUtilityTools.h; path = ../../Helper/XUtilityTools.h; sourceTree = "<group>"; };
+		037D83A01D2E7DCF0063E17E /* XUtilityTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XUtilityTools.m; path = ../../Helper/XUtilityTools.m; sourceTree = "<group>"; };
+		037D83A11D2E7DCF0063E17E /* XStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XStringUtils.h; path = ../XStringUtils.h; sourceTree = "<group>"; };
+		037D83A21D2E7DCF0063E17E /* XStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XStringUtils.m; path = ../XStringUtils.m; sourceTree = "<group>"; };
+		037D83A51D2E7DDE0063E17E /* APIConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIConfig.h; path = ../../Helper/APIConfig.h; sourceTree = "<group>"; };
+		037D83A91D2E845E0063E17E /* RootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootVC.h; path = ../RootVC.h; sourceTree = "<group>"; };
+		037D83AA1D2E845E0063E17E /* RootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootVC.m; path = ../RootVC.m; sourceTree = "<group>"; };
 		037D83AC1D2E84A50063E17E /* MainPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageVC.h; sourceTree = "<group>"; };
 		037D83AD1D2E84A50063E17E /* MainPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageVC.m; sourceTree = "<group>"; };
 		037D83B11D2E9A8E0063E17E /* calender_F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_F.png; sourceTree = "<group>"; };
@@ -282,16 +279,22 @@
 		037D84051D2E9A8E0063E17E /* 返回顶部.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回顶部.png"; sourceTree = "<group>"; };
 		037D84061D2E9A8E0063E17E /* 黑色返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黑色返回.png"; sourceTree = "<group>"; };
 		037D84541D2E9D150063E17E /* asd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asd.png; sourceTree = "<group>"; };
-		03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListTableViewCell.h; sourceTree = "<group>"; };
-		03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListTableViewCell.m; sourceTree = "<group>"; };
-		03F2736E1D332CE3003E9C47 /* ArticleCateListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateListCell.h; sourceTree = "<group>"; };
-		03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateListCell.m; sourceTree = "<group>"; };
-		03F273711D332D33003E9C47 /* ArticleCateListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateListView.h; sourceTree = "<group>"; };
-		03F273721D332D33003E9C47 /* ArticleCateListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateListView.m; sourceTree = "<group>"; };
+		03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleListTableViewCell.h; path = ../../ArticleListTableViewCell.h; sourceTree = "<group>"; };
+		03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleListTableViewCell.m; path = ../../ArticleListTableViewCell.m; sourceTree = "<group>"; };
+		03F2736E1D332CE3003E9C47 /* ArticleCateListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleCateListCell.h; path = ../../ArticleCateListCell.h; sourceTree = "<group>"; };
+		03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleCateListCell.m; path = ../../ArticleCateListCell.m; sourceTree = "<group>"; };
+		03F273711D332D33003E9C47 /* ArticleCateListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArticleCateListView.h; path = ../../ArticleCateListView.h; sourceTree = "<group>"; };
+		03F273721D332D33003E9C47 /* ArticleCateListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArticleCateListView.m; path = ../../ArticleCateListView.m; sourceTree = "<group>"; };
 		03F59FD91D30DEB10000D9C9 /* ArticleAssistBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAssistBar.h; sourceTree = "<group>"; };
 		03F59FDA1D30DEB10000D9C9 /* ArticleAssistBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleAssistBar.m; sourceTree = "<group>"; };
 		03F59FDC1D30F64D0000D9C9 /* ArticleAssistButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleAssistButton.h; sourceTree = "<group>"; };
 		03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleAssistButton.m; sourceTree = "<group>"; };
+		8A7882EB1D347B4900ECD822 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideCell.h; path = TongHuo/RootVC/MainPageVC/LeftSideCell.h; sourceTree = SOURCE_ROOT; };
+		8A7882EC1D347B4900ECD822 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideCell.m; path = TongHuo/RootVC/MainPageVC/LeftSideCell.m; sourceTree = SOURCE_ROOT; };
+		8A7882ED1D347B4900ECD822 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideView.h; path = TongHuo/RootVC/MainPageVC/LeftSideView.h; sourceTree = SOURCE_ROOT; };
+		8A7882EE1D347B4900ECD822 /* LeftSideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideView.m; path = TongHuo/RootVC/MainPageVC/LeftSideView.m; sourceTree = SOURCE_ROOT; };
+		8ADF16931D34DB9300CF6C23 /* ArticleList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList.h; sourceTree = "<group>"; };
+		8ADF16941D34DB9300CF6C23 /* ArticleList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList.m; sourceTree = "<group>"; };
 		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.release.xcconfig"; sourceTree = "<group>"; };
 		E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -344,10 +347,9 @@
 		037D834C1D2E7B9E0063E17E /* TongHuo */ = {
 			isa = PBXGroup;
 			children = (
-				03F59FD81D30DE8D0000D9C9 /* ArticleAssistView */,
 				0307A7AD1D2F9E1900DC2B81 /* FoundationVC */,
 				037D83AF1D2E9A8E0063E17E /* images */,
-				037D83A61D2E83A20063E17E /* RootVC */,
+				037D83A61D2E83A20063E17E /* Function */,
 				037D83681D2E7D3D0063E17E /* Helper */,
 				037D83501D2E7B9E0063E17E /* AppDelegate.h */,
 				037D83511D2E7B9E0063E17E /* AppDelegate.m */,
@@ -375,79 +377,39 @@
 		037D83681D2E7D3D0063E17E /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				037D83A51D2E7DDE0063E17E /* APIConfig.h */,
-				037D839F1D2E7DCF0063E17E /* XUtilityTools.h */,
-				037D83A01D2E7DCF0063E17E /* XUtilityTools.m */,
-				037D83A11D2E7DCF0063E17E /* XStringUtils.h */,
-				037D83A21D2E7DCF0063E17E /* XStringUtils.m */,
-				037D839C1D2E7DA10063E17E /* NetRequest.h */,
-				037D839D1D2E7DA10063E17E /* NetRequest.m */,
-				037D83691D2E7D800063E17E /* NetRequest+Article.h */,
-				037D836A1D2E7D800063E17E /* NetRequest+Article.m */,
-				037D836B1D2E7D800063E17E /* NetRequest+DailyFavourites.h */,
-				037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */,
-				037D836D1D2E7D800063E17E /* NetRequest+Region.h */,
-				037D836E1D2E7D800063E17E /* NetRequest+Region.m */,
-				037D836F1D2E7D800063E17E /* NetRequest+Simple.h */,
-				037D83701D2E7D800063E17E /* NetRequest+Simple.m */,
-				037D83711D2E7D800063E17E /* NetRequest+Special.h */,
-				037D83721D2E7D800063E17E /* NetRequest+Special.m */,
-				037D83731D2E7D800063E17E /* NetRequest+UserDoing.h */,
-				037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */,
-				037D83751D2E7D800063E17E /* NetRequest+UserInfoRequst.h */,
-				037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */,
-				037D83771D2E7D800063E17E /* MainPage.m */,
-				037D83781D2E7D800063E17E /* MainPage.h */,
-				037D83791D2E7D800063E17E /* MainPageScroll.h */,
-				037D837A1D2E7D800063E17E /* MainPageScroll.m */,
-				037D837B1D2E7D800063E17E /* MAMAHeaderPage.h */,
-				037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */,
-				037D837D1D2E7D800063E17E /* MAMATableViewControllers.h */,
-				037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */,
-				037D837F1D2E7D800063E17E /* NSObject+FileWithBundle.h */,
-				037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */,
-				037D83811D2E7D800063E17E /* UIBarButtonItem+CustomItem.h */,
-				037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */,
-				037D83831D2E7D800063E17E /* UIView+SetSize.h */,
-				037D83841D2E7D800063E17E /* UIView+SetSize.m */,
-				037D83851D2E7D800063E17E /* XAlertViewHelper.h */,
-				037D83861D2E7D800063E17E /* XAlertViewHelper.m */,
-				037D83871D2E7D800063E17E /* XNavigationController.h */,
-				037D83881D2E7D800063E17E /* XNavigationController.m */,
-				037D83891D2E7D800063E17E /* XTabBar.h */,
-				037D838A1D2E7D800063E17E /* XTabBar.m */,
+				8A0637A31D34D84F0047A8CC /* M */,
+				8A0637A11D34D8280047A8CC /* V */,
+				8A0637A21D34D8280047A8CC /* VC */,
+				8A0637A01D34D7CA0047A8CC /* FileManager */,
+				8A06379F1D34D77C0047A8CC /* NetRequest */,
+				03F59FD81D30DE8D0000D9C9 /* ArticleAssistView */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		037D83A61D2E83A20063E17E /* RootVC */ = {
+		037D83A61D2E83A20063E17E /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				0307A7A71D2F7B8000DC2B81 /* ShadowView.h */,
+				0307A7A81D2F7B8000DC2B81 /* ShadowView.m */,
 				037D83A81D2E83EE0063E17E /* LeftVC */,
 				037D83A71D2E83C90063E17E /* MainPageVC */,
-				037D83A91D2E845E0063E17E /* RootVC.h */,
-				037D83AA1D2E845E0063E17E /* RootVC.m */,
-				03F273711D332D33003E9C47 /* ArticleCateListView.h */,
-				03F273721D332D33003E9C47 /* ArticleCateListView.m */,
-				030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */,
-				030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */,
-				030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */,
-				030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */,
-				03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */,
-				03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */,
-				03F2736E1D332CE3003E9C47 /* ArticleCateListCell.h */,
-				03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */,
 			);
+			name = Function;
 			path = RootVC;
 			sourceTree = "<group>";
 		};
 		037D83A71D2E83C90063E17E /* MainPageVC */ = {
 			isa = PBXGroup;
 			children = (
+				030EF0D21D3237B90034BDD0 /* NetRequest+Prepare_Fro.h */,
+				030EF0D31D3237B90034BDD0 /* NetRequest+Prepare_Fro.m */,
+				037D83A91D2E845E0063E17E /* RootVC.h */,
+				037D83AA1D2E845E0063E17E /* RootVC.m */,
+				8A0637A41D34D9730047A8CC /* Column */,
+				8A0637A51D34D9730047A8CC /* HeaderLine */,
 				037D83AC1D2E84A50063E17E /* MainPageVC.h */,
 				037D83AD1D2E84A50063E17E /* MainPageVC.m */,
-				0307A7A71D2F7B8000DC2B81 /* ShadowView.h */,
-				0307A7A81D2F7B8000DC2B81 /* ShadowView.m */,
 			);
 			path = MainPageVC;
 			sourceTree = "<group>";
@@ -455,10 +417,10 @@
 		037D83A81D2E83EE0063E17E /* LeftVC */ = {
 			isa = PBXGroup;
 			children = (
-				0307A7A41D2F7B5F00DC2B81 /* LeftSideView.h */,
-				0307A7A51D2F7B5F00DC2B81 /* LeftSideView.m */,
-				0307A7AA1D2F94B500DC2B81 /* LeftSideCell.h */,
-				0307A7AB1D2F94B500DC2B81 /* LeftSideCell.m */,
+				8A7882EB1D347B4900ECD822 /* LeftSideCell.h */,
+				8A7882EC1D347B4900ECD822 /* LeftSideCell.m */,
+				8A7882ED1D347B4900ECD822 /* LeftSideView.h */,
+				8A7882EE1D347B4900ECD822 /* LeftSideView.m */,
 			);
 			path = LeftVC;
 			sourceTree = "<group>";
@@ -635,7 +597,8 @@
 				03F59FDC1D30F64D0000D9C9 /* ArticleAssistButton.h */,
 				03F59FDD1D30F64D0000D9C9 /* ArticleAssistButton.m */,
 			);
-			path = ArticleAssistView;
+			name = ArticleAssistView;
+			path = ../ArticleAssistView;
 			sourceTree = "<group>";
 		};
 		77686E93646AD8C27DBFE939 /* Frameworks */ = {
@@ -644,6 +607,110 @@
 				DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A06379F1D34D77C0047A8CC /* NetRequest */ = {
+			isa = PBXGroup;
+			children = (
+				037D83A51D2E7DDE0063E17E /* APIConfig.h */,
+				037D839C1D2E7DA10063E17E /* NetRequest.h */,
+				037D839D1D2E7DA10063E17E /* NetRequest.m */,
+				037D83691D2E7D800063E17E /* NetRequest+Article.h */,
+				037D836A1D2E7D800063E17E /* NetRequest+Article.m */,
+				037D836B1D2E7D800063E17E /* NetRequest+DailyFavourites.h */,
+				037D836C1D2E7D800063E17E /* NetRequest+DailyFavourites.m */,
+				037D836D1D2E7D800063E17E /* NetRequest+Region.h */,
+				037D836E1D2E7D800063E17E /* NetRequest+Region.m */,
+				037D836F1D2E7D800063E17E /* NetRequest+Simple.h */,
+				037D83701D2E7D800063E17E /* NetRequest+Simple.m */,
+				037D83711D2E7D800063E17E /* NetRequest+Special.h */,
+				037D83721D2E7D800063E17E /* NetRequest+Special.m */,
+				037D83731D2E7D800063E17E /* NetRequest+UserDoing.h */,
+				037D83741D2E7D800063E17E /* NetRequest+UserDoing.m */,
+				037D83751D2E7D800063E17E /* NetRequest+UserInfoRequst.h */,
+				037D83761D2E7D800063E17E /* NetRequest+UserInfoRequst.m */,
+			);
+			name = NetRequest;
+			path = ../ArticleAssistView/NetRequest;
+			sourceTree = "<group>";
+		};
+		8A0637A01D34D7CA0047A8CC /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				037D837F1D2E7D800063E17E /* NSObject+FileWithBundle.h */,
+				037D83801D2E7D800063E17E /* NSObject+FileWithBundle.m */,
+			);
+			name = FileManager;
+			path = ../ArticleAssistView/FileManager;
+			sourceTree = "<group>";
+		};
+		8A0637A11D34D8280047A8CC /* V */ = {
+			isa = PBXGroup;
+			children = (
+				037D83891D2E7D800063E17E /* XTabBar.h */,
+				037D838A1D2E7D800063E17E /* XTabBar.m */,
+				037D83831D2E7D800063E17E /* UIView+SetSize.h */,
+				037D83841D2E7D800063E17E /* UIView+SetSize.m */,
+			);
+			name = V;
+			path = ../ArticleAssistView/V;
+			sourceTree = "<group>";
+		};
+		8A0637A21D34D8280047A8CC /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				037D83811D2E7D800063E17E /* UIBarButtonItem+CustomItem.h */,
+				037D83821D2E7D800063E17E /* UIBarButtonItem+CustomItem.m */,
+				037D83851D2E7D800063E17E /* XAlertViewHelper.h */,
+				037D83861D2E7D800063E17E /* XAlertViewHelper.m */,
+				037D83871D2E7D800063E17E /* XNavigationController.h */,
+				037D83881D2E7D800063E17E /* XNavigationController.m */,
+				037D837D1D2E7D800063E17E /* MAMATableViewControllers.h */,
+				037D837E1D2E7D800063E17E /* MAMATableViewControllers.m */,
+				037D83791D2E7D800063E17E /* MainPageScroll.h */,
+				037D837A1D2E7D800063E17E /* MainPageScroll.m */,
+				037D837B1D2E7D800063E17E /* MAMAHeaderPage.h */,
+				037D837C1D2E7D800063E17E /* MAMAHeaderPage.m */,
+				037D83771D2E7D800063E17E /* MainPage.m */,
+				037D83781D2E7D800063E17E /* MainPage.h */,
+				037D839F1D2E7DCF0063E17E /* XUtilityTools.h */,
+				037D83A01D2E7DCF0063E17E /* XUtilityTools.m */,
+			);
+			name = VC;
+			path = ../ArticleAssistView/VC;
+			sourceTree = "<group>";
+		};
+		8A0637A31D34D84F0047A8CC /* M */ = {
+			isa = PBXGroup;
+			children = (
+				037D83A11D2E7DCF0063E17E /* XStringUtils.h */,
+				037D83A21D2E7DCF0063E17E /* XStringUtils.m */,
+			);
+			path = M;
+			sourceTree = "<group>";
+		};
+		8A0637A41D34D9730047A8CC /* Column */ = {
+			isa = PBXGroup;
+			children = (
+				030EF0CF1D3233CB0034BDD0 /* ArticleListModle.h */,
+				030EF0D01D3233CB0034BDD0 /* ArticleListModle.m */,
+				03E8E29F1D2FFB89004D304A /* ArticleListTableViewCell.h */,
+				03E8E2A01D2FFB89004D304A /* ArticleListTableViewCell.m */,
+				8ADF16931D34DB9300CF6C23 /* ArticleList.h */,
+				8ADF16941D34DB9300CF6C23 /* ArticleList.m */,
+			);
+			path = Column;
+			sourceTree = "<group>";
+		};
+		8A0637A51D34D9730047A8CC /* HeaderLine */ = {
+			isa = PBXGroup;
+			children = (
+				03F273711D332D33003E9C47 /* ArticleCateListView.h */,
+				03F273721D332D33003E9C47 /* ArticleCateListView.m */,
+				03F2736E1D332CE3003E9C47 /* ArticleCateListCell.h */,
+				03F2736F1D332CE3003E9C47 /* ArticleCateListCell.m */,
+			);
+			path = HeaderLine;
 			sourceTree = "<group>";
 		};
 		BB3FE1A4621DB6195B78CC43 /* Pods */ = {
@@ -863,16 +930,16 @@
 				037D835B1D2E7B9E0063E17E /* TongHuo.xcdatamodeld in Sources */,
 				037D83941D2E7D800063E17E /* MAMAHeaderPage.m in Sources */,
 				037D83991D2E7D800063E17E /* XAlertViewHelper.m in Sources */,
+				8ADF16951D34DB9300CF6C23 /* ArticleList.m in Sources */,
 				037D838C1D2E7D800063E17E /* NetRequest+DailyFavourites.m in Sources */,
 				03F59FDE1D30F64D0000D9C9 /* ArticleAssistButton.m in Sources */,
 				037D838D1D2E7D800063E17E /* NetRequest+Region.m in Sources */,
 				037D83921D2E7D800063E17E /* MainPage.m in Sources */,
-				0307A7AC1D2F94B500DC2B81 /* LeftSideCell.m in Sources */,
 				037D839B1D2E7D800063E17E /* XTabBar.m in Sources */,
 				037D838E1D2E7D800063E17E /* NetRequest+Simple.m in Sources */,
 				037D838F1D2E7D800063E17E /* NetRequest+Special.m in Sources */,
 				037D83951D2E7D800063E17E /* MAMATableViewControllers.m in Sources */,
-				0307A7A61D2F7B5F00DC2B81 /* LeftSideView.m in Sources */,
+				8A7882EF1D347B4900ECD822 /* LeftSideCell.m in Sources */,
 				037D839A1D2E7D800063E17E /* XNavigationController.m in Sources */,
 				037D838B1D2E7D800063E17E /* NetRequest+Article.m in Sources */,
 				0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */,
@@ -885,6 +952,7 @@
 				03F273731D332D33003E9C47 /* ArticleCateListView.m in Sources */,
 				03E8E2A11D2FFB89004D304A /* ArticleListTableViewCell.m in Sources */,
 				037D83931D2E7D800063E17E /* MainPageScroll.m in Sources */,
+				8A7882F01D347B4900ECD822 /* LeftSideView.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */,
 				03F273701D332CE3003E9C47 /* ArticleCateListCell.m in Sources */,
