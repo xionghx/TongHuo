@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface XNavigationController : UINavigationController
-@property(nonatomic,strong)UISegmentedControl *segmentedControl;
+//@property(nonatomic,strong)UISegmentedControl *segmentedControl;
 @property(nonatomic,strong)UIButton * leftButton;
 @property(nonatomic,strong)UIButton * rightButton;
 @property(nonatomic,strong)UIView *animationLine;

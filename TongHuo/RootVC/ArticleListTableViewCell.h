@@ -26,6 +26,5 @@
 @property(nonatomic,strong)ArticleAssistBar * assistBar;
 @property(nonatomic,strong)UIButton *catenameButton;
 @property(nonatomic,strong)NSDictionary * dataSources;
-@property (nonatomic, assign)double xHeight;
 
 @end

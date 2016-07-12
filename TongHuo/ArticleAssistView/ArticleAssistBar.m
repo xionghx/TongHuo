@@ -22,10 +22,10 @@
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, 0, 200, 20);
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(200, 40));
-        }];
-        self.backgroundColor = [UIColor greenColor];
+//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+////            make.size.mas_equalTo(CGSizeMake(300, 60));
+//        }];
+//        self.backgroundColor = [UIColor greenColor];
         [self setLayout];
     }
     return self;
@@ -54,6 +54,7 @@
         _zanTotalButton = [ArticleAssistButton buttonWithType:UIButtonTypeCustom];
         [_zanTotalButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"赞未选" ofType:@"png" inDirectory:@""]]  forState:UIControlStateNormal];
         [_zanTotalButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"赞" ofType:@"png" inDirectory:@""]]  forState:UIControlStateSelected];
+        _zanTotalButton.titleLabel.font = [UIFont systemFontOfSize:11];
         
     }
     return _zanTotalButton;
@@ -63,7 +64,8 @@
     if (_comTotalButton == nil) {
         _comTotalButton = [ArticleAssistButton buttonWithType:UIButtonTypeCustom];
         [_comTotalButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"评论数" ofType:@"png" inDirectory:@""]]  forState:UIControlStateNormal];
-//        _comTotalButton.backgroundColor = [UIColor blackColor];
+        _comTotalButton.titleLabel.font = [UIFont systemFontOfSize:11];
+
     }
     return _comTotalButton;
 }
@@ -73,28 +75,28 @@
     WEAK_SELF;
     [self addSubview:self.shareurlButton];
     [_shareurlButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.mas_left).offset(10);
+        make.left.equalTo(weakSelf.mas_left).offset(0.5 * weakSelf.height);
         make.bottom.equalTo(weakSelf.mas_bottom).offset(0);
         make.size.mas_equalTo(CGSizeMake(weakSelf.height, weakSelf.height));
     }];
     [self addSubview:self.collectTotalButton];
     [_collectTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_shareurlButton.mas_right).offset(10);
+        make.left.equalTo(_shareurlButton.mas_right).offset(0.5 * weakSelf.height);
         make.bottom.equalTo(_shareurlButton.mas_bottom);
         make.size.equalTo(_shareurlButton);
     }];
     
     [self addSubview:self.zanTotalButton];
     [_zanTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_collectTotalButton.mas_right).offset(10);
+        make.left.equalTo(_collectTotalButton.mas_right).offset(0.5 * weakSelf.height);
         make.bottom.equalTo(_collectTotalButton.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(2 * weakSelf.height, weakSelf.height));
+        make.size.mas_equalTo(CGSizeMake(3 * weakSelf.height, weakSelf.height));
             }];
     [self addSubview:self.comTotalButton];
     [_comTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_zanTotalButton.mas_right).offset(10);
+        make.left.equalTo(_zanTotalButton.mas_right).offset(0.5 * weakSelf.height);
         make.bottom.equalTo(_zanTotalButton);
-        make.size.mas_equalTo(CGSizeMake(2 * weakSelf.height, weakSelf.height));
+        make.size.mas_equalTo(CGSizeMake(3 * weakSelf.height, weakSelf.height));
     }];
 }
 

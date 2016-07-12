@@ -5,16 +5,21 @@
 //  Created by xionghuanxin on 7/7/16.
 //  Copyright © 2016 xionghuanxin. All rights reserved.
 //
-
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 #import "UIView+SetSize.h"
 #import "UIBarButtonItem+CustomItem.h"
 #import "NSObject+FileWithBundle.h"
+#import "Masonry.h"
 
 #define WEAK_SELF  __weak __typeof(self)weakSelf = self;
 // RGB颜色
 #define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define MainColor [UIColor colorWithRed:17/255.0 green:168/255.0 blue:187/255.0 alpha:1]
+#define MainGray [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]
+
+#define Color(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
 
 // 随机色
 #define RandomColor RGBColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))

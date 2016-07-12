@@ -51,7 +51,7 @@
     //    [self.view addSubview:self.aButton];
     [self.view addSubview:self.scrollView];
     //    [Controllers buttonAtRect:CGRectMake(200, 200, 50, 50) withTitle:@"asd" andTaget:self andAction:@selector(butt)];
-    [((XNavigationController *)self.navigationController).segmentedControl addTarget:self action:@selector(segmentedControlValueChanged) forControlEvents:UIControlEventValueChanged];
+//    [((XNavigationController *)self.navigationController).segmentedControl addTarget:self action:@selector(segmentedControlValueChanged) forControlEvents:UIControlEventValueChanged];
     
 }
 
@@ -232,18 +232,18 @@
     }];
 }
 
--(void)segmentedControlValueChanged
-{
-    switch (((XNavigationController *)self.navigationController).segmentedControl.selectedSegmentIndex) {
-        case 0:
-            [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
-            break;
-        case 1:
-            [self.scrollView setContentOffset:CGPointMake(SCREEN_W, 0) animated:YES];
-            break;
-        default:
-            break;
-    }
-}
+//-(void)segmentedControlValueChanged
+//{
+//    switch (((XNavigationController *)self.navigationController).segmentedControl.selectedSegmentIndex) {
+//        case 0:
+//            [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
+//            break;
+//        case 1:
+//            [self.scrollView setContentOffset:CGPointMake(SCREEN_W, 0) animated:YES];
+//            break;
+//        default:
+//            break;
+//    }
+//}
 
 @end

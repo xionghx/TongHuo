@@ -34,56 +34,11 @@
     }
     return self;
 }
-
--(void)setupLayout
-{
-    [self.contentView addSubview:self.thumbImage];
-    [self.thumbImage  addSubview:self.avatarButton];
-    [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.introLabel];
-    [self.contentView addSubview:self.assistBar];
-    [self.contentView addSubview:self.catenameButton];
-    WEAK_SELF;
-    
-    [weakSelf.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf);
-        make.top.equalTo(weakSelf);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W, 200));
-    }];
-    [weakSelf.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage).offset(20);
-        make.top.equalTo(weakSelf.thumbImage).offset(20);
-        //        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 300);
-        //        make.bottom.equalTo(weakSelf.thumbImage.mas_bottom).offset(-120);
-        //        make.height.mas_equalTo(0);
-                make.size.mas_equalTo(CGSizeMake(80, 40));
-        //        make.size.mas_offset(CGSizeMake(40, 20));
-        //        make.width.mas_equalTo(200);
-    }];
-    [weakSelf.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage);
-        make.top.equalTo(weakSelf.thumbImage.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W, 50));
-    }];
-    [weakSelf.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage);
-        make.top.equalTo(weakSelf.titleLabel.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W,100));
-    }];
-    [weakSelf.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage);
-        make.top.equalTo(weakSelf.introLabel.mas_bottom);
-    }];
-    [weakSelf.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf).offset(-10);
-        make.top.equalTo(weakSelf.introLabel.mas_bottom);
-    }];
-}
 -(void)setupWithDataSource:(NSDictionary *)dataSource
        andComplitionHandel:(void(^)(CGFloat a))complitionHandel
 {
-    [self.contentView addSubview:self.thumbImage];
     [self.thumbImage  addSubview:self.avatarButton];
+    [self.contentView addSubview:self.thumbImage];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.introLabel];
     [self.contentView addSubview:self.assistBar];
@@ -101,75 +56,66 @@
     [self.assistBar.zanTotalButton setTitle:dataSource[@"sZanTotal"] forState:UIControlStateNormal];
     [self.catenameButton setTitle:dataSource[@"sCatename"] forState:UIControlStateNormal];
     _dataSources = dataSource;
-    
-//    CGRect titleFrame = [dataSource[@"sTitle"] boundingRectWithSize:CGSizeMake(SCREEN_W-20 , SCREEN_H) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
-//    
-//    CGRect introFrame = [dataSource[@"sIntro"] boundingRectWithSize:CGSizeMake(SCREEN_W-20, SCREEN_H) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
-
 
     [weakSelf.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf);
         make.top.equalTo(weakSelf);
         make.size.mas_equalTo(CGSizeMake(SCREEN_W, 200));
     }];
+    
     [weakSelf.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage).offset(20);
         make.top.equalTo(weakSelf.thumbImage).offset(20);
-//        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
-//                make.bottom.equalTo(weakSelf.thumbImage.mas_bottom).offset(-120);
-        //        make.height.mas_equalTo(0);
-//                make.size.mas_equalTo(CGSizeMake(80, 40));
-                make.size.mas_offset(CGSizeMake(40, 20));
-        //        make.width.mas_equalTo(200);
+        make.size.mas_offset(CGSizeMake(100, 30));
     }];
+    
     [weakSelf.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage);
-        make.top.equalTo(weakSelf.thumbImage.mas_bottom);
+        make.left.equalTo(weakSelf.thumbImage).offset(30);
+        make.top.equalTo(weakSelf.thumbImage.mas_bottom).offset(20);
         make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
-
-//        make.size.mas_equalTo(CGSizeMake(SCREEN_W, titleFrame.size.height));
     }];
     [weakSelf.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage);
-        make.top.equalTo(weakSelf.titleLabel.mas_bottom);
-        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
+        make.left.equalTo(weakSelf.thumbImage).offset(20);
+        make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(15);
+        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 20);
 
-//        make.size.mas_equalTo(CGSizeMake(SCREEN_W,introFrame.size.height));
     }];
+    
     [weakSelf.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage);
-        make.top.equalTo(weakSelf.introLabel.mas_bottom);
+        make.top.equalTo(weakSelf.introLabel.mas_bottom).offset(25);
+        make.size.mas_equalTo(CGSizeMake(300, 20));
     }];
+    
     [weakSelf.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf).offset(-10);
         make.bottom.equalTo(weakSelf.assistBar.mas_bottom);
+        make.size.mas_equalTo(CGSizeMake(40, 20));
         
     }];
-    [weakSelf.masonryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.assistBar.mas_bottom);
-    }];
+    
+    
+    
     [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(weakSelf.assistBar);
+        make.top.equalTo(weakSelf.thumbImage);
+        make.left.equalTo(weakSelf);
+        make.right.equalTo(weakSelf);
+        make.bottom.equalTo(weakSelf.assistBar).offset(30);
+        NSLog(@"%f",weakSelf.contentView.size.height);
     }];
-
-//    complitionHandel(self.masonryView.frame.origin.y);
-//
-//    self.xHeight =  self.masonryView.frame.origin.y ;
-//    CGRect frame = [content boundingRectWithSize:CGSizeMake(200, 350) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
-
 }
 
--(UIView *)masonryView
-{
-    if (_masonryView == nil) {
-        _masonryView =[[UIView alloc]init];
-    }
-    return _masonryView;
-}
 -(ArticleAssistButton *)avatarButton
 {
     if (_avatarButton == nil) {
         _avatarButton = [ArticleAssistButton buttonWithType:UIButtonTypeCustom];
+        _avatarButton.titleLabel.font = [UIFont systemFontOfSize:11];
+        _avatarButton.tag = 201;
+        _avatarButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        _avatarButton.layer.borderWidth = 1.5;
+        [_avatarButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+
+
     }
     return _avatarButton;
 }
@@ -177,7 +123,14 @@
 {
     if (_assistBar == nil) {
         _assistBar = [[ArticleAssistBar alloc]init];
-        _assistBar.backgroundColor = [UIColor whiteColor];
+        _assistBar.shareurlButton.tag = 202;
+        _assistBar.collectTotalButton.tag = 203;
+        _assistBar.zanTotalButton.tag = 204;
+        _assistBar.comTotalButton.tag = 205;
+        [_assistBar.shareurlButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_assistBar.collectTotalButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_assistBar.zanTotalButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [_assistBar.comTotalButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _assistBar;
 }
@@ -196,6 +149,8 @@
         _titleLabel.numberOfLines = 0;
         _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [UIFont systemFontOfSize:20];
+
     }
     return _titleLabel;
 }
@@ -205,7 +160,9 @@
         _introLabel = [[UILabel alloc]init];
         _introLabel.textColor = [UIColor blackColor];
         _introLabel.numberOfLines = 0;
-        _introLabel.textAlignment = NSTextAlignmentCenter;
+        _introLabel.textAlignment = NSTextAlignmentLeft;
+        _introLabel.font = [UIFont systemFontOfSize:12];
+        _introLabel.textColor = [UIColor grayColor];
     }
     return _introLabel;
 }
@@ -213,7 +170,11 @@
 {
     if (_catenameButton == nil) {
         _catenameButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _catenameButton.backgroundColor = [UIColor brownColor];
+        _catenameButton.backgroundColor = MainColor;
+        _catenameButton.titleLabel.font = [UIFont systemFontOfSize:11];
+        _catenameButton.tag = 206;
+        [_catenameButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+
     }
     return _catenameButton;
 }
@@ -231,6 +192,30 @@
     _dataSources = dataSources;
     NSLog(@"%@",_dataSources);
 }
-
+-(void)buttonAction:(UIButton *)sender
+{
+    
+    NSLog(@"%ld",sender.tag);
+    switch (sender.tag - 200) {
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            
+            break;
+        case 5:
+            
+            break;
+            
+        default:
+            break;
+    }
+}
 
 @end
