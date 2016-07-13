@@ -10,10 +10,12 @@
 #import "NetRequest+Article.h"
 #import "ArticleListTableViewCell.h"
 #import "NetRequest+Prepare_Fro.h"
+#import "ArticleDetailVC.h"
+#import "XAlertViewHelper.h"
 
 #define reUseMark @"cellReuse"
 
-@interface ArticleList ()<UITableViewDataSource>
+@interface ArticleList ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView * articleListTableView;
 @property(nonatomic,strong)NSMutableArray *articleList;
 @end
@@ -35,8 +37,9 @@
     if (_articleListTableView == nil) {
         _articleListTableView = [[UITableView alloc]initWithFrame:self.bounds style:UITableViewStylePlain];
         _articleListTableView.dataSource = self;
-//        _articleListTableView.delegate = self;
+        _articleListTableView.delegate = self;
         _articleListTableView.estimatedRowHeight = 400;
+        _articleListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_articleListTableView registerClass:[ArticleListTableViewCell class] forCellReuseIdentifier:reUseMark];
     }
     return _articleListTableView;
@@ -54,18 +57,44 @@
     }];
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    UIViewController *presentVC = rootVC;
+    
+    while (presentVC.presentedViewController) {
+        presentVC = presentVC.presentedViewController;
+    }
+    
+    [presentVC presentViewController:[ArticleDetailVC new] animated:YES completion:^{
+        
+    }];
+}
+
 
 -(void)loadData
-{
-    [NetRequest getArticleListWithSPage:@"" andSPagesize:@"1" andCompletionBlock:^(id responseObject, NSError *error) {
+{   [NetRequest getArticleListWithCid:@"" andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"2" andCompletionBlock:^(id responseObject, NSError *error) {
+    
+    [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
+    [self.articleListTableView reloadData];
+    [NetRequest getArticleListWithCid:@"" andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"5" andCompletionBlock:^(id responseObject, NSError *error) {
+        [self.articleList removeAllObjects];
         [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
         [self.articleListTableView reloadData];
-        [NetRequest getArticleListWithSPage:@"" andSPagesize:@"20" andCompletionBlock:^(id responseObject, NSError *error) {
-            [self.articleList removeAllObjects];
-            [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
-            [self.articleListTableView reloadData];
-        }];
+
     }];
+
+}];
+    
+//    [NetRequest getArticleListWithSPage:@"" andSPagesize:@"1" andCompletionBlock:^(id responseObject, NSError *error) {
+//        [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
+//        [self.articleListTableView reloadData];
+//        [NetRequest getArticleListWithSPage:@"" andSPagesize:@"20" andCompletionBlock:^(id responseObject, NSError *error) {
+//            [self.articleList removeAllObjects];
+//            [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
+//            [self.articleListTableView reloadData];
+//        }];
+//    }];
 }
 
 

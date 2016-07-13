@@ -6,9 +6,9 @@
 //  Copyright © 2016 xionghuanxin. All rights reserved.
 //
 
-#import "ArticleCateListCell.h"
+#import "SimpleListCell.h"
 #import "Masonry.h"
-@interface ArticleCateListCell ()
+@interface SimpleListCell ()
 @property(nonatomic,strong)UIView * lineView;
 @property(nonatomic,strong)UIView * squreView;
 
@@ -17,16 +17,17 @@
 @property(nonatomic,strong)UILabel *introLabel;
 
 @property(nonatomic,strong)UIButton *linkButton;
+
+
 @end
 
-@implementation ArticleCateListCell
+@implementation SimpleListCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self setupLayout];
-        self.backgroundColor =[UIColor greenColor];
     }
     return self;
 }
@@ -35,8 +36,8 @@
     [self.contentView addSubview:self.lineView];
     [self.contentView addSubview:self.squreView];
     [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.introLabel];
+    [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.linkButton];
     
     
@@ -54,10 +55,30 @@
         make.width.mas_equalTo(6);
         make.height.equalTo(self.squreView.mas_width);
         make.centerX.mas_equalTo(weakSelf.lineView);
+        make.centerY.mas_equalTo(_titleLabel);
+    }];
+    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(weakSelf);
+        make.left.mas_equalTo(_squreView.mas_right).offset(5);
+        make.right.mas_equalTo(weakSelf).offset(-5);
+        
+    }];
+    [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_titleLabel.mas_bottom).offset(5);
+        make.left.mas_equalTo(_squreView.mas_right).offset(5);
+        make.right.mas_equalTo(weakSelf).offset(-5);
     }];
     
-    [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_timeLabel.mas_bottom).offset(5);
+        make.left.mas_equalTo(_lineView.mas_right).offset(5);
+        make.right.mas_equalTo(weakSelf).offset(-10);
+    }];
+    
+    [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_titleLabel);
         
+        make.bottom.mas_equalTo(_introLabel).offset(20);
     }];
 }
 -(UIView *)lineView
@@ -102,6 +123,7 @@
 {
     if (_introLabel == nil) {
         _introLabel = [[UILabel alloc]init];
+        _introLabel.numberOfLines = 0;
         
     }
     return _introLabel;
@@ -117,4 +139,32 @@
     }
     return _linkButton;
 }
+-(void)setupDataWitDataSource:(NSDictionary *)dataSource
+                withIndexPath:(NSIndexPath *)indexPath
+      andShouldShowIntroLabel:(BOOL)showIntroLabel
+{
+    //    NSLog(@"%@",dataSource);
+    //    self.showIntroLabel = indexPath == self.currentSelectedPath && self.currentSelectedPath != self.lastSelectedPath? YES:NO;
+    //    if (_lastSelectedPath == _currentSelectedPath) {
+    //        self.showIntroLabel = !self.showIntroLabel;
+    //    }
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[dataSource[@"sAddtime"] doubleValue]];
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+    NSString * string = [formatter stringFromDate:date];
+    self.timeLabel.text = string;
+    self.titleLabel.text = dataSource[@"sTitle"];
+    self.introLabel.text = showIntroLabel? dataSource[@"sIntro"]:nil;
+}
+
+-(void)haveBeenSelectedMethod:(BOOL)showIntroLabel
+
+{
+    //    self.showIntroLabel = selectedIndexPath ==_lastSelectedPath? !self.showIntroLabel : YES;
+//    self.showIntroLabel = showIntroLabel;
+//    NSLog(@"%d",self.showIntroLabel);
+    
+}
+
+
 @end

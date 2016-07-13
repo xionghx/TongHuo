@@ -37,7 +37,7 @@
 }
 -(void)test
 {
-//    NSLog(@"self:%@   self_p:%p    super:%@   super:%p",self,self,super,super);
+    //    NSLog(@"self:%@   self_p:%p    super:%@   super:%p",self,self,super,super);
 }
 
 
@@ -58,19 +58,19 @@
     
 }
 
-+(void)getCommentListWithId:(NSString *)sId
-                      SPage:(NSString *)sPage
-                  andSPagesize:(NSString *)sPagesize
-            andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock
-{
-    NSString * parameStr = [XStringUtils jsonStringWithParameters:@{@"sId":sId,@"sPage":sPage,@"sPagesize":sPagesize} ];
-    [NetRequest POST:POST_URL  parameters:[self getParametersByMethod:@"article_comment" action:@"getCommentList" params:parameStr ] sucess:^(id responseObject) {
-        completionBlock(responseObject,nil);
-    } failure:^(NSError *error) {
-        completionBlock(nil,error);
-    }];
-    
-}
+//+(void)getCommentListWithId:(NSString *)sId
+//                      SPage:(NSString *)sPage
+//               andSPagesize:(NSString *)sPagesize
+//         andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock
+//{
+//    NSString * parameStr = [XStringUtils jsonStringWithParameters:@{@"sId":sId,@"sPage":sPage,@"sPagesize":sPagesize} ];
+//    [NetRequest POST:POST_URL  parameters:[self getParametersByMethod:@"article_comment" action:@"getCommentList" params:parameStr ] sucess:^(id responseObject) {
+//        completionBlock(responseObject,nil);
+//    } failure:^(NSError *error) {
+//        completionBlock(nil,error);
+//    }];
+//    
+//}
 
 
 +(void)getArticleInfoWithsID:(NSString *)sId
@@ -85,12 +85,15 @@
     }];
     
 }
-+(void)getArticleListWithSPage:(NSString *)sPage
-                  andSPagesize:(NSString *)sPagesize
-            andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock
++(void)getArticleListWithCid:(NSString *)sCid
+                    andTname:(NSString *)sTname
+                  andKeyWord:(NSString *)sKeyWord
+                       SPage:(NSString *)sPage
+                andSPagesize:(NSString *)sPagesize
+          andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock
 {
     
-    NSString * parameStr = [XStringUtils jsonStringWithParameters:@{@"sPage":sPage,@"sPagesize":sPagesize} ];
+    NSString * parameStr = [XStringUtils jsonStringWithParameters:@{@"sCid":sCid,@"sTname":sTname,@"sKeyWord":sKeyWord,@"sPage":sPage,@"sPagesize":sPagesize} ];
     
     [NetRequest POST:POST_URL  parameters:[self getParametersByMethod:@"article" action:@"getArticleList" params:parameStr ] sucess:^(id responseObject) {
         completionBlock(responseObject,nil);
@@ -131,7 +134,7 @@
 //    }
 //    if (![XStringUtils isTextEmpty:action]) {
 //        [adic setValue:action forKey:@"a"];
-//        
+//
 //    }
 //    if (![XStringUtils isTextEmpty:params]) {
 //        [adic setValue:params forKey:@"params"];

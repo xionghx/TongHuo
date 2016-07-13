@@ -98,10 +98,9 @@
     
     [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.thumbImage);
-        make.left.equalTo(weakSelf);
-        make.right.equalTo(weakSelf);
+//        make.left.equalTo(weakSelf);
+//        make.right.equalTo(weakSelf);
         make.bottom.equalTo(weakSelf.assistBar).offset(30);
-        NSLog(@"%f",weakSelf.contentView.size.height);
     }];
 }
 

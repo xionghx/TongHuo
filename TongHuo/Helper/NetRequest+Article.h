@@ -20,17 +20,19 @@
                    andSContent :(NSString *)sContent
              andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock;
 
-+(void)getCommentListWithId:(NSString *)sId
-                      SPage:(NSString *)sPage
-               andSPagesize:(NSString *)sPagesize
-         andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock;
++(void)getArticleListWithCid:(NSString *)sCid
+                    andTname:(NSString *)sTname
+                  andKeyWord:(NSString *)sKeyWord
+                       SPage:(NSString *)sPage
+                andSPagesize:(NSString *)sPagesize
+          andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock;
 
 +(void)getArticleInfoWithsID:(NSString *)sId
           andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock;
 
-+(void)getArticleListWithSPage:(NSString *)sPage
-                  andSPagesize:(NSString *)sPagesize
-            andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock;
+//+(void)getArticleListWithSPage:(NSString *)sPage
+//                  andSPagesize:(NSString *)sPagesize
+//            andCompletionBlock:(void(^)(id responseObject,NSError * error)) completionBlock;
 
 +(void)getArticleTagList:(void(^)(id responseObject,NSError * error)) completionBlock;
 

@@ -11,7 +11,7 @@
 #import "ShadowView.h"
 #import "XNavigationController.h"
 #import "Articlelist.h"
-#import "ArticleCateListView.h"
+#import "SimpleListView.h"
 
 
 
@@ -23,7 +23,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
 @property(nonatomic,strong)ShadowView * shadowView;
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,strong)ArticleList * articlelistView;
-@property(nonatomic,strong)ArticleCateListView *articleCateListView;
+@property(nonatomic,strong)SimpleListView *articleCateListView;
 
 @end
 
@@ -35,10 +35,10 @@ static NSString * reUseMark = @"articleListTableViewCell";
     }
     return self;
 }
--(ArticleCateListView *)articleCateListView
+-(SimpleListView *)articleCateListView
 {
     if (_articleCateListView == nil) {
-        _articleCateListView = [[ArticleCateListView alloc]initWithFrame:CGRectMake(SCREEN_W, 0, SCREEN_W, SCREEN_H - 64)];
+        _articleCateListView = [[SimpleListView alloc]initWithFrame:CGRectMake(SCREEN_W, 0, SCREEN_W, SCREEN_H - 64)];
     }
     return _articleCateListView;
 }

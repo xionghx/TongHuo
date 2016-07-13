@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArticleCateListView : UIView
+@interface SimpleListView : UIView
 
 @end

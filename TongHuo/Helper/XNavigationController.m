@@ -62,51 +62,20 @@
         _titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 44)];
         _titleView.centerX = 0.5* SCREEN_W;
         _titleView.centerY = 42;
-        _titleView.backgroundColor = [UIColor blackColor];
     }
     return  _titleView;
 }
 
-//-(UISegmentedControl *)segmentedControl
-//{
-//    if (_segmentedControl == nil) {
-//        _segmentedControl = [[UISegmentedControl alloc]initWithItems:@[@"专栏精选",@"MAMA头条"]];
-//        _segmentedControl.centerX = 0.5 * SCREEN_W;
-//    }
-//    return _segmentedControl;
-//}
-//-(UIButton *)leftButton
-//{
-//    if (_leftButton == nil) {
-//        _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        _leftButton.frame = CGRectMake(SCREEN_W - 60, 20, 44, 44);
-//        _leftButton.imageEdgeInsets = UIEdgeInsetsMake(8, 13, 18, 13);
-//
-//    }
-//    return _leftButton;
-//}
-//-(UIPageControl *)pageControl
-//{
-//    if (_pageControl == nil) {
-//        _pageControl = [[UIPageControl alloc]init];
-//        _pageControl.frame = CGRectMake(100, 20, 100, 10);
-//        _pageControl.numberOfPages = 2;
-//        
-//    }
-//    return _pageControl;
-//}
-//
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     
     if (self.viewControllers.count<1) {
-//        viewController.hidesBottomBarWhenPushed = YES;
         
         // 定义leftBarButtonItem
         viewController.navigationController.navigationBar.barTintColor = [UIColor blackColor];
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:viewController action:nil image:@"打开更多"imageInset:UIEdgeInsetsMake(35, 10, 35, 60)];
+        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:viewController action:nil image:@"打开更多"imageInset:UIEdgeInsetsMake(40, 10, 35, 65)];
         // 定义rightBarButtonItem
-        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:viewController action:nil image:@"calender_F" imageInset:UIEdgeInsetsMake(45, 105, 45, -5)];
+        viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:viewController action:nil image:@"calender_F" imageInset:UIEdgeInsetsMake(52, 112, 45, -5)];
         [self.view addSubview:self.titleView];
         [self.view bringSubviewToFront:self.titleView];
         [self.titleView addSubview:self.animationLine];
@@ -114,6 +83,9 @@
         [self.titleView addSubview:self.titleViewRightButton];
         self.titleViewLeftButton.selected = true;
         [self.titleViewLeftButton setTitle:@"专栏精选" forState:UIControlStateNormal];
+        self.titleViewLeftButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        self.titleViewRightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+
         [self.titleViewLeftButton setTitleColor:MainColor forState:UIControlStateSelected];
         [self.titleViewLeftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [self.titleViewRightButton setTitle:@"MAMA头条" forState:UIControlStateNormal];
