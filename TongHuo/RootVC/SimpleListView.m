@@ -10,6 +10,8 @@
 #import "SimpleListCell.h"
 #import "Masonry.h"
 #import "NetRequest+Simple.h"
+#import "SimpleCateListView.h"
+
 
 @interface SimpleListView ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 @property(nonatomic,strong)UITableView *simpleListTableView;
@@ -21,7 +23,7 @@
 @property(nonatomic,strong)UILabel *tableHeaderLabelOne;
 @property(nonatomic,strong)UILabel  *tableHeaderLabelTwo;
 @property(nonatomic,strong)UIView * lineView;
-
+@property(nonatomic,strong)SimpleCateListView* simpleCateListView;
 
 @end
 
@@ -47,12 +49,19 @@
             NSLog(@"%@",error);
         }else{
             [self.dataSource addObjectsFromArray: responseObject[@"info"][@"data"]];
-            NSLog(@"%@",self.dataSource);
+//            NSLog(@"%@",self.dataSource);
             [self.simpleListTableView reloadData];
         }
         
     }];
 
+}
+-(SimpleCateListView *)simpleCateListView
+{
+    if (_simpleCateListView == nil) {
+        _simpleCateListView = [[SimpleCateListView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, 60)];
+    }
+    return _simpleCateListView;
 }
 -(UITableView *)simpleListTableView
 {
@@ -64,7 +73,7 @@
         _simpleListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _simpleListTableView.sectionHeaderHeight = 60;
         _simpleListTableView.sectionFooterHeight = 0;
-//        _simpleListTableView.tableHeaderView = self.tableHeaderView;
+        _simpleListTableView.tableHeaderView = self.simpleCateListView;
         [_simpleListTableView registerClass:[SimpleListCell class] forCellReuseIdentifier:reuseMark];
     }
     return _simpleListTableView;

@@ -11,6 +11,8 @@
 #import "NetRequest+Article.h"
 #import "XStringUtils.h"
 #import "ModelVCClassed.h"
+#import "LoginView.h"
+
 @interface LeftSideView ()<UITableViewDataSource>
 @property(nonatomic,strong)NSArray * imageNames;
 @property(nonatomic,strong)UIButton * useInformation;
@@ -64,6 +66,7 @@ static NSString * cellReuse = @"reUseMark";
         _useInformation.layer.borderWidth = 3;
         _useInformation.layer.borderColor = [UIColor whiteColor].CGColor;
         _useInformation.backgroundColor = [UIColor blackColor];
+        [_useInformation addTarget:self action:@selector(useInformationButtonTaped) forControlEvents:UIControlEventTouchUpInside];
     }
     return _useInformation;
 }
@@ -122,6 +125,10 @@ static NSString * cellReuse = @"reUseMark";
             [self.tableView reloadData];
         }
     }];
+}
+-(void)useInformationButtonTaped
+{
+    [LoginView showLoginView];
 }
 
 @end
