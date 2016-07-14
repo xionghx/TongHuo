@@ -1,5 +1,5 @@
 //
-//  ArticleList_CatePage.h
+//  XNavigationBar.h
 //  TongHuo
 //
 //  Created by xionghuaxin on 7/14/16.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ArticleList_CatePage : UIView
--(void)loadDataSourceWithCid:(NSString *)sCid;
+@interface XNavigationBar : UINavigationBar
 
 @end

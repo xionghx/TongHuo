@@ -55,6 +55,10 @@
         make.bottom.mas_equalTo(weakSelf).offset(-15);
         make.right.mas_equalTo(weakSelf).offset(-15);
     }];
+    [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_sThumbImageView);
+        make.bottom.mas_equalTo(_sHitnumLabel);
+    }];
     
     
 }

@@ -136,6 +136,7 @@
 		8A0E05761D378F3C00B31424 /* ArticleList_CatePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05751D378F3C00B31424 /* ArticleList_CatePageCell.m */; };
 		8A0E057A1D37A54400B31424 /* DataSourcePrepare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05791D37A54400B31424 /* DataSourcePrepare.m */; };
 		8A0E05801D37AD5E00B31424 /* ArticleCateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */; };
+		8AE8C3F31D37E68A002F8AE7 /* XNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -317,6 +318,8 @@
 		8A0E05791D37A54400B31424 /* DataSourcePrepare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePrepare.m; sourceTree = "<group>"; };
 		8A0E057E1D37AD5E00B31424 /* ArticleCateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateCollectionViewCell.h; sourceTree = "<group>"; };
 		8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateCollectionViewCell.m; sourceTree = "<group>"; };
+		8AE8C3F11D37E68A002F8AE7 /* XNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationBar.h; sourceTree = "<group>"; };
+		8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationBar.m; sourceTree = "<group>"; };
 		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3C292FA194D94C7DF50C51F /* Pods-TongHuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.release.xcconfig"; sourceTree = "<group>"; };
 		E513A51531A145D28DB2D3CF /* Pods-TongHuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TongHuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TongHuo/Pods-TongHuo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -548,6 +551,8 @@
 				8A0E04991D37890600B31424 /* XAlertViewHelper.m */,
 				8A0E049A1D37890600B31424 /* XTabBar.h */,
 				8A0E049B1D37890600B31424 /* XTabBar.m */,
+				8AE8C3F11D37E68A002F8AE7 /* XNavigationBar.h */,
+				8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */,
 			);
 			path = V;
 			sourceTree = "<group>";
@@ -1019,6 +1024,7 @@
 				8A0E04F81D37890600B31424 /* FoundationVC.m in Sources */,
 				8A0E04FF1D37890600B31424 /* ArticleList.m in Sources */,
 				8A0E051C1D37890600B31424 /* ArticleAssistButton.m in Sources */,
+				8AE8C3F31D37E68A002F8AE7 /* XNavigationBar.m in Sources */,
 				8A0E05191D37890600B31424 /* XStringUtils.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				8A0E050E1D37890600B31424 /* NetRequest+Article.m in Sources */,

@@ -18,7 +18,7 @@
 
 static NSString * reUseMark = @"articleListTableViewCell";
 
-@interface RootVC ()<UIScrollViewDelegate>
+@interface RootVC ()<UIScrollViewDelegate,LeftSideViewDelegate>
 //@property(nonatomic,strong)XNavigationController * mainPage;
 @property(nonatomic,strong)LeftSideView * leftSide;
 @property(nonatomic,strong)ShadowView * shadowView;
@@ -111,6 +111,7 @@ static NSString * reUseMark = @"articleListTableViewCell";
     if (_leftSide == nil) {
         _leftSide  = [[LeftSideView alloc]init];
         _leftSide.x =-0.5 * SCREEN_W;
+        _leftSide.delegate = self;
     }
     return _leftSide;
 }
@@ -128,13 +129,13 @@ static NSString * reUseMark = @"articleListTableViewCell";
         self.leftSide.x = 0;
         self.shadowView.alpha = 0.3;
     } completion:^(BOOL finished) {
-        UITapGestureRecognizer * shadowGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(leftSideHide)];
+        UITapGestureRecognizer * shadowGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(hideLeftSide)];
         [self.shadowView addGestureRecognizer:shadowGesture];
         
     }];
 }
 
--(void)leftSideHide
+-(void)hideLeftSide
 {
     [UIView animateWithDuration:0.2 animations:^{
         self.shadowView.alpha = 0;
@@ -183,7 +184,6 @@ static NSString * reUseMark = @"articleListTableViewCell";
         ((XNavigationController *)(self.navigationController)).titleViewLeftButton.selected = YES;
     }
 }
-
 
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "ArticleCateCollectionViewCell.h"
+#import "DataSourcePrepare.h"
+
 @interface ArticleCateCollectionViewCell()
 
 @end
@@ -62,6 +64,9 @@
 
 -(void)setupDataWithDataSource:(NSDictionary *)dataSource
 {
-    
+    self.sCnameLabel.text = dataSource[@"sCname"];
+    NSString *imageStr =[dataSource[@"sCname"] isEqualToString:[DataSourcePrepare DataSource].selectedItem[@"sCname"]]? @"选中":@"未选";
+    self.sCimgView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@%@",dataSource[@"sCname"],imageStr]  ofType:@"png" inDirectory:@""]];
+
 }
 @end

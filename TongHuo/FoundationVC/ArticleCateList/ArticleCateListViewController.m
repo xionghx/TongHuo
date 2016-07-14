@@ -13,18 +13,23 @@
 
 #define REUSE_CATE @"articleCateCollectionViewCell"
 
-@interface ArticleCateListViewController ()
+@interface ArticleCateListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UIButton *backButton;
 @property(nonatomic,strong)UITextField *searchTextField;
 @property(nonatomic,strong)UICollectionView *articleCateCollectionView;
 @property(nonatomic,strong)ArticleList_CatePage *articileListView;
-
 //@property(nonatomic,strong)
 
 @end
 
 @implementation ArticleCateListViewController
-
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
@@ -41,10 +46,15 @@
     [self.view addSubview:self.searchTextField];
     [self.view addSubview:self.articleCateCollectionView];
     [self.view addSubview:self.articileListView];
+    self.articileListView.backgroundColor = [UIColor redColor];
     [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(weakSelf.view).offset(10);
         make.top.mas_equalTo(weakSelf.view).offset(20);
         make.width.and.height.offset(40);
+    }];
+    
+    [_backButton.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.and.height.mas_equalTo(20);
     }];
     
     [_searchTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +70,7 @@
         make.height.mas_equalTo(80);
     }];
     [_articileListView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_articleCateCollectionView).offset(20);
+        make.top.mas_equalTo(_articleCateCollectionView.mas_bottom);
         make.left.mas_equalTo(weakSelf.view);
         make.width.mas_equalTo(weakSelf.view);
         make.bottom.mas_equalTo(weakSelf.view);
@@ -72,9 +82,14 @@
     if (_backButton == nil) {
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_backButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"黑色返回" ofType:@"png" inDirectory:@""]] forState:UIControlStateNormal];
+        [_backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _backButton;
+}
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 -(UITextField *)searchTextField
 {
@@ -94,9 +109,9 @@
         //配置item的尺寸
         layout.itemSize = CGSizeMake(60, 60);
         //item 之间的最小间距
-        layout.minimumInteritemSpacing = 4;
+//        layout.minimumInteritemSpacing = 4;
         //item 每一行之间的最小间距
-        layout.minimumLineSpacing = 10;
+//        layout.minimumLineSpacing = 10;
         //header
 //        layout.headerReferenceSize = CGSizeMake(320, 60);
 //        //footer
@@ -105,6 +120,10 @@
 
         _articleCateCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_W, 80) collectionViewLayout:layout];
         [_articleCateCollectionView registerClass:[ArticleCateCollectionViewCell class] forCellWithReuseIdentifier:REUSE_CATE];
+        _articleCateCollectionView.delegate = self;
+        _articleCateCollectionView.dataSource = self;
+//        _articleCateCollectionView.contentSize = CGSizeMake(1.2*SCREEN_W, 200);
+        _articleCateCollectionView.backgroundColor = [UIColor whiteColor];
         
     }
     return _articleCateCollectionView;
@@ -113,6 +132,7 @@
 {
     if (_articileListView == nil) {
         _articileListView = [[ArticleList_CatePage alloc]init];
+//        [_articileListView loadDataSourceWithCid:[DataSourcePrepare DataSource].articleCateList[0][@"sCid"]];
     }
     return _articileListView;
 }
@@ -124,13 +144,14 @@
 
 //配置每一个cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ArticleCateCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    ArticleCateCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:REUSE_CATE forIndexPath:indexPath];
     [cell setupDataWithDataSource:[DataSourcePrepare DataSource].articleCateList[indexPath.row]];
     return cell;
 }
 //点击cell
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
+    
 }
 
 

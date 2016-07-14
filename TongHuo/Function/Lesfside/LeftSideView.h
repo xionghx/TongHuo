@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol LeftSideViewDelegate <NSObject>
-
+-(void)hideLeftSide;
 @end
 
 @interface LeftSideView : UIView

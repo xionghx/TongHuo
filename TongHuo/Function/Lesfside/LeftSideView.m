@@ -109,14 +109,13 @@ static NSString * cellReuse = @"reUseMark";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
-    UIViewController *presentVC = rootVC;
-
-    while (presentVC.presentedViewController) {
-        presentVC = presentVC.presentedViewController;
-    }
+    [DataSourcePrepare DataSource].selectedItem = [DataSourcePrepare DataSource].articleCateList[indexPath.row];
     
+    UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    [self.delegate hideLeftSide];
     [(XNavigationController *)rootVC pushViewController:[ArticleCateListViewController new] animated:YES];
+    
+    
  }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

@@ -23,9 +23,17 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self loadDataSourceWithCid:[DataSourcePrepare DataSource].articleCateList[0][@"sCid"]];
+        self.userInteractionEnabled = YES;
+        self.dataSource = @[].mutableCopy;
+        [self loadDataSourceWithCid:[DataSourcePrepare DataSource].selectedItem[@"sCid"]];
+        [self setupUI];
+        
     }
     return self;
+}
+-(void)setupUI
+{
+    [self addSubview:self.articleListTableView];
 }
 
 -(UITableView *)articleListTableView
@@ -34,6 +42,7 @@
         _articleListTableView =[[UITableView alloc]initWithFrame:self.bounds style:UITableViewStylePlain];
         _articleListTableView.delegate =self;
         _articleListTableView.dataSource =self;
+        _articleListTableView.estimatedRowHeight = 200;
         [_articleListTableView registerClass:[ArticleList_CatePageCell class] forCellReuseIdentifier:CELL_REUSE];
     }
     return _articleListTableView;
@@ -41,7 +50,9 @@
 #pragma mark --------------<UITableViewDelegate,UITableViewDataSource>
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    NSLog(@"%ld",self.dataSource.count);
+    return self.dataSource.count;
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -53,8 +64,14 @@
 
 -(void)loadDataSourceWithCid:(NSString *)sCid
 {
-    [NetRequest getArticleListWithCid:sCid andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"" andCompletionBlock:^(id responseObject, NSError *error) {
-        
+    [NetRequest getArticleListWithCid:sCid andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"10" andCompletionBlock:^(id responseObject, NSError *error) {
+        if (error) {
+            NSLog(@"ArticleList_CatePage\ngetArticleListWithCid\n%@",error);
+        }else{
+            [self.dataSource  addObjectsFromArray: responseObject[@"info"][@"data"]];
+            [self.articleListTableView reloadData];
+
+        };
     }];
 }
 

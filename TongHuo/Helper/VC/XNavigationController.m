@@ -24,7 +24,7 @@
     if (self) {
 //        self.navigationBar.backgroundColor = [UIColor blackColor];
         self.navigationBar.barTintColor = [UIColor blackColor];
-//        self.navigationBarHidden = YES;
+        self.hidesBottomBarWhenPushed = YES;
     };
     return self;
 }
@@ -77,8 +77,8 @@
         viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:viewController action:nil image:@"打开更多"imageInset:UIEdgeInsetsMake(40, 10, 35, 65)];
         // 定义rightBarButtonItem
         viewController.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:viewController action:nil image:@"calender_F" imageInset:UIEdgeInsetsMake(52, 112, 45, -5)];
-//        [self.toolbar.maskView addSubview:self.titleView];
-        [[UIApplication sharedApplication].keyWindow addSubview:self.titleView];
+        [self.view addSubview:self.titleView];
+//        [[UIApplication sharedApplication].keyWindow addSubview:self.titleView];
 
 //        [viewController.view bringSubviewToFront:self.titleView];
         [self.titleView addSubview:self.animationLine];
@@ -98,10 +98,32 @@
 
     }else{
 //        viewController.hidesBottomBarWhenPushed = YES;
+//        viewController.navigationController.view.hidden =YES;
+//        self.view.hidden = YES;
+        [self.titleView removeFromSuperview];
+//        viewController.navigationItem = nil;
+//        [viewController setValue:nil forKey:@"navigationItem"];
+        viewController.navigationController.navigationBar.backItem.hidesBackButton = YES;
+//        viewController.navigationItem.leftBarButtonItem =[UIBarButtonItem itemWithTarget:self action:@selector(back) image:@"黑色返回"imageInset:UIEdgeInsetsMake(40, 10, 35, 65)];
+//        viewController.navigationItem.leftBarButtonItem
+        self.navigationBarHidden = YES;
+
     }
     // 调用父类pushViewController，self.viewControllers数组添加对象viewController
+
     [super pushViewController:viewController animated:animated];
-    
+}
+
+-(UIViewController *)popViewControllerAnimated:(BOOL)animated
+{
+    if (self.viewControllers.count==2) {
+        self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:nil image:@"打开更多"imageInset:UIEdgeInsetsMake(40, 10, 35, 65)];
+        // 定义rightBarButtonItem
+        self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:nil image:@"calender_F" imageInset:UIEdgeInsetsMake(52, 112, 45, -5)];
+        self.navigationBarHidden = NO;
+        [self.view addSubview:self.titleView];
+    };
+    return [super popViewControllerAnimated:animated];;
 }
 
 - (void)back

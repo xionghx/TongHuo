@@ -10,6 +10,8 @@
 
 @interface DataSourcePrepare : NSObject
 @property(nonatomic,strong)NSMutableArray * articleCateList;
+@property(nonatomic,strong)NSDictionary *selectedItem;
+
 +(instancetype)DataSource;
 
 @end
