@@ -128,6 +128,8 @@
 		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
 		8A0E01C61D37156C00B31424 /* SimpleCateListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E01C51D37156C00B31424 /* SimpleCateListView.m */; };
 		8A0E01CA1D3720CC00B31424 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E01C91D3720CC00B31424 /* LoginView.m */; };
+		8A0E01CE1D372C0000B31424 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E01CD1D372C0000B31424 /* UserInfo.m */; };
+		8A0E01D11D3738BE00B31424 /* SimpleListTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E01D01D3738BE00B31424 /* SimpleListTableViewHeader.m */; };
 		8A7882EF1D347B4900ECD822 /* LeftSideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7882EC1D347B4900ECD822 /* LeftSideCell.m */; };
 		8A7882F01D347B4900ECD822 /* LeftSideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7882EE1D347B4900ECD822 /* LeftSideView.m */; };
 		8ADF16951D34DB9300CF6C23 /* ArticleList.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ADF16941D34DB9300CF6C23 /* ArticleList.m */; };
@@ -299,6 +301,10 @@
 		8A0E01C51D37156C00B31424 /* SimpleCateListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCateListView.m; sourceTree = "<group>"; };
 		8A0E01C81D3720CC00B31424 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		8A0E01C91D3720CC00B31424 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		8A0E01CC1D372C0000B31424 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		8A0E01CD1D372C0000B31424 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		8A0E01CF1D3738BD00B31424 /* SimpleListTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleListTableViewHeader.h; sourceTree = "<group>"; };
+		8A0E01D01D3738BE00B31424 /* SimpleListTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleListTableViewHeader.m; sourceTree = "<group>"; };
 		8A7882EB1D347B4900ECD822 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideCell.h; path = TongHuo/RootVC/MainPageVC/LeftSideCell.h; sourceTree = SOURCE_ROOT; };
 		8A7882EC1D347B4900ECD822 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftSideCell.m; path = TongHuo/RootVC/MainPageVC/LeftSideCell.m; sourceTree = SOURCE_ROOT; };
 		8A7882ED1D347B4900ECD822 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftSideView.h; path = TongHuo/RootVC/MainPageVC/LeftSideView.h; sourceTree = SOURCE_ROOT; };
@@ -365,6 +371,7 @@
 		037D834C1D2E7B9E0063E17E /* TongHuo */ = {
 			isa = PBXGroup;
 			children = (
+				8A0E01CB1D372B1500B31424 /* UserInfo */,
 				0307A7AD1D2F9E1900DC2B81 /* FoundationVC */,
 				037D83AF1D2E9A8E0063E17E /* images */,
 				037D83A61D2E83A20063E17E /* Function */,
@@ -735,6 +742,8 @@
 				03F273721D332D33003E9C47 /* SimpleListView.m */,
 				03F2736E1D332CE3003E9C47 /* SimpleListCell.h */,
 				03F2736F1D332CE3003E9C47 /* SimpleListCell.m */,
+				8A0E01CF1D3738BD00B31424 /* SimpleListTableViewHeader.h */,
+				8A0E01D01D3738BE00B31424 /* SimpleListTableViewHeader.m */,
 			);
 			path = HeaderLine;
 			sourceTree = "<group>";
@@ -746,6 +755,15 @@
 				8A0E01C91D3720CC00B31424 /* LoginView.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		8A0E01CB1D372B1500B31424 /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8A0E01CC1D372C0000B31424 /* UserInfo.h */,
+				8A0E01CD1D372C0000B31424 /* UserInfo.m */,
+			);
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		8ADF16961D351D8300CF6C23 /* model */ = {
@@ -1010,6 +1028,7 @@
 				037D838B1D2E7D800063E17E /* NetRequest+Article.m in Sources */,
 				0307A7A91D2F7B8000DC2B81 /* ShadowView.m in Sources */,
 				037D839E1D2E7DA10063E17E /* NetRequest.m in Sources */,
+				8A0E01CE1D372C0000B31424 /* UserInfo.m in Sources */,
 				037D83551D2E7B9E0063E17E /* ViewController.m in Sources */,
 				0307A7B91D2FC1BA00DC2B81 /* ModelVCClassed.m in Sources */,
 				037D83971D2E7D800063E17E /* UIBarButtonItem+CustomItem.m in Sources */,
@@ -1023,6 +1042,7 @@
 				8A7882F01D347B4900ECD822 /* LeftSideView.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				037D83901D2E7D800063E17E /* NetRequest+UserDoing.m in Sources */,
+				8A0E01D11D3738BE00B31424 /* SimpleListTableViewHeader.m in Sources */,
 				03F273701D332CE3003E9C47 /* SimpleListCell.m in Sources */,
 				030EF0D11D3233CB0034BDD0 /* ArticleListModle.m in Sources */,
 				037D83961D2E7D800063E17E /* NSObject+FileWithBundle.m in Sources */,

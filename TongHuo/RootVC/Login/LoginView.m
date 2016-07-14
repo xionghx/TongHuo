@@ -18,8 +18,55 @@
     if (self) {
         self.backgroundColor = MainColor;
         self.alpha = 0.1;
+        [self setupUI];
     }
     return self;
+}
+-(void)setupUI
+{
+    UIImageView * backGroundView = [[UIImageView alloc]initWithFrame:SCREEN_BOUNDS];
+    backGroundView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"登录页背景" ofType:@"png" inDirectory:@""]];
+    [self addSubview:backGroundView];
+    
+    
+    UIImageView * logoImageView = [[UIImageView alloc]init];
+    logoImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"登录页MAMA-LOGO" ofType:@"png" inDirectory:@""]];
+    [self addSubview:logoImageView];
+    
+    [backGroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+    }];
+    WEAK_SELF
+    
+    [logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(weakSelf).multipliedBy(0.5);
+        make.height.mas_equalTo(weakSelf).multipliedBy(0.5);
+        make.centerX.mas_equalTo(weakSelf);
+        make.centerY.mas_equalTo(weakSelf);
+    }];
+    
+    UIButton * loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [loginButton setTitle:@"用微信账号登录" forState:UIControlStateNormal];
+    loginButton.backgroundColor = MainColor;
+    [self addSubview:loginButton];
+    [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(weakSelf);
+        make.height.mas_equalTo(40);
+        make.centerX.mas_equalTo(weakSelf);
+        make.centerY.mas_equalTo(weakSelf).offset(200);
+    }];
+    
+    UIButton * cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancleButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"登录页关闭按钮" ofType:@"png" inDirectory:@""]] forState:UIControlStateNormal];
+//    cancleButton.backgroundColor = MainColor;
+    [self addSubview:cancleButton];
+    [cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(40);
+        make.left.mas_equalTo(weakSelf.mas_left).offset(20);
+        make.top.mas_equalTo(weakSelf.mas_top).offset(20);
+    }];
+    
 }
 +(void)showLoginView
 {

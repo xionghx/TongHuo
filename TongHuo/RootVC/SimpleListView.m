@@ -5,12 +5,14 @@
 //  Created by xionghuanxin on 7/11/16.
 //  Copyright © 2016 xionghuanxin. All rights reserved.
 //
-#define reuseMark @"cellReuse"
+#define CELL_REUSE @"cell_Reuse"
+#define HEADER_REUSE @"header_reuse"
 #import "SimpleListView.h"
 #import "SimpleListCell.h"
 #import "Masonry.h"
 #import "NetRequest+Simple.h"
 #import "SimpleCateListView.h"
+#import "SimpleListTableViewHeader.h"
 
 
 @interface SimpleListView ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
@@ -49,7 +51,6 @@
             NSLog(@"%@",error);
         }else{
             [self.dataSource addObjectsFromArray: responseObject[@"info"][@"data"]];
-//            NSLog(@"%@",self.dataSource);
             [self.simpleListTableView reloadData];
         }
         
@@ -74,7 +75,8 @@
         _simpleListTableView.sectionHeaderHeight = 60;
         _simpleListTableView.sectionFooterHeight = 0;
         _simpleListTableView.tableHeaderView = self.simpleCateListView;
-        [_simpleListTableView registerClass:[SimpleListCell class] forCellReuseIdentifier:reuseMark];
+        [_simpleListTableView registerClass:[SimpleListCell class] forCellReuseIdentifier:CELL_REUSE];
+        [_simpleListTableView registerClass:[SimpleListTableViewHeader class] forHeaderFooterViewReuseIdentifier:HEADER_REUSE];
     }
     return _simpleListTableView;
 }
@@ -147,14 +149,34 @@
 {
     return self.dataSource.count;
 }
-- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    self.tableHeaderLabelOne.text = [NSString stringWithFormat:@"%@\n%@", self.dataSource[section][@"sMonth "],self.dataSource[section][@"sData"]];
-    self.tableHeaderLabelTwo.text = self.dataSource[section][@"sDate"];
+//- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+//{
+//    self.tableHeaderLabelOne.text = [NSString stringWithFormat:@"%@\n%@", self.dataSource[section][@"sMonth "],self.dataSource[section][@"sData"]];
+//    self.tableHeaderLabelTwo.text = self.dataSource[section][@"sDate"];
+//    
+//    self.tableHeaderLabelOne.backgroundColor = [UIColor blackColor];
+//    return self.tableHeaderView;
+//}
+
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    [_simpleListTableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
+    UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
+    ((SimpleListTableViewHeader *)view).tableHeaderLabelOne.text = [NSString stringWithFormat:@"%@\n%@", self.dataSource[section][@"sMonth "],self.dataSource[section][@"sData"]];
+    ((SimpleListTableViewHeader *)view).tableHeaderLabelTwo.text = self.dataSource[section][@"sDate"];
     
-    self.tableHeaderLabelOne.backgroundColor = [UIColor blackColor];
-    return self.tableHeaderView;
+    return view;
 }
+
+//- (nullable UITableViewHeaderFooterView *)headerViewForSection:(NSInteger)section {
+//    [_simpleListTableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
+//    UITableViewHeaderFooterView *view = [self.simpleListTableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
+//    ((SimpleListTableViewHeader *)view).tableHeaderLabelOne.text = [NSString stringWithFormat:@"%@\n%@", self.dataSource[section][@"sMonth "],self.dataSource[section][@"sData"]];
+//    ((SimpleListTableViewHeader *)view).tableHeaderLabelTwo.text = self.dataSource[section][@"sDate"];
+//
+//    return view;
+//}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.currentSelectedPath = indexPath;
@@ -187,7 +209,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SimpleListCell * cell = [tableView dequeueReusableCellWithIdentifier:reuseMark forIndexPath:indexPath];
+    SimpleListCell * cell = [tableView dequeueReusableCellWithIdentifier:CELL_REUSE forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell setupDataWitDataSource:self.dataSource[indexPath.section][@"sList"][indexPath.row]withIndexPath:indexPath andShouldShowIntroLabel:[self shoudShowIntroLabelAtIndexPath:indexPath]];
     return cell;
