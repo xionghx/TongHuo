@@ -7,6 +7,7 @@
 //
 
 #import "ArticleList.h"
+#import "XNavigationController.h"
 #import "NetRequest+Article.h"
 #import "ArticleListTableViewCell.h"
 //#import "NetRequest+Prepare_Fro.h"
@@ -59,16 +60,9 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
-    UIViewController *presentVC = rootVC;
-    
-    while (presentVC.presentedViewController) {
-        presentVC = presentVC.presentedViewController;
-    }
-    
-    [presentVC presentViewController:[ArticleDetailVC new] animated:YES completion:^{
-        
-    }];
+    [(XNavigationController *)rootVC pushViewController:[[ArticleDetailVC alloc]initWitDataSource:self.articleList[indexPath.row]] animated:YES];
 }
 
 
@@ -78,7 +72,7 @@
     [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
     [self.articleListTableView reloadData];
     [NetRequest getArticleListWithCid:@"" andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"5" andCompletionBlock:^(id responseObject, NSError *error) {
-        [self.articleList removeAllObjects];
+//        [self.articleList removeAllObjects];
         [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
         [self.articleListTableView reloadData];
 
@@ -86,15 +80,6 @@
 
 }];
     
-//    [NetRequest getArticleListWithSPage:@"" andSPagesize:@"1" andCompletionBlock:^(id responseObject, NSError *error) {
-//        [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
-//        [self.articleListTableView reloadData];
-//        [NetRequest getArticleListWithSPage:@"" andSPagesize:@"20" andCompletionBlock:^(id responseObject, NSError *error) {
-//            [self.articleList removeAllObjects];
-//            [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
-//            [self.articleListTableView reloadData];
-//        }];
-//    }];
 }
 
 

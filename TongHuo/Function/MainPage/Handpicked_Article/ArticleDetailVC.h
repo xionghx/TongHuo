@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ArticleDetailVC : UIViewController
+- (instancetype)initWitDataSource:(NSDictionary *)dataSource;
 
 @end

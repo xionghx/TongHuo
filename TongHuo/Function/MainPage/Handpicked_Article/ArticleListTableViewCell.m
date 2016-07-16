@@ -37,13 +37,17 @@
 -(void)setupWithDataSource:(NSDictionary *)dataSource
        andComplitionHandel:(void(^)(CGFloat a))complitionHandel
 {
+
     [self.thumbImage  addSubview:self.avatarButton];
     [self.contentView addSubview:self.thumbImage];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.introLabel];
     [self.contentView addSubview:self.assistBar];
+//    self.assistBar.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:self.catenameButton];
     [self.contentView addSubview:self.masonryView];
+//    [self.assistBar setLayout];
+
     WEAK_SELF;
     
     
@@ -74,6 +78,7 @@
         make.top.equalTo(weakSelf.thumbImage.mas_bottom).offset(20);
         make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
     }];
+    
     [weakSelf.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.thumbImage).offset(20);
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(15);
@@ -82,11 +87,13 @@
     }];
     
     [weakSelf.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage);
+        make.left.equalTo(weakSelf.thumbImage.mas_left);
         make.top.equalTo(weakSelf.introLabel.mas_bottom).offset(25);
-        make.size.mas_equalTo(CGSizeMake(300, 20));
+        make.width.offset(200);
+        make.height.offset(40);
+
     }];
-    
+
     [weakSelf.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf).offset(-10);
         make.bottom.equalTo(weakSelf.assistBar.mas_bottom);
@@ -98,10 +105,12 @@
     
     [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.thumbImage);
-//        make.left.equalTo(weakSelf);
-//        make.right.equalTo(weakSelf);
+        make.left.equalTo(weakSelf);
+        make.right.equalTo(weakSelf);
         make.bottom.equalTo(weakSelf.assistBar).offset(30);
     }];
+    MASAttachKeys(self.avatarButton, self.assistBar,self.avatarButton,self.thumbImage,self.titleLabel,self.introLabel);
+
 }
 
 -(ArticleAssistButton *)avatarButton
@@ -110,8 +119,8 @@
         _avatarButton = [ArticleAssistButton buttonWithType:UIButtonTypeCustom];
         _avatarButton.titleLabel.font = [UIFont systemFontOfSize:11];
         _avatarButton.tag = 201;
-        _avatarButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        _avatarButton.layer.borderWidth = 1.5;
+        _avatarButton.imageView.layer.borderColor = [UIColor whiteColor].CGColor;
+        _avatarButton.imageView.layer.borderWidth = 1.5;
         [_avatarButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
 
 

@@ -7,6 +7,7 @@
 //
 
 #import "ArticleList_CatePageCell.h"
+#import "UIImageView+WebCache.h"
 @interface ArticleList_CatePageCell ()
 
 @end
@@ -33,20 +34,20 @@
     [self.contentView addSubview:self.sHitnumLabel];
     
     [_sThumbImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(weakSelf).offset(15);
         make.top.mas_equalTo(weakSelf).offset(15);
-        make.bottom.mas_equalTo(weakSelf).offset(-15);
-        make.width.mas_equalTo(weakSelf.height).multipliedBy(4/3);
+        make.left.mas_equalTo(weakSelf).offset(15);
+        make.height.offset(100);
+        make.width.offset(100*4/3);
     }];
     
     [_sCatenameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_sThumbImageView).offset(15);
-        make.top.mas_equalTo(_sThumbImageView).offset(15);
+        make.left.mas_equalTo(_sThumbImageView.mas_right).offset(15);
+        make.top.mas_equalTo(_sThumbImageView);
         
     }];
     
     [_sTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_sThumbImageView).offset(15);
+        make.left.mas_equalTo(_sThumbImageView.mas_right).offset(15);
         make.top.mas_equalTo(_sCatenameLabel.mas_bottom).offset(15);
         make.right.mas_equalTo(weakSelf).offset(-15);
     }];
@@ -56,8 +57,10 @@
         make.right.mas_equalTo(weakSelf).offset(-15);
     }];
     [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_sThumbImageView);
-        make.bottom.mas_equalTo(_sHitnumLabel);
+        make.top.mas_equalTo(_sThumbImageView.mas_top).offset(-15);
+        make.width.mas_equalTo(SCREEN_W);
+        make.centerX.mas_equalTo(weakSelf);
+        make.bottom.mas_equalTo(_sThumbImageView.mas_bottom).offset(15);
     }];
     
     
@@ -102,7 +105,11 @@
 
 -(void)setupDataWitDataSource:(NSDictionary *)dataSource
 {
-    
+    [self.sThumbImageView sd_setImageWithURL:[NSURL URLWithString:dataSource[@"sThumb"]]];
+    self.sCatenameLabel.text = dataSource[@"sUsername"];
+    self.sTitleLabel.text = dataSource[@"sTitle"];
+    self.sHitnumLabel.text = [NSString stringWithFormat:@"%@浏览",dataSource[@"sHitnum"]];
+
 }
 
 

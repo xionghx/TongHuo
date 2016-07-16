@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ArticleList_CatePage : UIView
--(void)loadDataSourceWithCid:(NSString *)sCid;
+-(void)loadDataSourceWithCid:(NSString *)sCid
+            completionHandle:(void(^)())completionHadle;
 
 @end

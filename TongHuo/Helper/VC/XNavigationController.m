@@ -24,7 +24,9 @@
     if (self) {
 //        self.navigationBar.backgroundColor = [UIColor blackColor];
         self.navigationBar.barTintColor = [UIColor blackColor];
-        self.hidesBottomBarWhenPushed = YES;
+//        self.hidesBottomBarWhenPushed = YES;
+//        self.navigationItem.backBarButtonItem.style = UIBarButtonSystemItemDone;
+//        self.navigationBar.barTintColor = [UIColor blackColor];
     };
     return self;
 }
