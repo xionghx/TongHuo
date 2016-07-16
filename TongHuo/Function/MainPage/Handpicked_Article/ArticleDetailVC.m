@@ -39,87 +39,66 @@
     self.authorLabel.text =self.dataSource[@"sUserinfo"][@"sUsername"];
     self.hitnumLabel.text = self.dataSource[@"sUserinfo"][@"sHitTotal"];
     self.articleTotalLabel.text = self.dataSource[@"sUserinfo"][@"sArticleTotal"];
-//    self.footerViewBar.shareurlButton
+    //    self.footerViewBar.shareurlButton
     [self.footerViewBar.comTotalButton setTitle:self.dataSource[@"sComTotal"] forState:UIControlStateNormal];
     [self.footerViewBar.zanTotalButton setTitle:self.dataSource[@"sZanTotal"] forState:UIControlStateNormal];
 }
 #pragma mark -------getter
--(void)setupUI
+
+
+-(void)updateViewConstraints
 {
-    WEAK_SELF
-    [self.view addSubview:self.articleWebView];
     [_articleWebView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.view);
-        make.top.equalTo(weakSelf.view);
-        make.width.equalTo(weakSelf.view);
-        make.height.equalTo(weakSelf.view);
+        //        make.left.equalTo(self.view);
+        //        make.top.equalTo(self.view);
+        //        make.width.equalTo(self.view);
+        //        make.height.equalTo(self.view);
+        make.edges.equalTo(self.view);
     }];
     
-    [self.view addSubview:self.footerView];
     [_footerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(weakSelf.view);
-        make.left.equalTo(weakSelf.view);
-        make.width.equalTo(weakSelf.view);
+        make.bottom.equalTo(self.view);
+        make.left.equalTo(self.view);
+        make.width.equalTo(self.view);
         make.height.offset(60);
     }];
     
-    [self.footerView addSubview:self.footerViewBackButton];
-//
-//    [_footerViewBackButton mas_updateConstraints:^(MASConstraintMaker *make) {
-//                make.left.mas_equalTo(_footerViewBackButton).offset(10);
-//                make.top.mas_equalTo(_footerViewBackButton).offset(10);
-//                make.width.and.height.offset(50);
-//
-//    }];
     [_footerViewBackButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(_footerView).offset(10);
-        make.top.mas_equalTo(_footerView).offset(10);
-        make.width.and.height.offset(50);
+        make.left.mas_equalTo(self.footerView).offset(10);
+        make.centerY.mas_equalTo(self.footerView);
+        make.width.and.height.offset(40);
     }];
-    
-    
-    
-    [self.footerView addSubview:self.footerViewBar];
-//    [_footerViewBar mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.right.mas_equalTo(_footerView);
-//        make.bottom.mas_equalTo(_footerView);
-//
-//    }];
+    self.footerViewBar.backgroundColor = [UIColor redColor];
     [_footerViewBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.mas_equalTo(_footerView);
-        make.bottom.mas_equalTo(_footerView);
-        make.width.offset(200);
-        make.height.offset(40);
+        make.right.mas_equalTo(self.footerView).offset(-10);
+        make.bottom.mas_equalTo(_footerView).offset(-10);
+        make.height.mas_equalTo(20);
+        //        make.size.mas_equalTo(CGSizeMake(180, 20));
     }];
-
     
-    
-    
-    [self.view addSubview:self.headerViewButton];
     [_headerViewButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(weakSelf.view);
-        make.top.mas_equalTo(weakSelf.view);
-        make.width.mas_equalTo(weakSelf.view);
+        make.left.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view);
+        make.width.mas_equalTo(self.view);
         make.height.offset(100);
-        
     }];
-    [self.headerViewButton addSubview:self.avatarImageView];
+    
     [_avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_headerViewButton).offset(20);
         make.top.mas_equalTo(_headerViewButton).offset(20);
         make.width.and.height.offset(40);
     }];
-    [self.headerViewButton addSubview:self.authorLabel];
+    
     [_authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_avatarImageView.mas_right).offset(10);
         make.top.mas_equalTo(_avatarImageView.mas_top);
     }];
-    [self.headerViewButton addSubview:self.hitnumLabel];
+    
     [_hitnumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_authorLabel.mas_bottom).offset(5);
         make.left.mas_equalTo(_authorLabel);
     }];
-    [self.headerViewButton addSubview:self.articleTotalLabel];
+    
     [_articleTotalLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(_headerViewButton).offset(-5);
         make.bottom.mas_equalTo(_headerViewButton).offset(-5);
@@ -127,6 +106,19 @@
         make.height.offset(40);
     }];
     
+    [super updateViewConstraints];
+}
+-(void)setupUI
+{
+    [self.view addSubview:self.articleWebView];
+    [self.view addSubview:self.footerView];
+    [self.view addSubview:self.headerViewButton];
+    [self.footerView addSubview:self.footerViewBackButton];
+    [self.footerView addSubview:self.footerViewBar];
+    [self.headerViewButton addSubview:self.avatarImageView];
+    [self.headerViewButton addSubview:self.authorLabel];
+    [self.headerViewButton addSubview:self.hitnumLabel];
+    [self.headerViewButton addSubview:self.articleTotalLabel];
 }
 
 -(UILabel *)articleTotalLabel
@@ -173,7 +165,8 @@
 {
     if (_footerViewBackButton == nil) {
         _footerViewBackButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_footerViewBackButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"黑色返回" ofType:@"" inDirectory:@""]] forState:UIControlStateNormal];
+        [_footerViewBackButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"白色返回" ofType:@"png" inDirectory:@""]] forState:UIControlStateNormal];
+        [_footerViewBackButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     }
     return _footerViewBackButton;
 }
@@ -191,7 +184,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    self.view.backgroundColor = MainColor;
+    
     
 }
 -(UIView *)footerView
@@ -206,7 +199,7 @@
 {
     if (_headerViewButton == nil) {
         _headerViewButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        _headerViewButton.frame = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_H-64, SCREEN_W, 64)];
+        //        _headerViewButton.frame = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_H-64, SCREEN_W, 64)];
         _headerViewButton.backgroundColor = MainColor;
         
     }
@@ -224,17 +217,13 @@
 -(void)loadDataSourceWithId:(NSString *)sId
 {
     [NetRequest getArticleInfoWithsID:sId andCompletionBlock:^(id responseObject, NSError *error) {
-//        NSLog(@"%@",[XStringUtils jsonStringWithParameters: responseObject]);
-        
-        
-        
         if (error) {
             NSLog(@"ArticleDetailVC\nloadDataSourceWithId:\n%@",error);
         }else{
             self.dataSource = (NSDictionary*)(responseObject[@"info"][@"data"]);
             [self.articleWebView loadHTMLString:responseObject[@"info"][@"data"][@"sHtml"] baseURL:nil];
             [self setupValue];
-         }
+        }
     }];
 }
 
@@ -244,20 +233,15 @@
     if (currentPosition.y - self.lastPosition.y >10) {
         [self hideHeaderAndFooter:^(CGPoint location) {
             
-            
         }];
         self.lastPosition = currentPosition;
-
     }
     
     if (currentPosition.y - self.lastPosition.y <-10) {
         [self showHeaderAndFooter:^(CGPoint location) {
-          
-            
         }];
         self.lastPosition = currentPosition;
     }
-    
 }
 
 -(void)showHeaderAndFooter:(void(^)(CGPoint location)) block
@@ -271,7 +255,7 @@
 {
     self.headerViewButton.alpha = 0;
     self.footerView.alpha = 0;
-
+    
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -281,11 +265,16 @@
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    
+    NSLog(@"didstart");
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    
+    NSLog(@"stoped");
+}
+
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

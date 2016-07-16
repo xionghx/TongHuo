@@ -27,22 +27,21 @@
 
 -(void)setupUI
 {
-    WEAK_SELF
     [self.contentView addSubview:self.sCimgView];
     [self.contentView addSubview:self.sCnameLabel];
     
     [_sCimgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(weakSelf.mas_height).multipliedBy(0.5);
-        make.height.equalTo(weakSelf.mas_height).multipliedBy(0.5);
-        make.centerX.equalTo(weakSelf);
-        make.top.equalTo(weakSelf).offset(5);
+        make.width.equalTo(self.mas_height).multipliedBy(0.5);
+        make.height.equalTo(self.mas_height).multipliedBy(0.5);
+        make.centerX.equalTo(self);
+        make.top.equalTo(self).offset(5);
         
     }];
     
     [_sCnameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_sCimgView.mas_bottom);
-        make.centerX.equalTo(weakSelf);
-        make.height.equalTo(weakSelf.mas_height).multipliedBy(0.2);
+        make.centerX.equalTo(self);
+        make.height.equalTo(self.mas_height).multipliedBy(0.2);
     }];
 }
 

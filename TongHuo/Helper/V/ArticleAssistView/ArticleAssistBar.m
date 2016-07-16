@@ -21,14 +21,21 @@
 {
     self = [super init];
     if (self) {
-//        self.bounds = CGRectMake(0, 0, 200, 20);
-//        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-////            make.size.mas_equalTo(CGSizeMake(300, 60));
-//        }];
-//        self.backgroundColor = [UIColor greenColor];
-//        [self setLayout];
+        //        self.bounds = CGRectMake(0, 0, 200, 20);
+        //        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        ////            make.size.mas_equalTo(CGSizeMake(300, 60));
+        //        }];
+        //        self.backgroundColor = [UIColor greenColor];
+//        [self setupUI];
     }
     return self;
+}
+
+
+-(void)layoutSubviews
+{
+    [self setupUI];
+//    [super layoutSubviews];
 }
 -(UIButton *)shareurlButton
 {
@@ -65,39 +72,50 @@
         _comTotalButton = [ArticleAssistButton buttonWithType:UIButtonTypeCustom];
         [_comTotalButton setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"评论数" ofType:@"png" inDirectory:@""]]  forState:UIControlStateNormal];
         _comTotalButton.titleLabel.font = [UIFont systemFontOfSize:11];
-
+        
     }
     return _comTotalButton;
 }
 
--(void)setLayout
+-(void)setupUI
 {
-    WEAK_SELF;
-    [self addSubview:self.shareurlButton];
-    [_shareurlButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf).offset(0.5 * weakSelf.height);
-        make.bottom.equalTo(weakSelf);
-        make.size.mas_equalTo(CGSizeMake(weakSelf.height, weakSelf.height));
-    }];
-    [self addSubview:self.collectTotalButton];
-    [_collectTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_shareurlButton.mas_right).offset(0.5 * weakSelf.height);
-        make.bottom.equalTo(_shareurlButton);
-        make.size.equalTo(_shareurlButton);
-    }];
     
+
+}
+
+-(void)updateConstraints
+{
+
+    [self addSubview:self.shareurlButton];
+    [self addSubview:self.collectTotalButton];
     [self addSubview:self.zanTotalButton];
-    [_zanTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_collectTotalButton.mas_right).offset(0.5 * weakSelf.height);
-        make.bottom.equalTo(_collectTotalButton);
-        make.size.mas_equalTo(CGSizeMake(3 * weakSelf.height, weakSelf.height));
-            }];
     [self addSubview:self.comTotalButton];
-    [_comTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_zanTotalButton.mas_right).offset(0.5 * weakSelf.height);
-        make.bottom.equalTo(_zanTotalButton);
-        make.size.mas_equalTo(CGSizeMake(3 * weakSelf.height, weakSelf.height));
-    }];
+
+[_shareurlButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(self).offset(0.5 * self.height);
+    make.bottom.equalTo(self);
+    make.width.equalTo(self.mas_height);
+    make.height.equalTo(self);
+}];
+[_collectTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(_shareurlButton.mas_right).offset(0.5 * self.height);
+    make.bottom.equalTo(_shareurlButton);
+    make.size.equalTo(_shareurlButton);
+}];
+
+[_zanTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(self.collectTotalButton.mas_right).offset(0.5 * self.height);
+    make.bottom.equalTo(self.collectTotalButton);
+    make.width.equalTo(self.shareurlButton).multipliedBy(3);
+    make.height.equalTo(self.shareurlButton);
+}];
+[_comTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(_zanTotalButton.mas_right).offset(0.5 * self.height);
+    make.bottom.equalTo(_zanTotalButton);
+    make.size.mas_equalTo(self.zanTotalButton);
+}];
+
+        [super updateConstraints];
 }
 
 @end

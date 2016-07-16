@@ -27,15 +27,15 @@
 
 -(void)setupUI
 {
-    WEAK_SELF
+    
     [self.contentView addSubview:self.sThumbImageView];
     [self.contentView addSubview:self.sCatenameLabel];
     [self.contentView addSubview:self.sTitleLabel];
     [self.contentView addSubview:self.sHitnumLabel];
     
     [_sThumbImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(weakSelf).offset(15);
-        make.left.mas_equalTo(weakSelf).offset(15);
+        make.top.mas_equalTo(self).offset(15);
+        make.left.mas_equalTo(self).offset(15);
         make.height.offset(100);
         make.width.offset(100*4/3);
     }];
@@ -49,17 +49,17 @@
     [_sTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_sThumbImageView.mas_right).offset(15);
         make.top.mas_equalTo(_sCatenameLabel.mas_bottom).offset(15);
-        make.right.mas_equalTo(weakSelf).offset(-15);
+        make.right.mas_equalTo(self).offset(-15);
     }];
     
     [_sHitnumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(weakSelf).offset(-15);
-        make.right.mas_equalTo(weakSelf).offset(-15);
+        make.bottom.mas_equalTo(self).offset(-15);
+        make.right.mas_equalTo(self).offset(-15);
     }];
-    [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_sThumbImageView.mas_top).offset(-15);
         make.width.mas_equalTo(SCREEN_W);
-        make.centerX.mas_equalTo(weakSelf);
+        make.centerX.mas_equalTo(self);
         make.bottom.mas_equalTo(_sThumbImageView.mas_bottom).offset(15);
     }];
     

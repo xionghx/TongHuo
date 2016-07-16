@@ -35,10 +35,9 @@
 }
 -(void)setupUI
 {
-    WEAK_SELF
     [self addSubview:self.articleListTableView];
     [_articleListTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.width.left.width.bottom.width.right.equalTo(weakSelf);
+        make.top.width.left.width.bottom.width.right.equalTo(self);
     }];
     
 }

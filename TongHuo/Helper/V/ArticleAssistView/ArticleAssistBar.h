@@ -15,6 +15,6 @@
 @property(nonatomic,strong)ArticleAssistButton *zanTotalButton;
 @property(nonatomic,strong)ArticleAssistButton *comTotalButton;
 
--(void)setLayout;
+//-(void)setLayout;
 
 @end

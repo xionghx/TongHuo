@@ -30,22 +30,21 @@
 
 -(void)setupUI
 {
-    WEAK_SELF
     [self addSubview:self.lineView];
     [self addSubview:self.tableHeaderLabelOne];
     [self addSubview:self.tableHeaderLabelTwo];
     
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(1);
-        make.height.equalTo(weakSelf);
-        make.left.mas_equalTo(weakSelf).offset(20);
-        make.top.mas_equalTo(weakSelf).offset(0);
+        make.height.equalTo(self);
+        make.left.mas_equalTo(self).offset(20);
+        make.top.mas_equalTo(self).offset(0);
     }];
 
     [_tableHeaderLabelOne mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.and.height.mas_equalTo(weakSelf.mas_height).multipliedBy(0.8);
-        make.centerX.mas_equalTo(weakSelf.mas_left).offset(20);
-        make.centerY.mas_equalTo(weakSelf);
+        make.width.and.height.mas_equalTo(self.mas_height).multipliedBy(0.8);
+        make.centerX.mas_equalTo(self.mas_left).offset(20);
+        make.centerY.mas_equalTo(self);
     }];
     
     [_tableHeaderLabelTwo mas_makeConstraints:^(MASConstraintMaker *make) {

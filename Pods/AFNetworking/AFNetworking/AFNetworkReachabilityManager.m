@@ -206,9 +206,8 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
         return;
     }
 
-    __weak __typeof(self)weakSelf = self;
     AFNetworkReachabilityStatusBlock callback = ^(AFNetworkReachabilityStatus status) {
-        __strong __typeof(weakSelf)strongSelf = weakSelf;
+        __strong __typeof(self)strongSelf = self;
 
         strongSelf.networkReachabilityStatus = status;
         if (strongSelf.networkReachabilityStatusBlock) {

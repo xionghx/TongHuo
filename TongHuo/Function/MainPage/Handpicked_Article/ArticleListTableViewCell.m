@@ -19,7 +19,7 @@
 @implementation ArticleListTableViewCell
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
-    //如果有系统关键字不要慌，两步搞定。手动的映射key值不同的值。
+    //手动的映射key值不同的值。
     //    if ([key isEqualToString:@"id"]) {
     //        self.ID = value;
     //    }
@@ -30,9 +30,72 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        [self setupLayout];
+        [self layoutSubviews];
     }
     return self;
+}
+
+
+-(void)layoutSubviews
+{
+    [self.thumbImage  addSubview:self.avatarButton];
+    [self.contentView addSubview:self.thumbImage];
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.introLabel];
+    [self.contentView addSubview:self.assistBar];
+    //    self.assistBar.backgroundColor = [UIColor redColor];
+    [self.contentView addSubview:self.catenameButton];
+    [self.contentView addSubview:self.masonryView];
+    //    [self.assistBar setLayout];
+    [self.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self);
+        make.top.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(SCREEN_W, 200));
+    }];
+    
+    [self.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage).offset(20);
+        make.top.equalTo(self.thumbImage).offset(20);
+        make.size.mas_offset(CGSizeMake(100, 30));
+    }];
+    
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage).offset(30);
+        make.top.equalTo(self.thumbImage.mas_bottom).offset(20);
+        make.right.equalTo(self.thumbImage.mas_right).offset( - 30);
+    }];
+    
+    [self.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage).offset(20);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(15);
+        make.right.equalTo(self.thumbImage.mas_right).offset( - 20);
+        
+    }];
+    
+    [self.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage.mas_left);
+        make.top.equalTo(self.introLabel.mas_bottom).offset(25);
+        make.width.equalTo(@100);
+        make.height.equalTo(@20);
+        
+    }];
+    
+    [self.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-10);
+        make.bottom.equalTo(self.assistBar.mas_bottom);
+        make.size.mas_equalTo(CGSizeMake(40, 20));
+        
+    }];
+    
+    
+    
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.thumbImage);
+        make.left.equalTo(self);
+        make.right.equalTo(self);
+        make.bottom.equalTo(self.assistBar).offset(30);
+    }];
+
 }
 -(void)setupWithDataSource:(NSDictionary *)dataSource
        andComplitionHandel:(void(^)(CGFloat a))complitionHandel
@@ -43,13 +106,61 @@
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.introLabel];
     [self.contentView addSubview:self.assistBar];
-//    self.assistBar.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:self.catenameButton];
     [self.contentView addSubview:self.masonryView];
-//    [self.assistBar setLayout];
 
-    WEAK_SELF;
     
+    
+
+    [self.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self);
+        make.top.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(SCREEN_W, 200));
+    }];
+    
+    [self.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage).offset(20);
+        make.top.equalTo(self.thumbImage).offset(20);
+        make.size.mas_offset(CGSizeMake(100, 30));
+    }];
+    
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage).offset(30);
+        make.top.equalTo(self.thumbImage.mas_bottom).offset(20);
+        make.right.equalTo(self.thumbImage.mas_right).offset( - 30);
+    }];
+    
+    [self.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage).offset(20);
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(15);
+        make.right.equalTo(self.thumbImage.mas_right).offset( - 20);
+
+    }];
+    
+    [self.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.thumbImage.mas_left);
+        make.top.equalTo(self.introLabel.mas_bottom).offset(25);
+        make.width.offset(200);
+        make.height.offset(40);
+
+    }];
+
+    [self.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self).offset(-10);
+        make.bottom.equalTo(self.assistBar.mas_bottom);
+        make.size.mas_equalTo(CGSizeMake(40, 20));
+        
+    }];
+    
+    
+    
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.thumbImage);
+        make.left.equalTo(self);
+        make.right.equalTo(self);
+        make.bottom.equalTo(self.assistBar).offset(30);
+    }];
+//    MASAttachKeys(self.avatarButton, self.assistBar,self.avatarButton,self.thumbImage,self.titleLabel,self.introLabel);
     
     [self.thumbImage sd_setImageWithURL:[NSURL URLWithString:dataSource[@"sThumb"]]];
     self.titleLabel.text = dataSource[@"sTitle"];
@@ -61,55 +172,6 @@
     [self.catenameButton setTitle:dataSource[@"sCatename"] forState:UIControlStateNormal];
     _dataSources = dataSource;
 
-    [weakSelf.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf);
-        make.top.equalTo(weakSelf);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W, 200));
-    }];
-    
-    [weakSelf.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage).offset(20);
-        make.top.equalTo(weakSelf.thumbImage).offset(20);
-        make.size.mas_offset(CGSizeMake(100, 30));
-    }];
-    
-    [weakSelf.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage).offset(30);
-        make.top.equalTo(weakSelf.thumbImage.mas_bottom).offset(20);
-        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 30);
-    }];
-    
-    [weakSelf.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage).offset(20);
-        make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(15);
-        make.right.equalTo(weakSelf.thumbImage.mas_right).offset( - 20);
-
-    }];
-    
-    [weakSelf.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf.thumbImage.mas_left);
-        make.top.equalTo(weakSelf.introLabel.mas_bottom).offset(25);
-        make.width.offset(200);
-        make.height.offset(40);
-
-    }];
-
-    [weakSelf.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf).offset(-10);
-        make.bottom.equalTo(weakSelf.assistBar.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(40, 20));
-        
-    }];
-    
-    
-    
-    [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(weakSelf.thumbImage);
-        make.left.equalTo(weakSelf);
-        make.right.equalTo(weakSelf);
-        make.bottom.equalTo(weakSelf.assistBar).offset(30);
-    }];
-    MASAttachKeys(self.avatarButton, self.assistBar,self.avatarButton,self.thumbImage,self.titleLabel,self.introLabel);
 
 }
 
@@ -187,7 +249,7 @@
     return _catenameButton;
 }
 
--(void)setDataSources:(NSDictionary *)dataSources
+-(void)setupValueWith:(NSDictionary *)dataSources
 {
     [self.thumbImage sd_setImageWithURL:[NSURL URLWithString:dataSources[@"sThumb"]]];
     self.titleLabel.text = dataSources[@"sTitle"];
@@ -198,7 +260,6 @@
     [self.assistBar.zanTotalButton setTitle:dataSources[@"sZanTotal"] forState:UIControlStateNormal];
     [self.catenameButton setTitle:dataSources[@"sCatename"] forState:UIControlStateNormal];
     _dataSources = dataSources;
-    NSLog(@"%@",_dataSources);
 }
 -(void)buttonAction:(UIButton *)sender
 {

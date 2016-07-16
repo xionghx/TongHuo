@@ -109,14 +109,14 @@
             self.image = placeholderImage;
         }
 
-        __weak __typeof(self)weakSelf = self;
+        __weak __typeof(self)self = self;
         NSUUID *downloadID = [NSUUID UUID];
         AFImageDownloadReceipt *receipt;
         receipt = [downloader
                    downloadImageForURLRequest:urlRequest
                    withReceiptID:downloadID
                    success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull responseObject) {
-                       __strong __typeof(weakSelf)strongSelf = weakSelf;
+                       __strong __typeof(self)strongSelf = self;
                        if ([strongSelf.af_activeImageDownloadReceipt.receiptID isEqual:downloadID]) {
                            if (success) {
                                success(request, response, responseObject);
@@ -128,7 +128,7 @@
 
                    }
                    failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
-                       __strong __typeof(weakSelf)strongSelf = weakSelf;
+                       __strong __typeof(self)strongSelf = self;
                         if ([strongSelf.af_activeImageDownloadReceipt.receiptID isEqual:downloadID]) {
                             if (failure) {
                                 failure(request, response, error);

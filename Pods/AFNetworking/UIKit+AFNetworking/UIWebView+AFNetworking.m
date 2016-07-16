@@ -124,14 +124,13 @@
     }
     self.af_URLSessionTask = nil;
 
-    __weak __typeof(self)weakSelf = self;
     NSURLSessionDataTask *dataTask;
     dataTask = [self.sessionManager
             GET:request.URL.absoluteString
             parameters:nil
             progress:nil
             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
-                __strong __typeof(weakSelf) strongSelf = weakSelf;
+                __strong __typeof(self) strongSelf = self;
                 if (success) {
                     success((NSHTTPURLResponse *)task.response, responseObject);
                 }

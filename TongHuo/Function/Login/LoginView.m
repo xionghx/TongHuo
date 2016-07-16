@@ -36,13 +36,13 @@
     [backGroundView mas_makeConstraints:^(MASConstraintMaker *make) {
         
     }];
-    WEAK_SELF
+    
     
     [logoImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(weakSelf).multipliedBy(0.5);
-        make.height.mas_equalTo(weakSelf).multipliedBy(0.5);
-        make.centerX.mas_equalTo(weakSelf);
-        make.centerY.mas_equalTo(weakSelf);
+        make.width.mas_equalTo(self).multipliedBy(0.5);
+        make.height.mas_equalTo(self).multipliedBy(0.5);
+        make.centerX.mas_equalTo(self);
+        make.centerY.mas_equalTo(self);
     }];
     
     UIButton * loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -50,10 +50,10 @@
     loginButton.backgroundColor = MainColor;
     [self addSubview:loginButton];
     [loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(weakSelf);
+        make.width.mas_equalTo(self);
         make.height.mas_equalTo(40);
-        make.centerX.mas_equalTo(weakSelf);
-        make.centerY.mas_equalTo(weakSelf).offset(200);
+        make.centerX.mas_equalTo(self);
+        make.centerY.mas_equalTo(self).offset(200);
     }];
     
     UIButton * cancleButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -63,8 +63,8 @@
     [cancleButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(40);
-        make.left.mas_equalTo(weakSelf.mas_left).offset(20);
-        make.top.mas_equalTo(weakSelf.mas_top).offset(20);
+        make.left.mas_equalTo(self.mas_left).offset(20);
+        make.top.mas_equalTo(self.mas_top).offset(20);
     }];
     
 }

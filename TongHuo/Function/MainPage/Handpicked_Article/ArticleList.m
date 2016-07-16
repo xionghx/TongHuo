@@ -54,8 +54,9 @@
 {
     ArticleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reUseMark ];
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
-    [cell setupWithDataSource:self.articleList[indexPath.row] andComplitionHandel:^(CGFloat a) {
-    }];
+    [cell setupValueWith:self.articleList[indexPath.row]];
+//    [cell setupWithDataSource:self.articleList[indexPath.row] andComplitionHandel:^(CGFloat a) {
+//    }];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

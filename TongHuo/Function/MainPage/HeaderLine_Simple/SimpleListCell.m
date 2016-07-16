@@ -41,41 +41,40 @@
     [self.contentView addSubview:self.linkButton];
     
     
-    WEAK_SELF
     
     [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(1);
-        make.height.equalTo(weakSelf);
-        make.left.mas_equalTo(weakSelf).offset(20);
-        make.top.mas_equalTo(weakSelf).offset(0);
+        make.height.equalTo(self);
+        make.left.mas_equalTo(self).offset(20);
+        make.top.mas_equalTo(self).offset(0);
         
     }];
     
     [_squreView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(6);
         make.height.equalTo(self.squreView.mas_width);
-        make.centerX.mas_equalTo(weakSelf.lineView);
+        make.centerX.mas_equalTo(self.lineView);
         make.centerY.mas_equalTo(_titleLabel);
     }];
     [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(weakSelf);
+        make.top.mas_equalTo(self);
         make.left.mas_equalTo(_squreView.mas_right).offset(5);
-        make.right.mas_equalTo(weakSelf).offset(-5);
+        make.right.mas_equalTo(self).offset(-5);
         
     }];
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_titleLabel.mas_bottom).offset(5);
         make.left.mas_equalTo(_squreView.mas_right).offset(5);
-        make.right.mas_equalTo(weakSelf).offset(-5);
+        make.right.mas_equalTo(self).offset(-5);
     }];
     
     [_introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_timeLabel.mas_bottom).offset(5);
         make.left.mas_equalTo(_lineView.mas_right).offset(5);
-        make.right.mas_equalTo(weakSelf).offset(-10);
+        make.right.mas_equalTo(self).offset(-10);
     }];
     
-    [weakSelf.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_titleLabel);
         
         make.bottom.mas_equalTo(_introLabel).offset(20);

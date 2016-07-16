@@ -40,12 +40,11 @@
 
 -(void)setupUI
 {
-    WEAK_SELF;
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.backButton];
     [_backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(weakSelf.view).offset(10);
-        make.top.mas_equalTo(weakSelf.view).offset(20);
+        make.left.mas_equalTo(self.view).offset(10);
+        make.top.mas_equalTo(self.view).offset(20);
         make.width.and.height.offset(40);
     }];
 
@@ -56,7 +55,7 @@
     [self.view addSubview:self.searchTextField];
     [_searchTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(_backButton.mas_right).offset(20);
-        make.top.mas_equalTo(weakSelf.view).offset(20);
+        make.top.mas_equalTo(self.view).offset(20);
         make.width.offset(0.7 * SCREEN_W);
         make.height.offset(40);
     }];
@@ -64,17 +63,17 @@
     [self.view addSubview:self.articleCateCollectionView];
     [_articleCateCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_searchTextField.mas_bottom).offset(10);
-        make.left.mas_equalTo(weakSelf.view);
-        make.width.mas_equalTo(weakSelf.view);
+        make.left.mas_equalTo(self.view);
+        make.width.mas_equalTo(self.view);
         make.height.mas_equalTo(80);
     }];
+    
     [self.view addSubview:self.articileListView];
-
     [_articileListView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_articleCateCollectionView.mas_bottom);
-        make.left.mas_equalTo(weakSelf.view.mas_left);
-        make.width.mas_equalTo(weakSelf.view.width);
-        make.bottom.mas_equalTo(weakSelf.view.mas_bottom);
+        make.left.mas_equalTo(self.view.mas_left);
+        make.width.mas_equalTo(self.view.width);
+        make.bottom.mas_equalTo(self.view.mas_bottom);
     }];
 }
 

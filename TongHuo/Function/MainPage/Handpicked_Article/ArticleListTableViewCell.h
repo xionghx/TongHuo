@@ -15,7 +15,7 @@
 -(void)setupWithDataSource:(NSDictionary *)dataSource
        andComplitionHandel:(void(^)(CGFloat a))complitionHandel;
 
-
+-(void)setupValueWith:(NSDictionary *)dataSources;
 @property(nonatomic,strong)UIImageView * thumbImage;
 @property(nonatomic,strong)ArticleAssistButton *avatarButton;
 @property(nonatomic,strong)UILabel *titleLabel;

@@ -231,13 +231,13 @@
         // 3) Create the request and set up authentication, validation and response serialization
         NSUUID *mergedTaskIdentifier = [NSUUID UUID];
         NSURLSessionDataTask *createdTask;
-        __weak __typeof__(self) weakSelf = self;
+        __weak __typeof__(self) self = self;
 
         createdTask = [self.sessionManager
                        dataTaskWithRequest:request
                        completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
                            dispatch_async(self.responseQueue, ^{
-                               __strong __typeof__(weakSelf) strongSelf = weakSelf;
+                               __strong __typeof__(self) strongSelf = self;
                                AFImageDownloaderMergedTask *mergedTask = self.mergedTasks[URLIdentifier];
                                if ([mergedTask.identifier isEqual:mergedTaskIdentifier]) {
                                    mergedTask = [strongSelf safelyRemoveMergedTaskWithURLIdentifier:URLIdentifier];
