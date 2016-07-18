@@ -30,23 +30,25 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self layoutSubviews];
+        [self setupUI];
     }
     return self;
 }
 
 
--(void)layoutSubviews
+-(void)setupUI
 {
     [self.thumbImage  addSubview:self.avatarButton];
     [self.contentView addSubview:self.thumbImage];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.introLabel];
     [self.contentView addSubview:self.assistBar];
-    //    self.assistBar.backgroundColor = [UIColor redColor];
     [self.contentView addSubview:self.catenameButton];
     [self.contentView addSubview:self.masonryView];
-    //    [self.assistBar setLayout];
+}
+
+-(void)updateConstraints
+{
     [self.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self);
         make.top.equalTo(self);
@@ -87,93 +89,16 @@
         
     }];
     
-    
-    
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.thumbImage);
         make.left.equalTo(self);
         make.right.equalTo(self);
         make.bottom.equalTo(self.assistBar).offset(30);
     }];
-
+    [super updateConstraints];
 }
--(void)setupWithDataSource:(NSDictionary *)dataSource
-       andComplitionHandel:(void(^)(CGFloat a))complitionHandel
-{
-
-    [self.thumbImage  addSubview:self.avatarButton];
-    [self.contentView addSubview:self.thumbImage];
-    [self.contentView addSubview:self.titleLabel];
-    [self.contentView addSubview:self.introLabel];
-    [self.contentView addSubview:self.assistBar];
-    [self.contentView addSubview:self.catenameButton];
-    [self.contentView addSubview:self.masonryView];
-
-    
-    
-
-    [self.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self);
-        make.top.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(SCREEN_W, 200));
-    }];
-    
-    [self.avatarButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.thumbImage).offset(20);
-        make.top.equalTo(self.thumbImage).offset(20);
-        make.size.mas_offset(CGSizeMake(100, 30));
-    }];
-    
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.thumbImage).offset(30);
-        make.top.equalTo(self.thumbImage.mas_bottom).offset(20);
-        make.right.equalTo(self.thumbImage.mas_right).offset( - 30);
-    }];
-    
-    [self.introLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.thumbImage).offset(20);
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(15);
-        make.right.equalTo(self.thumbImage.mas_right).offset( - 20);
-
-    }];
-    
-    [self.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.thumbImage.mas_left);
-        make.top.equalTo(self.introLabel.mas_bottom).offset(25);
-        make.width.offset(200);
-        make.height.offset(40);
-
-    }];
-
-    [self.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-10);
-        make.bottom.equalTo(self.assistBar.mas_bottom);
-        make.size.mas_equalTo(CGSizeMake(40, 20));
-        
-    }];
-    
-    
-    
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.thumbImage);
-        make.left.equalTo(self);
-        make.right.equalTo(self);
-        make.bottom.equalTo(self.assistBar).offset(30);
-    }];
-//    MASAttachKeys(self.avatarButton, self.assistBar,self.avatarButton,self.thumbImage,self.titleLabel,self.introLabel);
-    
-    [self.thumbImage sd_setImageWithURL:[NSURL URLWithString:dataSource[@"sThumb"]]];
-    self.titleLabel.text = dataSource[@"sTitle"];
-    self.introLabel.text = dataSource[@"sIntro"];
-    [self.avatarButton sd_setImageWithURL:[NSURL URLWithString:dataSource[@"sAvatar"]] forState:UIControlStateNormal];
-    [self.avatarButton setTitle:dataSource[@"sUsername"] forState:UIControlStateNormal];
-    [self.assistBar.comTotalButton setTitle:dataSource[@"sComTotal"] forState:UIControlStateNormal];
-    [self.assistBar.zanTotalButton setTitle:dataSource[@"sZanTotal"] forState:UIControlStateNormal];
-    [self.catenameButton setTitle:dataSource[@"sCatename"] forState:UIControlStateNormal];
-    _dataSources = dataSource;
 
 
-}
 
 -(ArticleAssistButton *)avatarButton
 {

@@ -68,11 +68,11 @@
         make.centerY.mas_equalTo(self.footerView);
         make.width.and.height.offset(40);
     }];
-    self.footerViewBar.backgroundColor = [UIColor redColor];
+    
     [_footerViewBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(self.footerView).offset(-10);
         make.bottom.mas_equalTo(_footerView).offset(-10);
-        make.height.mas_equalTo(20);
+//        make.height.mas_equalTo(20);
         //        make.size.mas_equalTo(CGSizeMake(180, 20));
     }];
     
