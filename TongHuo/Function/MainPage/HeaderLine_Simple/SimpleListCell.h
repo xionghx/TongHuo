@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface SimpleListCell : UITableViewCell
--(void)setupDataWitDataSource:(NSDictionary *)dataSource
-                withIndexPath:(NSIndexPath *)indexPath
-      andShouldShowIntroLabel:(BOOL)showIntroLabel;
+//-(void)setupDataWitDataSource:(NSDictionary *)dataSource
+//                withIndexPath:(NSIndexPath *)indexPath
+//      andShouldShowIntroLabel:(BOOL)showIntroLabel;
 
+-(void)setupDataWithDataSource:(NSDictionary *)dataSource
+                 withIndexPath:(NSIndexPath *)indexPath
+   andShouldShowIntroLabelPath:(NSIndexPath *)path;
 
 @end

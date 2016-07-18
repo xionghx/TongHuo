@@ -24,14 +24,13 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self setupUI];
-        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
 
 -(void)setupValuesWith:(NSDictionary *)data
 {
-    [self.thumbImageView sd_setImageWithURL:data[@"sThumb"]];
+    [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:data[@"sThumb"]]];
     self.titleLabel.text = data[@"sTitle"];
     self.introLabel.text = data[@"sIntro"];
 }

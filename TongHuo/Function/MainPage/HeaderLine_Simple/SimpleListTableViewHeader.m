@@ -14,6 +14,7 @@
 {
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
+//        self.frame = CGRectMake(0, 0, SCREEN_W, 50);
         [self setupUI];
     }
     return self;
@@ -42,7 +43,7 @@
     }];
 
     [_tableHeaderLabelOne mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.and.height.mas_equalTo(self.mas_height).multipliedBy(0.8);
+        make.width.and.height.mas_equalTo(self.mas_height).multipliedBy(0.6);
         make.centerX.mas_equalTo(self.mas_left).offset(20);
         make.centerY.mas_equalTo(self);
     }];
@@ -86,7 +87,7 @@
         _tableHeaderLabelOne.layer.cornerRadius = 5;
         _tableHeaderLabelOne.layer.masksToBounds = YES;
         _tableHeaderLabelOne.textColor = [UIColor whiteColor];
-        _tableHeaderLabelOne.font = [UIFont systemFontOfSize:11];
+        _tableHeaderLabelOne.font = [UIFont systemFontOfSize:10];
     }
     return _tableHeaderLabelOne;
 }
@@ -94,6 +95,8 @@
 {
     if (_tableHeaderLabelTwo == nil) {
         _tableHeaderLabelTwo = [[UILabel alloc]init];
+        _tableHeaderLabelTwo.font = [UIFont systemFontOfSize:10];
+
     }
     return _tableHeaderLabelTwo;
 }

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SpecialInfoVC : UIViewController
-- (instancetype)initWithDateSource:(NSDictionary *)data;
+-(void)setupUIWithData:(NSDictionary*)data;
+
 @end

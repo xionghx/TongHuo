@@ -20,8 +20,8 @@
 @property(nonatomic,strong)UITableView *simpleListTableView;
 @property(nonatomic,strong)NSMutableArray *dataSource;
 @property(nonatomic,strong)NSIndexPath *lastSelectedPath;
-@property(nonatomic,assign)NSIndexPath *IntroLabelShowedPath;
-@property(nonatomic,assign)NSIndexPath *currentSelectedPath;
+//@property(nonatomic,assign)NSIndexPath *IntroLabelShowedPath;
+//@property(nonatomic,assign)NSIndexPath *currentSelectedPath;
 @property(nonatomic,strong)UIView *tableHeaderView;
 @property(nonatomic,strong)UILabel *tableHeaderLabelOne;
 @property(nonatomic,strong)UILabel  *tableHeaderLabelTwo;
@@ -122,26 +122,26 @@
     
 }
 
--(UILabel *)tableHeaderLabelOne
-{
-    if (_tableHeaderLabelOne == nil) {
-        _tableHeaderLabelOne = [[UILabel alloc]init];
-        _tableHeaderLabelOne.backgroundColor = [UIColor blackColor];
-        _tableHeaderLabelOne.numberOfLines = 2;
-        _tableHeaderLabelOne.textAlignment = NSTextAlignmentCenter;
-        _tableHeaderLabelOne.layer.cornerRadius = 5;
-        _tableHeaderLabelOne.layer.masksToBounds = YES;
-        _tableHeaderLabelOne.textColor = [UIColor whiteColor];
-    }
-    return _tableHeaderLabelOne;
-}
--(UILabel *)tableHeaderLabelTwo
-{
-    if (_tableHeaderLabelTwo == nil) {
-        _tableHeaderLabelTwo = [[UILabel alloc]init];
-    }
-    return _tableHeaderLabelTwo;
-}
+//-(UILabel *)tableHeaderLabelOne
+//{
+//    if (_tableHeaderLabelOne == nil) {
+//        _tableHeaderLabelOne = [[UILabel alloc]init];
+//        _tableHeaderLabelOne.backgroundColor = [UIColor blackColor];
+//        _tableHeaderLabelOne.numberOfLines = 2;
+//        _tableHeaderLabelOne.textAlignment = NSTextAlignmentCenter;
+//        _tableHeaderLabelOne.layer.cornerRadius = 5;
+//        _tableHeaderLabelOne.layer.masksToBounds = YES;
+//        _tableHeaderLabelOne.textColor = [UIColor whiteColor];
+//    }
+//    return _tableHeaderLabelOne;
+//}
+//-(UILabel *)tableHeaderLabelTwo
+//{
+//    if (_tableHeaderLabelTwo == nil) {
+//        _tableHeaderLabelTwo = [[UILabel alloc]init];
+//    }
+//    return _tableHeaderLabelTwo;
+//}
 #pragma mark ------------<SimpleCateDelegate>
 
 -(void)loadDataWithCate:(NSString *)sCid
@@ -152,6 +152,7 @@
         }else{
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray: responseObject[@"info"][@"data"]];
+            self.IntroLabelShowedPath = nil;
             [self.simpleListTableView reloadData];
         }
         
@@ -183,7 +184,7 @@
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    [_simpleListTableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
+//    [_simpleListTableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
     UITableViewHeaderFooterView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:HEADER_REUSE];
     ((SimpleListTableViewHeader *)view).tableHeaderLabelOne.text = [NSString stringWithFormat:@"%@\n%@", self.dataSource[section][@"sMonth "],self.dataSource[section][@"sData"]];
     ((SimpleListTableViewHeader *)view).tableHeaderLabelTwo.text = self.dataSource[section][@"sDate"];
@@ -202,38 +203,46 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.currentSelectedPath = indexPath;
+    
+    if (self.IntroLabelShowedPath!=nil) {
+        if (self.IntroLabelShowedPath == indexPath) {
+            self.IntroLabelShowedPath =nil;
+        }else{
+            self.IntroLabelShowedPath = indexPath;
+        }
+    }else{
+        self.IntroLabelShowedPath = indexPath;
+    }
     
     [self.simpleListTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    if (self.lastSelectedPath) {
+    if (self.lastSelectedPath!=nil) {
         [self.simpleListTableView reloadRowsAtIndexPaths:@[self.lastSelectedPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
     }
-//    [self.simpleListTableView reloadData];
     self.lastSelectedPath = indexPath;
-    self.currentSelectedPath = nil;
+
 
 }
 
--(BOOL)shoudShowIntroLabelAtIndexPath:(NSIndexPath *)indexPath
-{
-    BOOL should = NO;
-    if (self.currentSelectedPath) {
-        if (self.currentSelectedPath!=self.IntroLabelShowedPath) {
-            should = YES;
-            self.IntroLabelShowedPath = indexPath;
-        }else{
-            self.IntroLabelShowedPath =nil;
-        }
-    }
-    
-    return should;
-}
+//-(BOOL)shoudShowIntroLabelAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    BOOL should = NO;
+//    if (self.currentSelectedPath!=nil) {
+//        if (self.currentSelectedPath!=self.IntroLabelShowedPath) {
+//            should = YES;
+//            self.IntroLabelShowedPath = self.currentSelectedPath;
+//        }
+//    }
+//    
+//    return should;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SimpleListCell * cell = [tableView dequeueReusableCellWithIdentifier:CELL_REUSE forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell setupDataWitDataSource:self.dataSource[indexPath.section][@"sList"][indexPath.row]withIndexPath:indexPath andShouldShowIntroLabel:[self shoudShowIntroLabelAtIndexPath:indexPath]];
+    [cell setupDataWithDataSource:self.dataSource[indexPath.section][@"sList"][indexPath.row] withIndexPath:indexPath andShouldShowIntroLabelPath:self.IntroLabelShowedPath];
+//    [cell setupDataWitDataSource:self.dataSource[indexPath.section][@"sList"][indexPath.row]withIndexPath:indexPath andShouldShowIntroLabel:[self shoudShowIntroLabelAtIndexPath:indexPath]];
     return cell;
 }
 @end

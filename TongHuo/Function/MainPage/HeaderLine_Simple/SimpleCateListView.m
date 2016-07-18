@@ -11,7 +11,7 @@
 @interface SimpleCateListView ()<UIScrollViewDelegate>
 @property(nonatomic,strong)UIScrollView * simpleCateListScrollView;
 @property(nonatomic,strong)NSMutableArray *simpleCateDataSource;
-
+@property(nonatomic,assign)NSInteger *selectedButtonTag;
 @end
 
 @implementation SimpleCateListView
@@ -33,8 +33,12 @@
     for (NSDictionary * dic in self.simpleCateDataSource) {
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = 200 + index;
+        [button setTitleColor:MainColor forState:UIControlStateSelected];
         [button setTitle:dic[@"sCname"] forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:12];
+        if (self.selectedButtonTag - button.tag == 0) {
+            button.titleLabel.textColor = MainColor;
+        }
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonTaped:) forControlEvents:UIControlEventTouchUpInside];
         [self.simpleCateListScrollView addSubview:button];
@@ -46,17 +50,33 @@
         }];
         index ++;
     }
+    ((UIButton*)[self viewWithTag:200]).selected = YES;
+    ((UIButton*)[self viewWithTag:200]).titleLabel.font = [UIFont systemFontOfSize:14];
     
+
     
 }
 -(void)buttonTaped:(UIButton *)sender
 {
+    
+    
+    for (NSInteger index = 0; index < self.simpleCateDataSource.count; index++) {
+        if (sender.tag-200-index ==0) {
+            ((UIButton*)[self viewWithTag:index + 200]).selected = YES;
+            ((UIButton*)[self viewWithTag:index + 200]).titleLabel.font = [UIFont systemFontOfSize:14];
+
+
+        }else{
+            ((UIButton*)[self viewWithTag:index + 200]).selected = NO;
+            ((UIButton*)[self viewWithTag:index + 200]).titleLabel.font = [UIFont systemFontOfSize:12];
+        }
+    }
     [self.delegate loadDataWithCate:self.simpleCateDataSource[sender.tag-200][@"sCid"]];
     switch (sender.tag -200) {
         case 0:
             
             break;
-
+            
         case 1:
             
             break;
@@ -81,7 +101,7 @@
         case 8:
             
             break;
-
+            
             
         default:
             break;
@@ -92,7 +112,7 @@
     if (_simpleCateListScrollView == nil) {
         _simpleCateListScrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
         _simpleCateListScrollView.delegate = self;
-        _simpleCateListScrollView.contentSize =CGSizeMake(2*SCREEN_W, 0);
+        _simpleCateListScrollView.contentSize =CGSizeMake(1.1*SCREEN_W, 0);
         _simpleCateListScrollView.backgroundColor = [UIColor lightGrayColor];
     }
     return _simpleCateListScrollView;
@@ -103,6 +123,7 @@
         if (error) {
             NSLog(@"%@",error);
         }else{
+            [self.simpleCateDataSource addObject:@{@"sCid":@"",@"sCname":@"全部"}];
             [self.simpleCateDataSource addObjectsFromArray:responseObject[@"info"][@"data"]];
             [self.delegate loadDataWithCate:self.simpleCateDataSource[0][@"sCid"]];
             [self setupUI];

@@ -62,6 +62,7 @@
         make.right.mas_equalTo(self).offset(-5);
         
     }];
+    
     [_timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_titleLabel.mas_bottom).offset(5);
         make.left.mas_equalTo(_squreView.mas_right).offset(5);
@@ -104,6 +105,8 @@
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc]init];
         _titleLabel.textColor = [UIColor blackColor];
+        _titleLabel.font = [UIFont systemFontOfSize:15];
+
         
     }
     return _titleLabel;
@@ -112,7 +115,7 @@
 {
     if (_timeLabel == nil) {
         _timeLabel = [[UILabel alloc]init];
-        _timeLabel.font = [UIFont systemFontOfSize:15];
+        _timeLabel.font = [UIFont systemFontOfSize:11];
         _timeLabel.textColor = [UIColor darkGrayColor];
         _timeLabel.numberOfLines = 0;
     }
@@ -123,6 +126,7 @@
     if (_introLabel == nil) {
         _introLabel = [[UILabel alloc]init];
         _introLabel.numberOfLines = 0;
+        _introLabel.font = [UIFont systemFontOfSize:12];
         
     }
     return _introLabel;
@@ -138,22 +142,39 @@
     }
     return _linkButton;
 }
--(void)setupDataWitDataSource:(NSDictionary *)dataSource
-                withIndexPath:(NSIndexPath *)indexPath
-      andShouldShowIntroLabel:(BOOL)showIntroLabel
+//-(void)setupDataWitDataSource:(NSDictionary *)dataSource
+//                withIndexPath:(NSIndexPath *)indexPath
+//      andShouldShowIntroLabel:(BOOL)showIntroLabel
+//{
+//    //    NSLog(@"%@",dataSource);
+//    //    self.showIntroLabel = indexPath == self.currentSelectedPath && self.currentSelectedPath != self.lastSelectedPath? YES:NO;
+//    //    if (_lastSelectedPath == _currentSelectedPath) {
+//    //        self.showIntroLabel = !self.showIntroLabel;
+//    //    }
+//    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[dataSource[@"sAddtime"] doubleValue]];
+//    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+//    formatter.dateFormat = @"yyyy-MM-dd HH:mm";
+//    NSString * string = [formatter stringFromDate:date];
+//    self.timeLabel.text = string;
+//    self.titleLabel.text = dataSource[@"sTitle"];
+//    self.introLabel.text = showIntroLabel? dataSource[@"sIntro"]:nil;
+//}
+
+-(void)setupDataWithDataSource:(NSDictionary *)dataSource
+                 withIndexPath:(NSIndexPath *)indexPath
+   andShouldShowIntroLabelPath:(NSIndexPath *)path
 {
-    //    NSLog(@"%@",dataSource);
-    //    self.showIntroLabel = indexPath == self.currentSelectedPath && self.currentSelectedPath != self.lastSelectedPath? YES:NO;
-    //    if (_lastSelectedPath == _currentSelectedPath) {
-    //        self.showIntroLabel = !self.showIntroLabel;
-    //    }
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[dataSource[@"sAddtime"] doubleValue]];
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd HH:mm";
     NSString * string = [formatter stringFromDate:date];
     self.timeLabel.text = string;
     self.titleLabel.text = dataSource[@"sTitle"];
-    self.introLabel.text = showIntroLabel? dataSource[@"sIntro"]:nil;
+    self.introLabel.text = indexPath == path? dataSource[@"sIntro"]:nil;
+    
+    self.titleLabel.textColor = indexPath == path? MainColor :[UIColor blackColor];
+    self.squreView.backgroundColor = indexPath == path? MainColor:[UIColor blackColor];
+
 }
 
 -(void)haveBeenSelectedMethod:(BOOL)showIntroLabel

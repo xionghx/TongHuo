@@ -153,9 +153,10 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{   SpecialInfoVC *newVC = [[SpecialInfoVC alloc]init];
+    [newVC setupUIWithData:self.dataSource[indexPath.row]];
     
-    [self.navigationController pushViewController:[[SpecialInfoVC alloc]initWithDateSource:self.dataSource[indexPath.row]] animated:YES];
+    [self.navigationController pushViewController:newVC animated:YES];
     
 }
 

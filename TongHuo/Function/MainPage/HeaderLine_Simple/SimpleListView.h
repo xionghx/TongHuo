@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SimpleListView : UIView
+@property(nonatomic,assign)NSIndexPath *IntroLabelShowedPath;
 
 @end
