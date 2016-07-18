@@ -136,6 +136,10 @@
 		8A0E05761D378F3C00B31424 /* ArticleList_CatePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05751D378F3C00B31424 /* ArticleList_CatePageCell.m */; };
 		8A0E057A1D37A54400B31424 /* DataSourcePrepare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05791D37A54400B31424 /* DataSourcePrepare.m */; };
 		8A0E05801D37AD5E00B31424 /* ArticleCateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */; };
+		8A953C4D1D3C778F00ACDC6C /* SpecialListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C4C1D3C778F00ACDC6C /* SpecialListViewController.m */; };
+		8A953C501D3C77D800ACDC6C /* SpecialListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C4F1D3C77D800ACDC6C /* SpecialListCell.m */; };
+		8A953C531D3C77FB00ACDC6C /* SpecialInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C521D3C77FB00ACDC6C /* SpecialInfoVC.m */; };
+		8A953C561D3C783D00ACDC6C /* SpecialInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C551D3C783D00ACDC6C /* SpecialInfoCell.m */; };
 		8AE8C3F31D37E68A002F8AE7 /* XNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */; };
 /* End PBXBuildFile section */
 
@@ -318,6 +322,14 @@
 		8A0E05791D37A54400B31424 /* DataSourcePrepare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePrepare.m; sourceTree = "<group>"; };
 		8A0E057E1D37AD5E00B31424 /* ArticleCateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateCollectionViewCell.h; sourceTree = "<group>"; };
 		8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateCollectionViewCell.m; sourceTree = "<group>"; };
+		8A953C4B1D3C778F00ACDC6C /* SpecialListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialListViewController.h; sourceTree = "<group>"; };
+		8A953C4C1D3C778F00ACDC6C /* SpecialListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialListViewController.m; sourceTree = "<group>"; };
+		8A953C4E1D3C77D800ACDC6C /* SpecialListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialListCell.h; sourceTree = "<group>"; };
+		8A953C4F1D3C77D800ACDC6C /* SpecialListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialListCell.m; sourceTree = "<group>"; };
+		8A953C511D3C77FB00ACDC6C /* SpecialInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialInfoVC.h; sourceTree = "<group>"; };
+		8A953C521D3C77FB00ACDC6C /* SpecialInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialInfoVC.m; sourceTree = "<group>"; };
+		8A953C541D3C783D00ACDC6C /* SpecialInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialInfoCell.h; sourceTree = "<group>"; };
+		8A953C551D3C783D00ACDC6C /* SpecialInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialInfoCell.m; sourceTree = "<group>"; };
 		8AE8C3F11D37E68A002F8AE7 /* XNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationBar.h; sourceTree = "<group>"; };
 		8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationBar.m; sourceTree = "<group>"; };
 		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -397,6 +409,7 @@
 		8A0E043B1D37890600B31424 /* FoundationVC */ = {
 			isa = PBXGroup;
 			children = (
+				8A953C4A1D3C776700ACDC6C /* SpecialListVC */,
 				8A0E056D1D378C9200B31424 /* ArticleCateList */,
 				8A0E043C1D37890600B31424 /* ArticleListModle.h */,
 				8A0E043D1D37890600B31424 /* ArticleListModle.m */,
@@ -781,6 +794,21 @@
 			path = DataSourcePrepare;
 			sourceTree = "<group>";
 		};
+		8A953C4A1D3C776700ACDC6C /* SpecialListVC */ = {
+			isa = PBXGroup;
+			children = (
+				8A953C4B1D3C778F00ACDC6C /* SpecialListViewController.h */,
+				8A953C4C1D3C778F00ACDC6C /* SpecialListViewController.m */,
+				8A953C4E1D3C77D800ACDC6C /* SpecialListCell.h */,
+				8A953C4F1D3C77D800ACDC6C /* SpecialListCell.m */,
+				8A953C511D3C77FB00ACDC6C /* SpecialInfoVC.h */,
+				8A953C521D3C77FB00ACDC6C /* SpecialInfoVC.m */,
+				8A953C541D3C783D00ACDC6C /* SpecialInfoCell.h */,
+				8A953C551D3C783D00ACDC6C /* SpecialInfoCell.m */,
+			);
+			path = SpecialListVC;
+			sourceTree = "<group>";
+		};
 		BB3FE1A4621DB6195B78CC43 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,7 +1017,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A953C531D3C77FB00ACDC6C /* SpecialInfoVC.m in Sources */,
 				8A0E05181D37890600B31424 /* UIView+SetSize.m in Sources */,
+				8A953C501D3C77D800ACDC6C /* SpecialListCell.m in Sources */,
 				8A0E04F91D37890600B31424 /* ModelVCClassed.m in Sources */,
 				8A0E05801D37AD5E00B31424 /* ArticleCateCollectionViewCell.m in Sources */,
 				8A0E05051D37890600B31424 /* RootVC.m in Sources */,
@@ -1019,6 +1049,8 @@
 				8A0E04F71D37890600B31424 /* ArticleListModle.m in Sources */,
 				8A0E051F1D37890600B31424 /* XNavigationController.m in Sources */,
 				8A0E051A1D37890600B31424 /* XUtilityTools.m in Sources */,
+				8A953C561D3C783D00ACDC6C /* SpecialInfoCell.m in Sources */,
+				8A953C4D1D3C778F00ACDC6C /* SpecialListViewController.m in Sources */,
 				8A0E050A1D37890600B31424 /* MainPage.m in Sources */,
 				8A0E04FD1D37890600B31424 /* LoginView.m in Sources */,
 				8A0E04F81D37890600B31424 /* FoundationVC.m in Sources */,

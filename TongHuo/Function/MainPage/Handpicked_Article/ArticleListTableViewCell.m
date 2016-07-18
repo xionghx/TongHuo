@@ -10,7 +10,7 @@
 #import "Masonry.h"
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
-//#import "MJRefresh.h"
+#import "MJRefresh.h"
 @interface ArticleListTableViewCell()
 @property(nonatomic,strong)UIView *masonryView;
 @end
@@ -45,10 +45,6 @@
     [self.contentView addSubview:self.assistBar];
     [self.contentView addSubview:self.catenameButton];
     [self.contentView addSubview:self.masonryView];
-}
-
--(void)updateConstraints
-{
     [self.thumbImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self);
         make.top.equalTo(self);
@@ -83,7 +79,7 @@
     }];
     
     [self.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self).offset(-10);
+        make.right.equalTo(self.contentView).offset(-10);
         make.bottom.equalTo(self.assistBar.mas_bottom);
         make.size.mas_equalTo(CGSizeMake(40, 20));
         
@@ -91,11 +87,9 @@
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.thumbImage);
-        make.left.equalTo(self);
-        make.right.equalTo(self);
         make.bottom.equalTo(self.assistBar).offset(30);
     }];
-    [super updateConstraints];
+
 }
 
 
@@ -186,6 +180,8 @@
     [self.catenameButton setTitle:dataSources[@"sCatename"] forState:UIControlStateNormal];
     _dataSources = dataSources;
 }
+
+
 -(void)buttonAction:(UIButton *)sender
 {
     

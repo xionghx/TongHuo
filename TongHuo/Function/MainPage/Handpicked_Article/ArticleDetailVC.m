@@ -27,19 +27,28 @@
 @property(nonatomic,strong)UILabel *authorLabel;
 @property(nonatomic,strong)UILabel *hitnumLabel;
 @property(nonatomic,strong)UILabel *articleTotalLabel;
-//@property(nonatomic,strong)
 
 
 @end
 
 @implementation ArticleDetailVC
+- (instancetype)initWitDataSource:(NSDictionary *)dataSource
+{
+    self = [super init];
+    if (self) {
+        _dataSource = @{}.copy;
+        [self loadDataSourceWithId:dataSource[@"sId"]];
+        [self setupUI];
+    }
+    return self;
+}
+
 -(void)setupValue
 {
     [self.avatarImageView sd_setImageWithURL:self.dataSource[@"sUserinfo"][@"sAvatar"] ];
     self.authorLabel.text =self.dataSource[@"sUserinfo"][@"sUsername"];
     self.hitnumLabel.text = self.dataSource[@"sUserinfo"][@"sHitTotal"];
     self.articleTotalLabel.text = self.dataSource[@"sUserinfo"][@"sArticleTotal"];
-    //    self.footerViewBar.shareurlButton
     [self.footerViewBar.comTotalButton setTitle:self.dataSource[@"sComTotal"] forState:UIControlStateNormal];
     [self.footerViewBar.zanTotalButton setTitle:self.dataSource[@"sZanTotal"] forState:UIControlStateNormal];
 }
@@ -49,10 +58,6 @@
 -(void)updateViewConstraints
 {
     [_articleWebView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //        make.left.equalTo(self.view);
-        //        make.top.equalTo(self.view);
-        //        make.width.equalTo(self.view);
-        //        make.height.equalTo(self.view);
         make.edges.equalTo(self.view);
     }];
     
@@ -171,15 +176,6 @@
     return _footerViewBackButton;
 }
 
-- (instancetype)initWitDataSource:(NSDictionary *)dataSource
-{
-    self = [super init];
-    if (self) {
-        _dataSource = @{}.copy;
-        [self loadDataSourceWithId:dataSource[@"sId"]];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

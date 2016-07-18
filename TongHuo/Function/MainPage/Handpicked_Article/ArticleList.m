@@ -10,7 +10,6 @@
 #import "XNavigationController.h"
 #import "NetRequest+Article.h"
 #import "ArticleListTableViewCell.h"
-//#import "NetRequest+Prepare_Fro.h"
 #import "ArticleDetailVC.h"
 #import "XAlertViewHelper.h"
 
@@ -55,8 +54,6 @@
     ArticleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reUseMark ];
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
     [cell setupValueWith:self.articleList[indexPath.row]];
-//    [cell setupWithDataSource:self.articleList[indexPath.row] andComplitionHandel:^(CGFloat a) {
-//    }];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,7 +70,6 @@
     [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
     [self.articleListTableView reloadData];
     [NetRequest getArticleListWithCid:@"" andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"5" andCompletionBlock:^(id responseObject, NSError *error) {
-//        [self.articleList removeAllObjects];
         [self.articleList addObjectsFromArray: responseObject[@"info"][@"data"] ];
         [self.articleListTableView reloadData];
 

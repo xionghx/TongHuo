@@ -15,6 +15,8 @@
 #import "DataSourcePrepare.h"
 #import "ArticleCateListViewController.h"
 #import "XNavigationController.h"
+#import "SpecialListViewController.h"
+
 
 
 
@@ -91,7 +93,10 @@ static NSString * cellReuse = @"reUseMark";
 }
 -(void)specialButtonTaped
 {
-    
+    UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    [self.delegate hideLeftSide];
+    [(XNavigationController *)rootVC pushViewController:[SpecialListViewController new] animated:YES];
+
 }
 
 -(UITableView *)tableView

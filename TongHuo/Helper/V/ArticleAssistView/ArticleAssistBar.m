@@ -85,6 +85,8 @@
     [self addSubview:self.comTotalButton];
     
     
+    
+    
 }
 
 -(void)updateConstraints
@@ -97,6 +99,7 @@
         make.width.equalTo(self.mas_height);
         make.height.equalTo(self);
     }];
+    
     [_collectTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(_shareurlButton.mas_right).offset(0.5 * self.height);
         make.bottom.equalTo(_shareurlButton);

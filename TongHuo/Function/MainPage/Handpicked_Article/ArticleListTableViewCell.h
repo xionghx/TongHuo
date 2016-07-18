@@ -12,9 +12,6 @@
 
 @interface ArticleListTableViewCell : UITableViewCell
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
--(void)setupWithDataSource:(NSDictionary *)dataSource
-       andComplitionHandel:(void(^)(CGFloat a))complitionHandel;
-
 -(void)setupValueWith:(NSDictionary *)dataSources;
 @property(nonatomic,strong)UIImageView * thumbImage;
 @property(nonatomic,strong)ArticleAssistButton *avatarButton;
