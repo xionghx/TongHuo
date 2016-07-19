@@ -15,10 +15,6 @@
 		037D835D1D2E7B9E0063E17E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037D835C1D2E7B9E0063E17E /* Assets.xcassets */; };
 		037D83601D2E7B9E0063E17E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037D835E1D2E7B9E0063E17E /* LaunchScreen.storyboard */; };
 		0E1177BD2314AFA585FDDC71 /* libPods-TongHuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */; };
-		8A0E04F71D37890600B31424 /* ArticleListModle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E043D1D37890600B31424 /* ArticleListModle.m */; };
-		8A0E04F81D37890600B31424 /* FoundationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E043F1D37890600B31424 /* FoundationVC.m */; };
-		8A0E04F91D37890600B31424 /* ModelVCClassed.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E04411D37890600B31424 /* ModelVCClassed.m */; };
-		8A0E04FA1D37890600B31424 /* ModelVCSimple.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E04431D37890600B31424 /* ModelVCSimple.m */; };
 		8A0E04FB1D37890600B31424 /* LeftSideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E04471D37890600B31424 /* LeftSideCell.m */; };
 		8A0E04FC1D37890600B31424 /* LeftSideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E04491D37890600B31424 /* LeftSideView.m */; };
 		8A0E04FD1D37890600B31424 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E044C1D37890600B31424 /* LoginView.m */; };
@@ -158,14 +154,6 @@
 		037D835F1D2E7B9E0063E17E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		037D83611D2E7B9E0063E17E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		037D83671D2E7C620063E17E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		8A0E043C1D37890600B31424 /* ArticleListModle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleListModle.h; sourceTree = "<group>"; };
-		8A0E043D1D37890600B31424 /* ArticleListModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleListModle.m; sourceTree = "<group>"; };
-		8A0E043E1D37890600B31424 /* FoundationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundationVC.h; sourceTree = "<group>"; };
-		8A0E043F1D37890600B31424 /* FoundationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundationVC.m; sourceTree = "<group>"; };
-		8A0E04401D37890600B31424 /* ModelVCClassed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCClassed.h; sourceTree = "<group>"; };
-		8A0E04411D37890600B31424 /* ModelVCClassed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCClassed.m; sourceTree = "<group>"; };
-		8A0E04421D37890600B31424 /* ModelVCSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelVCSimple.h; sourceTree = "<group>"; };
-		8A0E04431D37890600B31424 /* ModelVCSimple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelVCSimple.m; sourceTree = "<group>"; };
 		8A0E04461D37890600B31424 /* LeftSideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideCell.h; sourceTree = "<group>"; };
 		8A0E04471D37890600B31424 /* LeftSideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSideCell.m; sourceTree = "<group>"; };
 		8A0E04481D37890600B31424 /* LeftSideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSideView.h; sourceTree = "<group>"; };
@@ -377,7 +365,6 @@
 			isa = PBXGroup;
 			children = (
 				8A0E05771D37A51D00B31424 /* DataSourcePrepare */,
-				8A0E043B1D37890600B31424 /* FoundationVC */,
 				8A0E04441D37890600B31424 /* Function */,
 				8A0E046B1D37890600B31424 /* Helper */,
 				8A0E049F1D37890600B31424 /* images */,
@@ -410,21 +397,6 @@
 				DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8A0E043B1D37890600B31424 /* FoundationVC */ = {
-			isa = PBXGroup;
-			children = (
-				8A0E043C1D37890600B31424 /* ArticleListModle.h */,
-				8A0E043D1D37890600B31424 /* ArticleListModle.m */,
-				8A0E043E1D37890600B31424 /* FoundationVC.h */,
-				8A0E043F1D37890600B31424 /* FoundationVC.m */,
-				8A0E04401D37890600B31424 /* ModelVCClassed.h */,
-				8A0E04411D37890600B31424 /* ModelVCClassed.m */,
-				8A0E04421D37890600B31424 /* ModelVCSimple.h */,
-				8A0E04431D37890600B31424 /* ModelVCSimple.m */,
-			);
-			path = FoundationVC;
 			sourceTree = "<group>";
 		};
 		8A0E04441D37890600B31424 /* Function */ = {
@@ -1037,7 +1009,6 @@
 			files = (
 				8A0E05181D37890600B31424 /* UIView+SetSize.m in Sources */,
 				8A266BB01D3DBB3200180F4A /* ArticleCateListViewController.m in Sources */,
-				8A0E04F91D37890600B31424 /* ModelVCClassed.m in Sources */,
 				8A0E05051D37890600B31424 /* RootVC.m in Sources */,
 				8A0E050F1D37890600B31424 /* NetRequest+DailyFavourites.m in Sources */,
 				8A0E05031D37890600B31424 /* SimpleListTableViewHeader.m in Sources */,
@@ -1064,13 +1035,11 @@
 				8A266BB31D3DBB3200180F4A /* DailyFavouritesVC.m in Sources */,
 				8A0E05001D37890600B31424 /* ArticleListTableViewCell.m in Sources */,
 				8A0E04FE1D37890600B31424 /* ArticleDetailVC.m in Sources */,
-				8A0E04F71D37890600B31424 /* ArticleListModle.m in Sources */,
 				8A0E051F1D37890600B31424 /* XNavigationController.m in Sources */,
 				8A266BB41D3DBB3200180F4A /* SpecialInfoCell.m in Sources */,
 				8A0E051A1D37890600B31424 /* XUtilityTools.m in Sources */,
 				8A0E050A1D37890600B31424 /* MainPage.m in Sources */,
 				8A0E04FD1D37890600B31424 /* LoginView.m in Sources */,
-				8A0E04F81D37890600B31424 /* FoundationVC.m in Sources */,
 				8A0E04FF1D37890600B31424 /* ArticleList.m in Sources */,
 				8A0E051C1D37890600B31424 /* ArticleAssistButton.m in Sources */,
 				8AE8C3F31D37E68A002F8AE7 /* XNavigationBar.m in Sources */,
@@ -1079,7 +1048,6 @@
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				8A0E050E1D37890600B31424 /* NetRequest+Article.m in Sources */,
 				8A0E050C1D37890600B31424 /* MAMAHeaderPage.m in Sources */,
-				8A0E04FA1D37890600B31424 /* ModelVCSimple.m in Sources */,
 				8A0E04FB1D37890600B31424 /* LeftSideCell.m in Sources */,
 				8A0E05151D37890600B31424 /* NetRequest.m in Sources */,
 				8A0E050B1D37890600B31424 /* MainPageScroll.m in Sources */,

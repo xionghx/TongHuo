@@ -10,14 +10,17 @@
 #import "LeftSideCell.h"
 #import "NetRequest+Article.h"
 #import "XStringUtils.h"
-#import "ModelVCClassed.h"
 #import "LoginView.h"
 #import "DataSourcePrepare.h"
 #import "ArticleCateListViewController.h"
 #import "XNavigationController.h"
 #import "SpecialListViewController.h"
 #import "UserInfoViewController.h"
+#import "LeftSideCell.h"
 
+
+
+#define REUSE_MARK @"cell_reuse"
 
 
 
@@ -29,7 +32,6 @@
 @property(nonatomic,strong)NSArray *  dataSouce;
 @end
 
-static NSString * cellReuse = @"reUseMark";
 @implementation LeftSideView
 - (instancetype)init
 {
@@ -88,7 +90,7 @@ static NSString * cellReuse = @"reUseMark";
         _specialButton.y = 0.5*SCREEN_W;
         [_specialButton setTitle:@"专题" forState:UIControlStateNormal];
         [_specialButton addTarget:self action:@selector(specialButtonTaped) forControlEvents:UIControlEventTouchUpInside];
-        _specialButton.backgroundColor = [UIColor grayColor];
+        _specialButton.backgroundColor = MainColor;
         
     }
     return _specialButton;
@@ -98,16 +100,18 @@ static NSString * cellReuse = @"reUseMark";
     UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
     [self.delegate hideLeftSide];
     [(XNavigationController *)rootVC pushViewController:[SpecialListViewController new] animated:YES];
-
+    
 }
 
 -(UITableView *)tableView
 {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, self.specialButton.y + self.specialButton.height, self.width, self.height -(self.specialButton.y + self.specialButton.height)) style:UITableViewStylePlain];
-        [_tableView registerClass:[LeftSideCell class] forCellReuseIdentifier:cellReuse];
+        [_tableView registerClass:[LeftSideCell class] forCellReuseIdentifier:REUSE_MARK];
         _tableView.dataSource = self;
         _tableView.delegate = self;
+        _tableView.rowHeight = 55;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
     }
     return _tableView;
@@ -123,7 +127,7 @@ static NSString * cellReuse = @"reUseMark";
     [(XNavigationController *)rootVC pushViewController:[ArticleCateListViewController new] animated:YES];
     
     
- }
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataSouce.count;
@@ -131,10 +135,11 @@ static NSString * cellReuse = @"reUseMark";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    LeftSideCell *cell = [tableView dequeueReusableCellWithIdentifier:cellReuse];
-//    cell.backgroundColor = [UIColor redColor];
-    cell.textLabel.text = self.dataSouce[indexPath.row][@"sCname"];
-    cell.imageView.image = [[NSObject new] imageInMainBundleWithName:[NSString stringWithFormat:@"%@选中",self.dataSouce[indexPath.row][@"sCname"]] andType:@"png" andDirectory:@""];
+    LeftSideCell *cell = [tableView dequeueReusableCellWithIdentifier:REUSE_MARK];
+    //    cell.backgroundColor = [UIColor redColor];
+    [cell setValueWithCname:self.dataSouce[indexPath.row][@"sCname"]];
+//    cell.textLabel.text = self.dataSouce[indexPath.row][@"sCname"];
+//    cell.imageView.image = [[NSObject new] imageInMainBundleWithName:[NSString stringWithFormat:@"%@选中",self.dataSouce[indexPath.row][@"sCname"]] andType:@"png" andDirectory:@""];
     return cell;
     
 }
@@ -159,8 +164,8 @@ static NSString * cellReuse = @"reUseMark";
     [self.delegate hideLeftSide];
     [(XNavigationController *)rootVC pushViewController:[UserInfoViewController new] animated:YES];
     
-
-//    [LoginView showLoginView];
+    
+    //    [LoginView showLoginView];
 }
 
 @end

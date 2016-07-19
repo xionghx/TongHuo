@@ -118,26 +118,26 @@
 //        make.size.mas_equalTo(self.zanTotalButton);
 //    }];
     [_shareurlButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(5);
+        make.left.equalTo(self);
         make.bottom.equalTo(self);
         make.width.equalTo(self.mas_height);
         make.height.equalTo(self);
     }];
     
     [_collectTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_shareurlButton.mas_right).offset(5);
+        make.left.equalTo(_shareurlButton.mas_right).offset(15);
         make.bottom.equalTo(_shareurlButton);
         make.size.equalTo(_shareurlButton);
     }];
     
     [_zanTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.collectTotalButton.mas_right).offset(5);
+        make.left.equalTo(self.collectTotalButton.mas_right).offset(15);
         make.bottom.equalTo(self.collectTotalButton);
         make.width.equalTo(self.shareurlButton).multipliedBy(3);
         make.height.equalTo(self.shareurlButton);
     }];
     [_comTotalButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_zanTotalButton.mas_right).offset(5);
+        make.left.equalTo(_zanTotalButton.mas_right).offset(10);
         make.bottom.equalTo(_zanTotalButton);
         make.size.mas_equalTo(self.zanTotalButton);
     }];

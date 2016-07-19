@@ -71,9 +71,9 @@
     }];
     
     [self.assistBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.thumbImage.mas_left);
+        make.left.equalTo(self.thumbImage.mas_left).offset(20);
         make.top.equalTo(self.introLabel.mas_bottom).offset(25);
-        make.width.equalTo(@100);
+        make.width.equalTo(@180);
         make.height.equalTo(@20);
         
     }];
@@ -87,6 +87,8 @@
     
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.thumbImage);
+        make.left.equalTo(self);
+        make.right.equalTo(self);
         make.bottom.equalTo(self.assistBar).offset(30);
     }];
 

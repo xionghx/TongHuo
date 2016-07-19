@@ -64,7 +64,6 @@
                 };
             }];
 
-//            [self refreshDate];
         }];
 //        MJRefreshFooter *footer = [MJRefreshAutoFooter forwardingTargetForSelector:@selector(refreshDate)];
         _articleListTableView.mj_footer = footer;
@@ -91,6 +90,7 @@
 -(void)loadDataSourceWithCid:(NSString *)sCid
             completionHandle:(void(^)())completionHadle
 {
+//    NSString *sPagesize = [NSString stringWithFormat:@"%ld",self.page]
     [NetRequest getArticleListWithCid:sCid andTname:@"" andKeyWord:@"" SPage:@"" andSPagesize:@"4" andCompletionBlock:^(id responseObject, NSError *error) {
         if (error) {
             NSLog(@"ArticleList_CatePage\ngetArticleListWithCid\n%@",error);

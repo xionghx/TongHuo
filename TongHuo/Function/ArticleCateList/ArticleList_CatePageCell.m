@@ -54,7 +54,7 @@
     
     [_sHitnumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.mas_equalTo(self).offset(-15);
-        make.right.mas_equalTo(self).offset(-15);
+        make.right.mas_equalTo(self).offset(-20);
     }];
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_sThumbImageView.mas_top).offset(-15);
@@ -82,6 +82,7 @@
     if (_sCatenameLabel == nil) {
         _sCatenameLabel =[[UILabel alloc]init];
         _sCatenameLabel.font = [UIFont systemFontOfSize:11];
+        _sCatenameLabel.textColor = MainColor;
     }
     return _sCatenameLabel;
 }
@@ -91,6 +92,7 @@
     if (_sTitleLabel == nil) {
         _sTitleLabel =[[UILabel alloc]init];
         _sTitleLabel.numberOfLines = 2;
+        _sTitleLabel.font = [UIFont systemFontOfSize:15];
     }
     return _sTitleLabel;
 }
@@ -99,6 +101,9 @@
 {
     if (_sHitnumLabel == nil) {
         _sHitnumLabel =[[UILabel alloc]init];
+        _sHitnumLabel.textColor = [UIColor grayColor];
+        _sHitnumLabel.font = [UIFont systemFontOfSize:11];
+        _sHitnumLabel.textAlignment = NSTextAlignmentRight;
     }
     return _sHitnumLabel;
 }
