@@ -16,6 +16,8 @@
 #import "ArticleCateListViewController.h"
 #import "XNavigationController.h"
 #import "SpecialListViewController.h"
+#import "UserInfoViewController.h"
+
 
 
 
@@ -153,7 +155,12 @@ static NSString * cellReuse = @"reUseMark";
 }
 -(void)useInformationButtonTaped
 {
-    [LoginView showLoginView];
+    UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    [self.delegate hideLeftSide];
+    [(XNavigationController *)rootVC pushViewController:[UserInfoViewController new] animated:YES];
+    
+
+//    [LoginView showLoginView];
 }
 
 @end

@@ -79,7 +79,7 @@
     }];
     
     [self.catenameButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(-10);
+        make.right.equalTo(self).offset(-10);
         make.bottom.equalTo(self.assistBar.mas_bottom);
         make.size.mas_equalTo(CGSizeMake(40, 20));
         
