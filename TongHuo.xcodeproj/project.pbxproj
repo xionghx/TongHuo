@@ -131,15 +131,17 @@
 		8A0E056A1D37890600B31424 /* 读取图片图.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E04F41D37890600B31424 /* 读取图片图.png */; };
 		8A0E056B1D37890600B31424 /* 返回顶部.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E04F51D37890600B31424 /* 返回顶部.png */; };
 		8A0E056C1D37890600B31424 /* 黑色返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A0E04F61D37890600B31424 /* 黑色返回.png */; };
-		8A0E05701D378CE400B31424 /* ArticleCateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E056F1D378CE400B31424 /* ArticleCateListViewController.m */; };
-		8A0E05731D378DDF00B31424 /* ArticleList_CatePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05721D378DDF00B31424 /* ArticleList_CatePage.m */; };
-		8A0E05761D378F3C00B31424 /* ArticleList_CatePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05751D378F3C00B31424 /* ArticleList_CatePageCell.m */; };
 		8A0E057A1D37A54400B31424 /* DataSourcePrepare.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E05791D37A54400B31424 /* DataSourcePrepare.m */; };
-		8A0E05801D37AD5E00B31424 /* ArticleCateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */; };
-		8A953C4D1D3C778F00ACDC6C /* SpecialListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C4C1D3C778F00ACDC6C /* SpecialListViewController.m */; };
-		8A953C501D3C77D800ACDC6C /* SpecialListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C4F1D3C77D800ACDC6C /* SpecialListCell.m */; };
-		8A953C531D3C77FB00ACDC6C /* SpecialInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C521D3C77FB00ACDC6C /* SpecialInfoVC.m */; };
-		8A953C561D3C783D00ACDC6C /* SpecialInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A953C551D3C783D00ACDC6C /* SpecialInfoCell.m */; };
+		8A266B991D3DB9B700180F4A /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266B981D3DB9B700180F4A /* UserInfoViewController.m */; };
+		8A266BAF1D3DBB3200180F4A /* ArticleCateCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266B9C1D3DBB3200180F4A /* ArticleCateCollectionViewCell.m */; };
+		8A266BB01D3DBB3200180F4A /* ArticleCateListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266B9E1D3DBB3200180F4A /* ArticleCateListViewController.m */; };
+		8A266BB11D3DBB3200180F4A /* ArticleList_CatePage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BA01D3DBB3200180F4A /* ArticleList_CatePage.m */; };
+		8A266BB21D3DBB3200180F4A /* ArticleList_CatePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BA21D3DBB3200180F4A /* ArticleList_CatePageCell.m */; };
+		8A266BB31D3DBB3200180F4A /* DailyFavouritesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BA51D3DBB3200180F4A /* DailyFavouritesVC.m */; };
+		8A266BB41D3DBB3200180F4A /* SpecialInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BA81D3DBB3200180F4A /* SpecialInfoCell.m */; };
+		8A266BB51D3DBB3200180F4A /* SpecialInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BAA1D3DBB3200180F4A /* SpecialInfoVC.m */; };
+		8A266BB61D3DBB3200180F4A /* SpecialListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BAC1D3DBB3200180F4A /* SpecialListCell.m */; };
+		8A266BB71D3DBB3200180F4A /* SpecialListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A266BAE1D3DBB3200180F4A /* SpecialListViewController.m */; };
 		8AE8C3F31D37E68A002F8AE7 /* XNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */; };
 /* End PBXBuildFile section */
 
@@ -312,24 +314,28 @@
 		8A0E04F41D37890600B31424 /* 读取图片图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "读取图片图.png"; sourceTree = "<group>"; };
 		8A0E04F51D37890600B31424 /* 返回顶部.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回顶部.png"; sourceTree = "<group>"; };
 		8A0E04F61D37890600B31424 /* 黑色返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黑色返回.png"; sourceTree = "<group>"; };
-		8A0E056E1D378CE400B31424 /* ArticleCateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateListViewController.h; sourceTree = "<group>"; };
-		8A0E056F1D378CE400B31424 /* ArticleCateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateListViewController.m; sourceTree = "<group>"; };
-		8A0E05711D378DDF00B31424 /* ArticleList_CatePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList_CatePage.h; sourceTree = "<group>"; };
-		8A0E05721D378DDF00B31424 /* ArticleList_CatePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList_CatePage.m; sourceTree = "<group>"; };
-		8A0E05741D378F3C00B31424 /* ArticleList_CatePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList_CatePageCell.h; sourceTree = "<group>"; };
-		8A0E05751D378F3C00B31424 /* ArticleList_CatePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList_CatePageCell.m; sourceTree = "<group>"; };
 		8A0E05781D37A54400B31424 /* DataSourcePrepare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSourcePrepare.h; sourceTree = "<group>"; };
 		8A0E05791D37A54400B31424 /* DataSourcePrepare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSourcePrepare.m; sourceTree = "<group>"; };
-		8A0E057E1D37AD5E00B31424 /* ArticleCateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateCollectionViewCell.h; sourceTree = "<group>"; };
-		8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateCollectionViewCell.m; sourceTree = "<group>"; };
-		8A953C4B1D3C778F00ACDC6C /* SpecialListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialListViewController.h; sourceTree = "<group>"; };
-		8A953C4C1D3C778F00ACDC6C /* SpecialListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialListViewController.m; sourceTree = "<group>"; };
-		8A953C4E1D3C77D800ACDC6C /* SpecialListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialListCell.h; sourceTree = "<group>"; };
-		8A953C4F1D3C77D800ACDC6C /* SpecialListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialListCell.m; sourceTree = "<group>"; };
-		8A953C511D3C77FB00ACDC6C /* SpecialInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialInfoVC.h; sourceTree = "<group>"; };
-		8A953C521D3C77FB00ACDC6C /* SpecialInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialInfoVC.m; sourceTree = "<group>"; };
-		8A953C541D3C783D00ACDC6C /* SpecialInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialInfoCell.h; sourceTree = "<group>"; };
-		8A953C551D3C783D00ACDC6C /* SpecialInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialInfoCell.m; sourceTree = "<group>"; };
+		8A266B971D3DB9B700180F4A /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		8A266B981D3DB9B700180F4A /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		8A266B9B1D3DBB3200180F4A /* ArticleCateCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateCollectionViewCell.h; sourceTree = "<group>"; };
+		8A266B9C1D3DBB3200180F4A /* ArticleCateCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateCollectionViewCell.m; sourceTree = "<group>"; };
+		8A266B9D1D3DBB3200180F4A /* ArticleCateListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCateListViewController.h; sourceTree = "<group>"; };
+		8A266B9E1D3DBB3200180F4A /* ArticleCateListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCateListViewController.m; sourceTree = "<group>"; };
+		8A266B9F1D3DBB3200180F4A /* ArticleList_CatePage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList_CatePage.h; sourceTree = "<group>"; };
+		8A266BA01D3DBB3200180F4A /* ArticleList_CatePage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList_CatePage.m; sourceTree = "<group>"; };
+		8A266BA11D3DBB3200180F4A /* ArticleList_CatePageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleList_CatePageCell.h; sourceTree = "<group>"; };
+		8A266BA21D3DBB3200180F4A /* ArticleList_CatePageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleList_CatePageCell.m; sourceTree = "<group>"; };
+		8A266BA41D3DBB3200180F4A /* DailyFavouritesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyFavouritesVC.h; sourceTree = "<group>"; };
+		8A266BA51D3DBB3200180F4A /* DailyFavouritesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyFavouritesVC.m; sourceTree = "<group>"; };
+		8A266BA71D3DBB3200180F4A /* SpecialInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialInfoCell.h; sourceTree = "<group>"; };
+		8A266BA81D3DBB3200180F4A /* SpecialInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialInfoCell.m; sourceTree = "<group>"; };
+		8A266BA91D3DBB3200180F4A /* SpecialInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialInfoVC.h; sourceTree = "<group>"; };
+		8A266BAA1D3DBB3200180F4A /* SpecialInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialInfoVC.m; sourceTree = "<group>"; };
+		8A266BAB1D3DBB3200180F4A /* SpecialListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialListCell.h; sourceTree = "<group>"; };
+		8A266BAC1D3DBB3200180F4A /* SpecialListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialListCell.m; sourceTree = "<group>"; };
+		8A266BAD1D3DBB3200180F4A /* SpecialListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialListViewController.h; sourceTree = "<group>"; };
+		8A266BAE1D3DBB3200180F4A /* SpecialListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialListViewController.m; sourceTree = "<group>"; };
 		8AE8C3F11D37E68A002F8AE7 /* XNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNavigationBar.h; sourceTree = "<group>"; };
 		8AE8C3F21D37E68A002F8AE7 /* XNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNavigationBar.m; sourceTree = "<group>"; };
 		DAF34D4EFFD6BD827639F124 /* libPods-TongHuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TongHuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -409,8 +415,6 @@
 		8A0E043B1D37890600B31424 /* FoundationVC */ = {
 			isa = PBXGroup;
 			children = (
-				8A953C4A1D3C776700ACDC6C /* SpecialListVC */,
-				8A0E056D1D378C9200B31424 /* ArticleCateList */,
 				8A0E043C1D37890600B31424 /* ArticleListModle.h */,
 				8A0E043D1D37890600B31424 /* ArticleListModle.m */,
 				8A0E043E1D37890600B31424 /* FoundationVC.h */,
@@ -426,6 +430,9 @@
 		8A0E04441D37890600B31424 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				8A266B9A1D3DBB3200180F4A /* ArticleCateList */,
+				8A266BA31D3DBB3200180F4A /* DailyFavourites */,
+				8A266BA61D3DBB3200180F4A /* SpecialListVC */,
 				8A0E04451D37890600B31424 /* Lesfside */,
 				8A0E044A1D37890600B31424 /* Login */,
 				8A0E044D1D37890600B31424 /* MainPage */,
@@ -450,6 +457,8 @@
 			children = (
 				8A0E044B1D37890600B31424 /* LoginView.h */,
 				8A0E044C1D37890600B31424 /* LoginView.m */,
+				8A266B971D3DB9B700180F4A /* UserInfoViewController.h */,
+				8A266B981D3DB9B700180F4A /* UserInfoViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -770,21 +779,6 @@
 			path = "登录页";
 			sourceTree = "<group>";
 		};
-		8A0E056D1D378C9200B31424 /* ArticleCateList */ = {
-			isa = PBXGroup;
-			children = (
-				8A0E056E1D378CE400B31424 /* ArticleCateListViewController.h */,
-				8A0E056F1D378CE400B31424 /* ArticleCateListViewController.m */,
-				8A0E057E1D37AD5E00B31424 /* ArticleCateCollectionViewCell.h */,
-				8A0E057F1D37AD5E00B31424 /* ArticleCateCollectionViewCell.m */,
-				8A0E05711D378DDF00B31424 /* ArticleList_CatePage.h */,
-				8A0E05721D378DDF00B31424 /* ArticleList_CatePage.m */,
-				8A0E05741D378F3C00B31424 /* ArticleList_CatePageCell.h */,
-				8A0E05751D378F3C00B31424 /* ArticleList_CatePageCell.m */,
-			);
-			path = ArticleCateList;
-			sourceTree = "<group>";
-		};
 		8A0E05771D37A51D00B31424 /* DataSourcePrepare */ = {
 			isa = PBXGroup;
 			children = (
@@ -794,17 +788,41 @@
 			path = DataSourcePrepare;
 			sourceTree = "<group>";
 		};
-		8A953C4A1D3C776700ACDC6C /* SpecialListVC */ = {
+		8A266B9A1D3DBB3200180F4A /* ArticleCateList */ = {
 			isa = PBXGroup;
 			children = (
-				8A953C4B1D3C778F00ACDC6C /* SpecialListViewController.h */,
-				8A953C4C1D3C778F00ACDC6C /* SpecialListViewController.m */,
-				8A953C4E1D3C77D800ACDC6C /* SpecialListCell.h */,
-				8A953C4F1D3C77D800ACDC6C /* SpecialListCell.m */,
-				8A953C511D3C77FB00ACDC6C /* SpecialInfoVC.h */,
-				8A953C521D3C77FB00ACDC6C /* SpecialInfoVC.m */,
-				8A953C541D3C783D00ACDC6C /* SpecialInfoCell.h */,
-				8A953C551D3C783D00ACDC6C /* SpecialInfoCell.m */,
+				8A266B9B1D3DBB3200180F4A /* ArticleCateCollectionViewCell.h */,
+				8A266B9C1D3DBB3200180F4A /* ArticleCateCollectionViewCell.m */,
+				8A266B9D1D3DBB3200180F4A /* ArticleCateListViewController.h */,
+				8A266B9E1D3DBB3200180F4A /* ArticleCateListViewController.m */,
+				8A266B9F1D3DBB3200180F4A /* ArticleList_CatePage.h */,
+				8A266BA01D3DBB3200180F4A /* ArticleList_CatePage.m */,
+				8A266BA11D3DBB3200180F4A /* ArticleList_CatePageCell.h */,
+				8A266BA21D3DBB3200180F4A /* ArticleList_CatePageCell.m */,
+			);
+			path = ArticleCateList;
+			sourceTree = "<group>";
+		};
+		8A266BA31D3DBB3200180F4A /* DailyFavourites */ = {
+			isa = PBXGroup;
+			children = (
+				8A266BA41D3DBB3200180F4A /* DailyFavouritesVC.h */,
+				8A266BA51D3DBB3200180F4A /* DailyFavouritesVC.m */,
+			);
+			path = DailyFavourites;
+			sourceTree = "<group>";
+		};
+		8A266BA61D3DBB3200180F4A /* SpecialListVC */ = {
+			isa = PBXGroup;
+			children = (
+				8A266BA71D3DBB3200180F4A /* SpecialInfoCell.h */,
+				8A266BA81D3DBB3200180F4A /* SpecialInfoCell.m */,
+				8A266BA91D3DBB3200180F4A /* SpecialInfoVC.h */,
+				8A266BAA1D3DBB3200180F4A /* SpecialInfoVC.m */,
+				8A266BAB1D3DBB3200180F4A /* SpecialListCell.h */,
+				8A266BAC1D3DBB3200180F4A /* SpecialListCell.m */,
+				8A266BAD1D3DBB3200180F4A /* SpecialListViewController.h */,
+				8A266BAE1D3DBB3200180F4A /* SpecialListViewController.m */,
 			);
 			path = SpecialListVC;
 			sourceTree = "<group>";
@@ -1017,11 +1035,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A953C531D3C77FB00ACDC6C /* SpecialInfoVC.m in Sources */,
 				8A0E05181D37890600B31424 /* UIView+SetSize.m in Sources */,
-				8A953C501D3C77D800ACDC6C /* SpecialListCell.m in Sources */,
+				8A266BB01D3DBB3200180F4A /* ArticleCateListViewController.m in Sources */,
 				8A0E04F91D37890600B31424 /* ModelVCClassed.m in Sources */,
-				8A0E05801D37AD5E00B31424 /* ArticleCateCollectionViewCell.m in Sources */,
 				8A0E05051D37890600B31424 /* RootVC.m in Sources */,
 				8A0E050F1D37890600B31424 /* NetRequest+DailyFavourites.m in Sources */,
 				8A0E05031D37890600B31424 /* SimpleListTableViewHeader.m in Sources */,
@@ -1031,26 +1047,27 @@
 				8A0E05111D37890600B31424 /* NetRequest+Simple.m in Sources */,
 				8A0E04FC1D37890600B31424 /* LeftSideView.m in Sources */,
 				8A0E057A1D37A54400B31424 /* DataSourcePrepare.m in Sources */,
-				8A0E05761D378F3C00B31424 /* ArticleList_CatePageCell.m in Sources */,
 				8A0E05161D37890600B31424 /* NSObject+FileWithBundle.m in Sources */,
 				8A0E050D1D37890600B31424 /* MAMATableViewControllers.m in Sources */,
+				8A266BB71D3DBB3200180F4A /* SpecialListViewController.m in Sources */,
 				8A0E05011D37890600B31424 /* SimpleCateListView.m in Sources */,
 				8A0E05171D37890600B31424 /* UIBarButtonItem+CustomItem.m in Sources */,
+				8A266BB21D3DBB3200180F4A /* ArticleList_CatePageCell.m in Sources */,
 				8A0E05121D37890600B31424 /* NetRequest+Special.m in Sources */,
 				8A0E05091D37890600B31424 /* UserInfo.m in Sources */,
 				8A0E05061D37890600B31424 /* ShadowView.m in Sources */,
 				8A0E05141D37890600B31424 /* NetRequest+UserInfoRequst.m in Sources */,
 				037D83551D2E7B9E0063E17E /* ViewController.m in Sources */,
-				8A0E05731D378DDF00B31424 /* ArticleList_CatePage.m in Sources */,
+				8A266BB61D3DBB3200180F4A /* SpecialListCell.m in Sources */,
 				8A0E051D1D37890600B31424 /* XAlertViewHelper.m in Sources */,
 				8A0E051B1D37890600B31424 /* ArticleAssistBar.m in Sources */,
+				8A266BB31D3DBB3200180F4A /* DailyFavouritesVC.m in Sources */,
 				8A0E05001D37890600B31424 /* ArticleListTableViewCell.m in Sources */,
 				8A0E04FE1D37890600B31424 /* ArticleDetailVC.m in Sources */,
 				8A0E04F71D37890600B31424 /* ArticleListModle.m in Sources */,
 				8A0E051F1D37890600B31424 /* XNavigationController.m in Sources */,
+				8A266BB41D3DBB3200180F4A /* SpecialInfoCell.m in Sources */,
 				8A0E051A1D37890600B31424 /* XUtilityTools.m in Sources */,
-				8A953C561D3C783D00ACDC6C /* SpecialInfoCell.m in Sources */,
-				8A953C4D1D3C778F00ACDC6C /* SpecialListViewController.m in Sources */,
 				8A0E050A1D37890600B31424 /* MainPage.m in Sources */,
 				8A0E04FD1D37890600B31424 /* LoginView.m in Sources */,
 				8A0E04F81D37890600B31424 /* FoundationVC.m in Sources */,
@@ -1058,6 +1075,7 @@
 				8A0E051C1D37890600B31424 /* ArticleAssistButton.m in Sources */,
 				8AE8C3F31D37E68A002F8AE7 /* XNavigationBar.m in Sources */,
 				8A0E05191D37890600B31424 /* XStringUtils.m in Sources */,
+				8A266BAF1D3DBB3200180F4A /* ArticleCateCollectionViewCell.m in Sources */,
 				037D83521D2E7B9E0063E17E /* AppDelegate.m in Sources */,
 				8A0E050E1D37890600B31424 /* NetRequest+Article.m in Sources */,
 				8A0E050C1D37890600B31424 /* MAMAHeaderPage.m in Sources */,
@@ -1066,9 +1084,11 @@
 				8A0E05151D37890600B31424 /* NetRequest.m in Sources */,
 				8A0E050B1D37890600B31424 /* MainPageScroll.m in Sources */,
 				8A0E051E1D37890600B31424 /* XTabBar.m in Sources */,
+				8A266BB11D3DBB3200180F4A /* ArticleList_CatePage.m in Sources */,
+				8A266BB51D3DBB3200180F4A /* SpecialInfoVC.m in Sources */,
+				8A266B991D3DB9B700180F4A /* UserInfoViewController.m in Sources */,
 				037D834F1D2E7B9E0063E17E /* main.m in Sources */,
 				8A0E05101D37890600B31424 /* NetRequest+Region.m in Sources */,
-				8A0E05701D378CE400B31424 /* ArticleCateListViewController.m in Sources */,
 				8A0E05131D37890600B31424 /* NetRequest+UserDoing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
